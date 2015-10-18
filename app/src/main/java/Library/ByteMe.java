@@ -1,6 +1,7 @@
 package Library;
 
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.util.Log;
 
 /**
@@ -54,7 +55,8 @@ public class ByteMe {
      *  Run begins the multithreading process of calculating the bits in a given array of ints.
      *
      * @param int_data a static array of ints of any value within the scope of the Java API.
-     * @return numbers of bits if calculation completes, -1 if the thread was interrupted.
+     * @return numbers of bits if calculation completes, -1 if the thread was interrupted. -2
+     * would be returned if the array given was null.
      */
     public int run(int[] int_data)
     {
@@ -78,44 +80,225 @@ public class ByteMe {
             value = -1;
             Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
         }
-
         return value;
     }
 
     public int run(String[] string_data) {
-        return 0;
+
+        // Initialize the multithreading class with the data
+        // and settings
+        CalculateSize foo = new CalculateSize(1, null,
+                string_data, null, null, null, null, null, null, null, null);
+
+        Thread thread = new Thread(foo);
+        thread.start();
+        int value = 0;
+
+        try
+        {
+            thread.join();
+            value = foo.getValue();
+        }
+        catch (InterruptedException e)
+        {
+            e.printStackTrace();
+            value = -1;
+            Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
+        }
+
+        return value;
     }
 
-    public int run(Short[] short_data) {
-        return 0;
+    public int run(short[] short_data) {
+        // Initialize the multithreading class with the data
+        // and settings
+        CalculateSize foo = new CalculateSize(2, null,
+                null, short_data, null, null, null, null, null, null, null);
+
+        Thread thread = new Thread(foo);
+        thread.start();
+        int value = 0;
+
+        try
+        {
+            thread.join();
+            value = foo.getValue();
+        }
+        catch (InterruptedException e)
+        {
+            e.printStackTrace();
+            value = -1;
+            Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
+        }
+        return value;
     }
 
-    public int run(Long[] long_data) {
-        return 0;
+    public int run(long[] long_data) {
+        // Initialize the multithreading class with the data
+        // and settings
+        CalculateSize foo = new CalculateSize(3, null,
+                null, null, long_data, null, null, null, null, null, null);
+
+        Thread thread = new Thread(foo);
+        thread.start();
+        int value = 0;
+
+        try
+        {
+            thread.join();
+            value = foo.getValue();
+        }
+        catch (InterruptedException e)
+        {
+            e.printStackTrace();
+            value = -1;
+            Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
+        }
+        return value;
     }
 
-    public int run(Byte[] byte_data) {
-        return 0;
+    public int run(byte[] byte_data) {
+        // Initialize the multithreading class with the data
+        // and settings
+        CalculateSize foo = new CalculateSize(4, null,
+                null, null, null, byte_data, null, null, null, null, null);
+
+        Thread thread = new Thread(foo);
+        thread.start();
+        int value = 0;
+
+        try
+        {
+            thread.join();
+            value = foo.getValue();
+        }
+        catch (InterruptedException e)
+        {
+            e.printStackTrace();
+            value = -1;
+            Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
+        }
+        return value;
     }
 
-    public int run(Float[] float_data) {
-        return 0;
+    public int run(float[] float_data) {
+        // Initialize the multithreading class with the data
+        // and settings
+        CalculateSize foo = new CalculateSize(5, null,
+                null, null, null, null, float_data, null, null, null, null);
+
+        Thread thread = new Thread(foo);
+        thread.start();
+        int value = 0;
+
+        try
+        {
+            thread.join();
+            value = foo.getValue();
+        }
+        catch (InterruptedException e)
+        {
+            e.printStackTrace();
+            value = -1;
+            Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
+        }
+        return value;
     }
 
-    public int run(Double[] double_data) {
-        return 0;
+    public int run(double[] double_data) {
+        // Initialize the multithreading class with the data
+        // and settings
+        CalculateSize foo = new CalculateSize(6, null,
+                null, null, null, null, null, double_data, null, null, null);
+
+        Thread thread = new Thread(foo);
+        thread.start();
+        int value = 0;
+
+        try
+        {
+            thread.join();
+            value = foo.getValue();
+        }
+        catch (InterruptedException e)
+        {
+            e.printStackTrace();
+            value = -1;
+            Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
+        }
+        return value;
     }
 
     public int run(char[] char_data) {
-        return 0;
+        // Initialize the multithreading class with the data
+        // and settings
+        CalculateSize foo = new CalculateSize(7, null,
+                null, null, null, null, null, null, char_data, null, null);
+
+        Thread thread = new Thread(foo);
+        thread.start();
+        int value = 0;
+
+        try
+        {
+            thread.join();
+            value = foo.getValue();
+        }
+        catch (InterruptedException e)
+        {
+            e.printStackTrace();
+            value = -1;
+            Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
+        }
+        return value;
     }
 
     public int run(boolean[] boolean_data) {
-        return 0;
+        // Initialize the multithreading class with the data
+        // and settings
+        CalculateSize foo = new CalculateSize(8, null,
+                null, null, null, null, null, null, null, boolean_data, null);
+
+        Thread thread = new Thread(foo);
+        thread.start();
+        int value = 0;
+
+        try
+        {
+            thread.join();
+            value = foo.getValue();
+        }
+        catch (InterruptedException e)
+        {
+            e.printStackTrace();
+            value = -1;
+            Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
+        }
+        return value;
     }
 
     public int run(Bitmap[] bitmap_data) {
-        return 0;
+        // Initialize the multithreading class with the data
+        // and settings
+        CalculateSize foo = new CalculateSize(9, null,
+                null, null, null, null, null, null, null, null, bitmap_data);
+
+        Thread thread = new Thread(foo);
+        thread.start();
+        int value = 0;
+
+        try
+        {
+            thread.join();
+            value = foo.getValue();
+        }
+        catch (InterruptedException e)
+        {
+            e.printStackTrace();
+            value = -1;
+            Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
+        }
+        return value;
     }
     //================================================
     // </Asynchronous Methods>
@@ -209,11 +392,11 @@ public class ByteMe {
 
         private volatile int[] int_data;
         private volatile String[] string_data;
-        private volatile Short[] short_data;
-        private volatile Long[] long_data;
-        private volatile Byte[] byte_data;
-        private volatile Float[] float_data;
-        private volatile Double[] double_data;
+        private volatile short[] short_data;
+        private volatile long[] long_data;
+        private volatile byte[] byte_data;
+        private volatile float[] float_data;
+        private volatile double[] double_data;
         private volatile char[] char_data;
         private volatile boolean[] boolean_data;
         private volatile Bitmap[] bitmap_data;
@@ -221,11 +404,11 @@ public class ByteMe {
         public CalculateSize(int alogorithm,
                              int[] int_data,
                              String[] string_data,
-                             Short[] short_data,
-                             Long[] long_data,
-                             Byte[] byte_data,
-                             Float[] float_data,
-                             Double[] double_data,
+                             short[] short_data,
+                             long[] long_data,
+                             byte[] byte_data,
+                             float[] float_data,
+                             double[] double_data,
                              char[] char_data,
                              boolean[] boolean_data,
                              Bitmap[] bitmap_data)
@@ -281,22 +464,110 @@ public class ByteMe {
 
                     break;
                 case 1:
+                    StringBuilder  binary = new StringBuilder();
+                    for(int i = 0; i < string_data.length; i++)
+                    {
+                        byte[] bytes = string_data[i].getBytes();
+                        binary = new StringBuilder();
+                        for (byte b : bytes)
+                        {
+                            int val = b;
+                            for (int m = 0; m < 8; m++)
+                            {
+                                binary.append((val & 128) == 0 ? 0 : 1);
+                                val <<= 1;
+                            }
+                        }
+                    }
+
+                    byteAmount = binary.length();
                     break;
                 case 2:
+
+                    String binary_short = "";
+                    for(int i = 0; i < short_data.length; i++)
+                    {
+                        binary_short += Integer.toString(0xFFFF & short_data[i], 2);
+                    }
+
+                    byteAmount = binary_short.length();
                     break;
                 case 3:
+
+                    String binary_long = "";
+                    for(int i = 0; i < long_data.length; i++)
+                    {
+                        binary_long += Long.toString(long_data[i], 2);
+                    }
+
+                    byteAmount = binary_long.length();
                     break;
                 case 4:
+
+                    String binary_byte = "";
+                    for(int i = 0; i < byte_data.length; i++)
+                    {
+                        binary_byte += String.format("%8s", Integer.toBinaryString(byte_data[i] & 0xFF)).replace(' ', '0');
+                    }
+
+                    byteAmount = binary_byte.length();
                     break;
                 case 5:
+
+                    String binary_float = "";
+                    for(int i = 0; i < float_data.length; i++)
+                    {
+                        binary_float += Integer.toString(Float.floatToIntBits(float_data[i]), 2);
+                    }
+
+                    byteAmount = binary_float.length();
                     break;
                 case 6:
+
+                    String binary_double = "";
+                    for(int i = 0; i < double_data.length; i++)
+                    {
+                        long bits = Double.doubleToLongBits(double_data[i]);
+                        binary_double += Long.toString(bits, 2);
+                    }
+
+                    byteAmount = binary_double.length();
                     break;
                 case 7:
+
+                    String binary_char = "";
+                    for(int i = 0; i < char_data.length; i++)
+                    {
+                        int value = (int)char_data[i];
+                        binary_char += Integer.toString(value, 2);
+                    }
+
+                    byteAmount = binary_char.length();
                     break;
                 case 8:
+
+                    String binary_boolean = "";
+                    for(int i = 0; i < boolean_data.length; i++)
+                    {
+                        int myInt = (boolean_data[i]) ? 1 : 0;
+                        binary_boolean += Integer.toString(myInt, 2);
+                    }
+
+                    byteAmount = binary_boolean.length();
                     break;
                 case 9:
+
+                    int bitmap_temp = 0;
+                    for(int i = 0; i < bitmap_data.length; i++)
+                    {
+                        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB_MR1) {
+                            bitmap_temp += bitmap_data[i].getRowBytes() * bitmap_data[i].getHeight();
+                        } else {
+                            bitmap_temp += bitmap_data[i].getByteCount();
+                        }
+                    }
+
+                    byteAmount = bitmap_temp;
                     break;
             }
         }
