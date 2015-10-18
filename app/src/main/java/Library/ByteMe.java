@@ -40,15 +40,76 @@ public class ByteMe {
 
     public int run(int[] int_data,
                        String[] string_data,
-                       Short[] short_data,
-                       Long[] long_data,
-                       Byte[] byte_data,
-                       Float[] float_data,
-                       Double[] double_data,
+                       short[] short_data,
+                       long[] long_data,
+                       byte[] byte_data,
+                       float[] float_data,
+                       double[] double_data,
                        char[] char_data,
                        boolean[] boolean_data,
                        Bitmap[] bitmap_data) {
-        return 0;
+
+        //TODO write this function to have all of the threads
+        //TODO ask if the array is null first, then create the threads
+        //TODO and start them. Make them join at the end with the combined
+        //TODO bit value.
+
+
+        // Initialize the multithreading class with the data
+        // and settings
+        if(int_data != null) {
+            CalculateSize int_thread = new CalculateSize(0, int_data,
+                    null, null, null, null, null, null, null, null, null);
+            Thread thread1 = new Thread();
+        }
+
+        if(string_data != null) {
+            CalculateSize string_thread = new CalculateSize(1, null,
+                    string_data, null, null, null, null, null, null, null, null);
+        }
+
+        CalculateSize short_thread = new CalculateSize(2, null,
+                null, short_data, null, null, null, null, null, null, null);
+
+        CalculateSize long_thread = new CalculateSize(3, null,
+                null, null, long_data, null, null, null, null, null, null);
+
+        CalculateSize byte_thread = new CalculateSize(4, null,
+                null, null, null, byte_data, null, null, null, null, null);
+
+        CalculateSize float_thread = new CalculateSize(5, null,
+                null, null, null, null, float_data, null, null, null, null);
+
+        CalculateSize double_thread = new CalculateSize(6, null,
+                null, null, null, null, null, double_data, null, null, null);
+
+        CalculateSize char_thread = new CalculateSize(7, null,
+                null, null, null, null, null, null, char_data, null, null);
+
+        CalculateSize boolean_thread = new CalculateSize(8, null,
+                null, null, null, null, null, null, null, boolean_data, null);
+
+        CalculateSize bitmap_thread = new CalculateSize(9, null,
+                null, null, null, null, null, null, null, null, bitmap_data);
+
+
+
+        Thread thread1 = new Thread(foo);
+        thread1.start();
+        int value = 0;
+
+        try
+        {
+            thread1.join();
+            value = foo.getValue();
+        }
+        catch (InterruptedException e)
+        {
+            e.printStackTrace();
+            value = -1;
+            Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
+        }
+        return value;
     }
 
     /**
