@@ -18,7 +18,7 @@ Runtime allocation measurements of:
 * Double
 * Char
 * Boolean
-* Bitmap
+* [Bitmap](http://developer.android.com/reference/android/graphics/Bitmap.html)
 
 ## Contributing
 
