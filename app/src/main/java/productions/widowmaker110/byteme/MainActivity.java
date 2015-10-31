@@ -47,5 +47,10 @@ public class MainActivity extends AppCompatActivity {
         Bitmap[] bitmap_array = {BitmapFactory.decodeResource(getResources(), R.drawable.android_black),
                 BitmapFactory.decodeResource(getResources(), R.drawable.android_white)};
         Log.d(""+this.getClass().getName(),"bitmap[]: " + b.run(bitmap_array));
+
+        // All of the objects combined.
+        Log.d(""+this.getClass().getName(),"all: " + b.run(int_array, string_array, short_array,
+                long_array, byte_array, float_array, double_array, char_array, boolean_array,
+                bitmap_array));
     }
 }

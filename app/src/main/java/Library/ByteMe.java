@@ -5,6 +5,11 @@ import android.os.Build;
 import android.util.Log;
 
 /**
+ * ByteMe.java
+ *
+ * This class calculates the bits within any given object by instanitating the run() function
+ * with an array of a given primitive type or bitmap.
+ *
  * Created by Alexander on 10/17/2015.
  */
 public class ByteMe {
@@ -37,7 +42,6 @@ public class ByteMe {
     //================================================
     // <Asynchronous Methods>
     //================================================
-
     public int run(int[] int_data,
                        String[] string_data,
                        short[] short_data,
@@ -48,67 +52,272 @@ public class ByteMe {
                        char[] char_data,
                        boolean[] boolean_data,
                        Bitmap[] bitmap_data) {
+        /**
+         * Async tasks
+         */
+        CalculateSize int_thread = null;
+        CalculateSize string_thread = null;
+        CalculateSize short_thread = null;
+        CalculateSize long_thread = null;
+        CalculateSize byte_thread = null;
+        CalculateSize float_thread = null;
+        CalculateSize double_thread = null;
+        CalculateSize char_thread = null;
+        CalculateSize boolean_thread = null;
+        CalculateSize bitmap_thread = null;
 
-        //TODO write this function to have all of the threads
-        //TODO ask if the array is null first, then create the threads
-        //TODO and start them. Make them join at the end with the combined
-        //TODO bit value.
+        /**
+         * Threads
+         */
+        Thread int_threading = null;
+        Thread string_threading = null;
+        Thread short_threading = null;
+        Thread long_threading = null;
+        Thread byte_threading = null;
+        Thread float_threading = null;
+        Thread double_threading = null;
+        Thread char_threading = null;
+        Thread boolean_threading = null;
+        Thread bitmap_threading = null;
 
+        /**
+         * Final int returning
+         */
+        int value = 0;
 
         // Initialize the multithreading class with the data
         // and settings
         if(int_data != null) {
-            CalculateSize int_thread = new CalculateSize(0, int_data,
+
+            int_thread = new CalculateSize(0, int_data,
                     null, null, null, null, null, null, null, null, null);
-            Thread thread1 = new Thread();
+
+            int_threading = new Thread(int_thread);
+            int_threading.start();
         }
 
         if(string_data != null) {
-            CalculateSize string_thread = new CalculateSize(1, null,
+
+            string_thread = new CalculateSize(1, null,
                     string_data, null, null, null, null, null, null, null, null);
+
+            string_threading = new Thread(string_thread);
+            string_threading.start();
         }
 
-        CalculateSize short_thread = new CalculateSize(2, null,
-                null, short_data, null, null, null, null, null, null, null);
+        if(short_data != null) {
 
-        CalculateSize long_thread = new CalculateSize(3, null,
-                null, null, long_data, null, null, null, null, null, null);
+            short_thread = new CalculateSize(2, null,
+                    null, short_data, null, null, null, null, null, null, null);
 
-        CalculateSize byte_thread = new CalculateSize(4, null,
-                null, null, null, byte_data, null, null, null, null, null);
+            short_threading = new Thread(short_thread);
+            short_threading.start();
+        }
 
-        CalculateSize float_thread = new CalculateSize(5, null,
-                null, null, null, null, float_data, null, null, null, null);
+        if(long_data != null) {
 
-        CalculateSize double_thread = new CalculateSize(6, null,
-                null, null, null, null, null, double_data, null, null, null);
+            long_thread = new CalculateSize(3, null,
+                    null, null, long_data, null, null, null, null, null, null);
 
-        CalculateSize char_thread = new CalculateSize(7, null,
-                null, null, null, null, null, null, char_data, null, null);
+            long_threading = new Thread(long_thread);
+            long_threading.start();
+        }
 
-        CalculateSize boolean_thread = new CalculateSize(8, null,
-                null, null, null, null, null, null, null, boolean_data, null);
+        if(byte_data != null) {
 
-        CalculateSize bitmap_thread = new CalculateSize(9, null,
-                null, null, null, null, null, null, null, null, bitmap_data);
+            byte_thread = new CalculateSize(4, null,
+                    null, null, null, byte_data, null, null, null, null, null);
 
+            byte_threading = new Thread(byte_thread);
+            byte_threading.start();
+        }
 
+        if(float_data != null) {
 
-        Thread thread1 = new Thread(foo);
-        thread1.start();
-        int value = 0;
+            float_thread = new CalculateSize(5, null,
+                    null, null, null, null, float_data, null, null, null, null);
 
-        try
+            float_threading = new Thread(float_thread);
+            float_threading.start();
+        }
+
+        if(double_data != null) {
+
+            double_thread = new CalculateSize(6, null,
+                    null, null, null, null, null, double_data, null, null, null);
+
+            double_threading = new Thread(double_thread);
+            double_threading.start();
+        }
+
+        if(char_data != null) {
+
+            char_thread = new CalculateSize(7, null,
+                    null, null, null, null, null, null, char_data, null, null);
+
+            char_threading = new Thread(char_thread);
+            char_threading.start();
+        }
+
+        if(boolean_data != null) {
+
+            boolean_thread = new CalculateSize(8, null,
+                    null, null, null, null, null, null, null, boolean_data, null);
+
+            boolean_threading = new Thread(boolean_thread);
+            boolean_threading.start();
+        }
+
+        if(bitmap_data != null) {
+
+            bitmap_thread = new CalculateSize(9, null,
+                    null, null, null, null, null, null, null, null, bitmap_data);
+
+            bitmap_threading = new Thread(bitmap_thread);
+            bitmap_threading.start();
+        }
+
+        if(int_threading != null)
         {
-            thread1.join();
-            value = foo.getValue();
+            try
+            {
+                int_threading.join();
+                value = value + int_thread.getValue();
+            }
+            catch (InterruptedException e)
+            {
+                e.printStackTrace();
+                value = -1;
+                Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
+            }
         }
-        catch (InterruptedException e)
+        if(string_threading != null)
         {
-            e.printStackTrace();
-            value = -1;
-            Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
+            try
+            {
+                string_threading.join();
+                value = value + string_thread.getValue();
+            }
+            catch (InterruptedException e)
+            {
+                e.printStackTrace();
+                value = -1;
+                Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
+            }
         }
+        if(short_threading != null)
+        {
+            try
+            {
+                short_threading.join();
+                value = value + short_thread.getValue();
+            }
+            catch (InterruptedException e)
+            {
+                e.printStackTrace();
+                value = -1;
+                Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
+            }
+        }
+        if(long_threading != null)
+        {
+            try
+            {
+                long_threading.join();
+                value = value + long_thread.getValue();
+            }
+            catch (InterruptedException e)
+            {
+                e.printStackTrace();
+                value = -1;
+                Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
+            }
+        }
+        if(byte_threading != null)
+        {
+            try
+            {
+                byte_threading.join();
+                value = value + byte_thread.getValue();
+            }
+            catch (InterruptedException e)
+            {
+                e.printStackTrace();
+                value = -1;
+                Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
+            }
+        }
+        if(float_threading != null)
+        {
+            try
+            {
+                float_threading.join();
+                value = value + float_thread.getValue();
+            }
+            catch (InterruptedException e)
+            {
+                e.printStackTrace();
+                value = -1;
+                Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
+            }
+        }
+        if(double_threading != null)
+        {
+            try
+            {
+                double_threading.join();
+                value = value + double_thread.getValue();
+            }
+            catch (InterruptedException e)
+            {
+                e.printStackTrace();
+                value = -1;
+                Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
+            }
+        }
+        if(char_threading != null)
+        {
+            try
+            {
+                char_threading.join();
+                value = value + char_thread.getValue();
+            }
+            catch (InterruptedException e)
+            {
+                e.printStackTrace();
+                value = -1;
+                Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
+            }
+        }
+        if(boolean_threading != null)
+        {
+            try
+            {
+                boolean_threading.join();
+                value = value + boolean_thread.getValue();
+            }
+            catch (InterruptedException e)
+            {
+                e.printStackTrace();
+                value = -1;
+                Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
+            }
+        }
+        if(bitmap_threading != null)
+        {
+            try
+            {
+                bitmap_threading.join();
+                value = value + bitmap_thread.getValue();
+            }
+            catch (InterruptedException e)
+            {
+                e.printStackTrace();
+                value = -1;
+                Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
+            }
+        }
+
         return value;
     }
 
@@ -365,7 +574,6 @@ public class ByteMe {
     // </Asynchronous Methods>
     //================================================
 
-
     //================================================
     // <Synchronous Methods>
     //================================================
@@ -403,7 +611,6 @@ public class ByteMe {
     // </Synchronous Methods>
     //================================================
 
-
     //================================================
     // <Get/Set Methods>
     //================================================
@@ -419,7 +626,6 @@ public class ByteMe {
     //================================================
     // </Get/Set Methods>
     //================================================
-
 
     //================================================
     // <Conversion Methods>
@@ -441,7 +647,6 @@ public class ByteMe {
     //================================================
     // </Conversion Methods>
     //================================================
-
 
     //================================================
     // <Async Calculation Method>
