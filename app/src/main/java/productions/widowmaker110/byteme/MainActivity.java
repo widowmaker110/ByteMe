@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.util.Objects;
+
 import Library.ByteMe;
 
 public class MainActivity extends AppCompatActivity {
@@ -47,6 +49,11 @@ public class MainActivity extends AppCompatActivity {
         Bitmap[] bitmap_array = {BitmapFactory.decodeResource(getResources(), R.drawable.android_black),
                 BitmapFactory.decodeResource(getResources(), R.drawable.android_white)};
         Log.d(""+this.getClass().getName(),"bitmap[]: " + b.run(bitmap_array));
+
+        // generic Object type
+        Object[] objects = {1, "Hello", 12345678910L, (short) 10, (byte) 10, 3.14f, 3.14, 'A', false,
+                BitmapFactory.decodeResource(getResources(), R.drawable.android_black), int_array};
+        Log.d(""+this.getClass().getName(),"object[]: " + b.run(objects));
 
         // All of the objects combined.
         Log.d(""+this.getClass().getName(),"all: " + b.run(int_array, string_array, short_array,

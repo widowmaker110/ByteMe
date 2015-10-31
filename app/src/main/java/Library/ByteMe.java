@@ -321,6 +321,52 @@ public class ByteMe {
         return value;
     }
 
+    public int run(Object[] objects)
+    {
+        int value = 0;
+
+        for(int i = 0; i < objects.length; i++)
+        {
+            switch (objects[i].getClass().toString()) {
+                case "class java.lang.String":
+                    Log.d("" + this.getClass().getName(), "String");
+                    break;
+                case "class java.lang.Integer":
+                    Log.d("" + this.getClass().getName(), "Integer");
+                    break;
+                case "class java.lang.Short":
+                    Log.d("" + this.getClass().getName(), "Short");
+                    break;
+                case "class java.lang.Long":
+                    Log.d("" + this.getClass().getName(), "Long");
+                    break;
+                case "class java.lang.Byte":
+                    Log.d("" + this.getClass().getName(), "Byte");
+                    break;
+                case "class java.lang.Float":
+                    Log.d("" + this.getClass().getName(), "Float");
+                    break;
+                case "class java.lang.Double":
+                    Log.d("" + this.getClass().getName(), "Double");
+                    break;
+                case "class java.lang.Char":
+                    Log.d("" + this.getClass().getName(), "Char");
+                    break;
+                case "class java.lang.Boolean":
+                    Log.d("" + this.getClass().getName(), "Boolean");
+                    break;
+                case "class android.graphics.Bitmap":
+                    Log.d("" + this.getClass().getName(), "Bitmap");
+                    break;
+                default:
+                    Log.d("" + this.getClass().getName(), "" + objects[i].getClass().getComponentType());
+                    break;
+            }
+        }
+
+        return value;
+    }
+
     /**
      *  Run begins the multithreading process of calculating the bits in a given array of ints.
      *
