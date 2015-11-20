@@ -4,6 +4,10 @@ import android.graphics.Bitmap;
 import android.os.Build;
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+
 /**
  * ByteMe.java
  *
@@ -11,8 +15,35 @@ import android.util.Log;
  * with an array of a given primitive type or bitmap.
  *
  * Created by Alexander on 10/17/2015.
+ *
+ * Algorithms
+ *
+ * http://javalandscape.blogspot.com/2009/01/cachingcaching-algorithms-and-caching.html
+ * http://www.coderanch.com/how-to/java/CachingStrategies
+ *
+ * Least Frequently Used: counter associated with each cache object
+ * Least Recently Used: remove the object which has stayed the longest in the cache
+ * Least Recently Used 2: objects must be used twice to be cached.
+ * Adaptive Replacement Cache: Combination of LRU and LFU; two LRU lists, one of objects seen once "recently", and one contains entries seen twice or more "recently"
+ * Most Recently Used: Remove the most recently used object
+ * First In First Out: queue which removes the first in line when space is needed.
  */
 public class ByteMe {
+
+    /**
+     * LRU Cache code. Using a array, able to store all of the data
+     */
+    public class LRU_Cache
+    {
+
+    }
+
+    public class LFU_Cache
+    {
+
+    }
+
+
 
     //================================================
     // <Global Variables>
@@ -376,6 +407,11 @@ public class ByteMe {
      */
     public int run(int[] int_data)
     {
+        if(int_data == null)
+        {
+            return -2;
+        }
+
         // Initialize the multithreading class with the data
         // and settings
         CalculateSize foo = new CalculateSize(0, int_data,
@@ -618,43 +654,6 @@ public class ByteMe {
     }
     //================================================
     // </Asynchronous Methods>
-    //================================================
-
-    //================================================
-    // <Synchronous Methods>
-    //================================================
-
-    public void ByteMeSynchronous(int[] int_data) {
-    }
-
-    public void ByteMeSynchronous(String[] string_data) {
-    }
-
-    public void ByteMeSynchronous(Short[] short_data) {
-    }
-
-    public void ByteMeSynchronous(Long[] long_data) {
-    }
-
-    public void ByteMeSynchronous(Byte[] byte_data) {
-    }
-
-    public void ByteMeSynchronous(Float[] float_data) {
-    }
-
-    public void ByteMeSynchronous(Double[] double_data) {
-    }
-
-    public void ByteMeSynchronous(char[] char_data) {
-    }
-
-    public void ByteMeSynchronous(boolean[] boolean_data) {
-    }
-
-    public void ByteMeSynchronous(Bitmap[] bitmap_data) {
-    }
-    //================================================
-    // </Synchronous Methods>
     //================================================
 
     //================================================
