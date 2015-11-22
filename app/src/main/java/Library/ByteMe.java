@@ -4,6 +4,9 @@ import android.graphics.Bitmap;
 import android.os.Build;
 import android.util.Log;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -68,6 +71,34 @@ public class ByteMe {
             instance = new ByteMe();
         }
         return instance;
+    }
+
+    public void examine(Object obj) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+
+        //Get the list of possible methods held in this object.
+        Method[] methods = obj.getClass().getMethods();
+
+        // iterate through them
+        for (Method method : methods) {
+            Log.d("" + this.getClass().getName(), "--------------------------");
+            Log.d("" + this.getClass().getName(), "Method: " + method.getName());
+            Log.d("" + this.getClass().getName(), "Return Type: " + method.getReturnType());
+            Log.d("" + this.getClass().getName(), "Class: " + method.getClass());
+            Log.d("" + this.getClass().getName(), "Declaring Class: " + method.getDeclaringClass());
+
+            if(method.getReturnType().getName().contains("int")) {
+                try {
+                    int temp = (int) method.invoke(obj);
+                    Log.d("" + this.getClass().getName(),"temp value: " + temp);
+                } catch (InvocationTargetException e) {
+                    e.printStackTrace();
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            Log.d("" + this.getClass().getName(), "--------------------------");
+        }
     }
 
     //================================================
