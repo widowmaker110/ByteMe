@@ -4,12 +4,10 @@ import android.graphics.Bitmap;
 import android.os.Build;
 import android.util.Log;
 
-import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * ByteMe.java
@@ -47,7 +45,6 @@ public class ByteMe {
     }
 
 
-
     //================================================
     // <Global Variables>
     //================================================
@@ -56,6 +53,10 @@ public class ByteMe {
     private int Kb = 1024;
     private int Mb = 1024 * 1024;
     private int Gb = 1024 * 1024 * 1024;
+
+    // list of method names which are java API based.
+    private List<String> restrictedMethods = Arrays.asList("equals","getClass",
+            "hashCode", "notify", "notifyAll", "toString", "wait");
 
     /**
      * Empty Constructor
@@ -73,32 +74,185 @@ public class ByteMe {
         return instance;
     }
 
-    public void examine(Object obj) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    /**
+     * examine
+     *
+     * examine figures out what type the custom object component is in a loop.
+     * After figuring out which type it is, it figures out the byte allocation of the object.
+     *
+     * @param obj Any object within the Java API. The supported types are
+     *            Int
+     *            String
+     *            Short
+     *            Byte
+     *            Long
+     *            Float
+     *            Double
+     *            Char
+     *            Boolean
+     *            Bitmap
+     */
+    public void examine(Object obj) {
 
         //Get the list of possible methods held in this object.
         Method[] methods = obj.getClass().getMethods();
 
+        // Keep track of how many bytes is being used
+        int bytesUsed = 0;
+
         // iterate through them
         for (Method method : methods) {
-            Log.d("" + this.getClass().getName(), "--------------------------");
-            Log.d("" + this.getClass().getName(), "Method: " + method.getName());
-            Log.d("" + this.getClass().getName(), "Return Type: " + method.getReturnType());
-            Log.d("" + this.getClass().getName(), "Class: " + method.getClass());
-            Log.d("" + this.getClass().getName(), "Declaring Class: " + method.getDeclaringClass());
 
-            if(method.getReturnType().getName().contains("int")) {
-                try {
-                    int temp = (int) method.invoke(obj);
-                    Log.d("" + this.getClass().getName(),"temp value: " + temp);
-                } catch (InvocationTargetException e) {
-                    e.printStackTrace();
-                } catch (IllegalAccessException e) {
-                    e.printStackTrace();
+            // see if the method name is restricted
+            if (!isRestrictedMethod(method.getName())) {
+
+                // switch through the possible primitive types and bitmap methods.
+                // get the amount of bytes of each type within the custom object.
+                switch (method.getReturnType().toString()) {
+
+                    case "class java.lang.String":
+
+                        try {
+                            String temp = (String) method.invoke(obj);
+                            bytesUsed += run(new String[]{temp});
+                        } catch (InvocationTargetException e) {
+                            e.printStackTrace();
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
+                        }
+
+                        break;
+                    case "int":
+
+                        try {
+                            int temp = (int) method.invoke(obj);
+                            bytesUsed += run(new int[]{temp});
+                        } catch (InvocationTargetException e) {
+                            e.printStackTrace();
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
+                        }
+
+                        break;
+                    case "class java.lang.Short":
+
+                        try {
+                            short temp = (short) method.invoke(obj);
+                            bytesUsed += run(new short[]{temp});
+                        } catch (InvocationTargetException e) {
+                            e.printStackTrace();
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
+                        }
+
+                        break;
+                    case "class java.lang.Long":
+
+                        try {
+                            long temp = (long) method.invoke(obj);
+                            bytesUsed += run(new long[]{temp});
+                        } catch (InvocationTargetException e) {
+                            e.printStackTrace();
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
+                        }
+
+                        break;
+                    case "class java.lang.Byte":
+
+                        try {
+                            byte temp = (byte) method.invoke(obj);
+                            bytesUsed += run(new byte[]{temp});
+                        } catch (InvocationTargetException e) {
+                            e.printStackTrace();
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
+                        }
+
+                        break;
+                    case "class java.lang.Float":
+
+                        try {
+                            float temp = (float) method.invoke(obj);
+                            bytesUsed += run(new float[]{temp});
+                        } catch (InvocationTargetException e) {
+                            e.printStackTrace();
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
+                        }
+
+                        break;
+                    case "class java.lang.Double":
+
+                        try {
+                            double temp = (double) method.invoke(obj);
+                            bytesUsed += run(new double[]{temp});
+                        } catch (InvocationTargetException e) {
+                            e.printStackTrace();
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
+                        }
+
+                        break;
+                    case "class java.lang.Char":
+
+                        try {
+                            char temp = (char) method.invoke(obj);
+                            bytesUsed += run(new char[]{temp});
+                        } catch (InvocationTargetException e) {
+                            e.printStackTrace();
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
+                        }
+
+                        break;
+                    case "class java.lang.Boolean":
+
+                        try {
+                            boolean temp = (boolean) method.invoke(obj);
+                            bytesUsed += run(new boolean[]{temp});
+                        } catch (InvocationTargetException e) {
+                            e.printStackTrace();
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
+                        }
+
+                        break;
+                    case "class android.graphics.Bitmap":
+
+                        try {
+                            Bitmap temp = (Bitmap) method.invoke(obj);
+                            bytesUsed += run(new Bitmap[]{temp});
+                        } catch (InvocationTargetException e) {
+                            e.printStackTrace();
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
+                        }
+
+                        break;
                 }
-            }
 
-            Log.d("" + this.getClass().getName(), "--------------------------");
+                Log.d(""+this.getClass().getName(),"bytesUsed: " + bytesUsed);
+            }
         }
+    }
+
+    /**
+     * isRestrictedMethod
+     *
+     * isRestrictedMethod returns boolean value saying whether or not the name of the method
+     * is made by the programmer or if it came from a java API.
+     *
+     * @param method This is the name of the method.
+     * @return True if the method name is a non-java base API (toString, hashCode, etc).
+     */
+    private boolean isRestrictedMethod(String method)
+    {
+        if(restrictedMethods.contains(method))
+        {
+            return true;
+        }
+        return false;
     }
 
     //================================================
