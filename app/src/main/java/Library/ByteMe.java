@@ -1,12 +1,18 @@
 package Library;
 
+import android.app.ActivityManager;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.util.Log;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -17,13 +23,13 @@ import java.util.List;
  *
  * Created by Alexander on 10/17/2015.
  *
- * Algorithms
+ * Cache algorithms available:
+ * -Least Recently Used (LinkedList)
  *
  * http://javalandscape.blogspot.com/2009/01/cachingcaching-algorithms-and-caching.html
  * http://www.coderanch.com/how-to/java/CachingStrategies
  *
  * Least Frequently Used: counter associated with each cache object
- * Least Recently Used: remove the object which has stayed the longest in the cache
  * Least Recently Used 2: objects must be used twice to be cached.
  * Adaptive Replacement Cache: Combination of LRU and LFU; two LRU lists, one of objects seen once "recently", and one contains entries seen twice or more "recently"
  * Most Recently Used: Remove the most recently used object
@@ -32,27 +38,184 @@ import java.util.List;
 public class ByteMe {
 
     /**
+     * developerMode is a boolean variable used to turn on or off the
+     * Log.d messages of every action within the Library. Mostly used for
+     * debugging.
+     *
+     * true = messages on.
+     * false = messages off.
+     */
+    private boolean developerMode = false;
+
+
+    //================================================
+    // <Cache Algorithms>
+    //================================================
+
+    /**
      * LRU Cache code. Using a array, able to store all of the data
+     *
+     * http://www.programcreek.com/2013/03/leetcode-lru-cache-java/
      */
     public class LRU_Cache
     {
+        // Node which will hold each object
+        private class Node{
+            int key;
+            Object value;
+            Node pre;
+            Node next;
 
+            public Node(int key, Object value){
+                this.key = key;
+                this.value = value;
+            }
+        }
+
+        // Actual cache
+        HashMap<Integer, Node> map = new HashMap<Integer, Node>();
+        Node head=null;
+        Node end=null;
+
+        /**
+         * Empty Constructor
+         */
+        public LRU_Cache() {}
+
+        public Object get(int key) {
+            if(map.containsKey(key)){
+                Node n = map.get(key);
+                remove(n);
+                setHead(n);
+                return n.value;
+            }
+
+            return -1;
+        }
+
+        public void remove(Node n){
+            if(n.pre!=null){
+                n.pre.next = n.next;
+            }else{
+                head = n.next;
+            }
+
+            if(n.next!=null){
+                n.next.pre = n.pre;
+            }else{
+                end = n.pre;
+            }
+
+        }
+
+        public void setHead(Node n){
+            n.next = head;
+            n.pre = null;
+
+            if(head!=null)
+                head.pre = n;
+
+            head = n;
+
+            if(end ==null)
+                end = head;
+        }
+
+        /**
+         * Add
+         *
+         * Add takes the object and adds it to the head of the linked list.
+         * If the Linked List has reached the max allocation, it will remove the last node in the list
+         * and make the new value the head.
+         * @param key
+         * @param value
+         */
+        public void add(int key, Object value) {
+
+            // Replace the node if its already in the linked list.
+            if(map.containsKey(key)){
+
+                Node old = map.get(key);
+
+                int oldBitValue = getTotalBitOfSingleObject(value);
+                setAllocation_current(getAllocation_current() - oldBitValue);
+
+                old.value = value;
+
+                int newBitValue = getTotalBitOfSingleObject(value);
+                setAllocation_current(getAllocation_current() + newBitValue);
+
+                remove(old);
+                setHead(old);
+            }
+            // create a new one if it doesn't exist
+            else{
+                Node created = new Node(key, value);
+
+                if(getAllocation_current() >= getAllocationMax()){
+
+                    int oldBitValue = getTotalBitOfSingleObject(end.value);
+                    setAllocation_current(getAllocation_current() - oldBitValue);
+
+                    map.remove(end.key);
+                    remove(end);
+                    setHead(created);
+
+                    int newBitValue = getTotalBitOfSingleObject(value);
+                    setAllocation_current(getAllocation_current() + newBitValue);
+
+                }else{
+                    setHead(created);
+                    int newBitValue = getTotalBitOfSingleObject(value);
+                    setAllocation_current(getAllocation_current() + newBitValue);
+                }
+
+                map.put(key, created);
+            }
+        }
     }
 
-    public class LFU_Cache
-    {
+    // LFU Class
 
-    }
+    // LRU2 Class
 
+    // ARC Class
+
+    // MRU Class
+
+    // FIFO Class
+
+    //================================================
+    // </Cache Algorithms>
+    //================================================
 
     //================================================
     // <Global Variables>
     //================================================
     private static ByteMe instance = null;
+    private static Context mContext;
+
+    private LRU_Cache lru_cache;
+
     private int allocation_max;
+    private int allocation_current;
+
+    // used to say how much of the device memory the cache so take max
+    public static int RAM_ONE_FOURTH = 4;
+    public static int RAM_ONE_FIFTH = 5;
+    public static int RAM_ONE_SIXTH = 6;
+    public static int RAM_ONE_SEVENTH = 7;
+    public static int RAM_ONE_EIGHT = 8;
+
+    private static long android_total_ram;
+
     private int Kb = 1024;
     private int Mb = 1024 * 1024;
     private int Gb = 1024 * 1024 * 1024;
+
+    // static variable to say which algorithm the objects will be held in.
+    public int CHOSEN_ALGORITHM = 0;
+    public static int LRU_ALGORITHM = 1;
 
     // list of method names which are java API based.
     private List<String> restrictedMethods = Arrays.asList("equals","getClass",
@@ -62,6 +225,13 @@ public class ByteMe {
      * Empty Constructor
      */
     public ByteMe() {}
+
+    /**
+     * Constructor with Context in order to perform some needed operations.
+     */
+    public ByteMe(Context context) {
+        mContext = context;
+    }
 
     /**
      * Context instance get method.
@@ -92,7 +262,7 @@ public class ByteMe {
      *            Boolean
      *            Bitmap
      */
-    public void examine(Object obj) {
+    public int getTotalBitOfSingleObject(Object obj) {
 
         //Get the list of possible methods held in this object.
         Method[] methods = obj.getClass().getMethods();
@@ -231,10 +401,9 @@ public class ByteMe {
 
                         break;
                 }
-
-                Log.d(""+this.getClass().getName(),"bytesUsed: " + bytesUsed);
             }
         }
+        return bytesUsed;
     }
 
     /**
@@ -258,331 +427,6 @@ public class ByteMe {
     //================================================
     // <Asynchronous Methods>
     //================================================
-    public int run(int[] int_data,
-                       String[] string_data,
-                       short[] short_data,
-                       long[] long_data,
-                       byte[] byte_data,
-                       float[] float_data,
-                       double[] double_data,
-                       char[] char_data,
-                       boolean[] boolean_data,
-                       Bitmap[] bitmap_data) {
-        /**
-         * Async tasks
-         */
-        CalculateSize int_thread = null;
-        CalculateSize string_thread = null;
-        CalculateSize short_thread = null;
-        CalculateSize long_thread = null;
-        CalculateSize byte_thread = null;
-        CalculateSize float_thread = null;
-        CalculateSize double_thread = null;
-        CalculateSize char_thread = null;
-        CalculateSize boolean_thread = null;
-        CalculateSize bitmap_thread = null;
-
-        /**
-         * Threads
-         */
-        Thread int_threading = null;
-        Thread string_threading = null;
-        Thread short_threading = null;
-        Thread long_threading = null;
-        Thread byte_threading = null;
-        Thread float_threading = null;
-        Thread double_threading = null;
-        Thread char_threading = null;
-        Thread boolean_threading = null;
-        Thread bitmap_threading = null;
-
-        /**
-         * Final int returning
-         */
-        int value = 0;
-
-        // Initialize the multithreading class with the data
-        // and settings
-        if(int_data != null) {
-
-            int_thread = new CalculateSize(0, int_data,
-                    null, null, null, null, null, null, null, null, null);
-
-            int_threading = new Thread(int_thread);
-            int_threading.start();
-        }
-
-        if(string_data != null) {
-
-            string_thread = new CalculateSize(1, null,
-                    string_data, null, null, null, null, null, null, null, null);
-
-            string_threading = new Thread(string_thread);
-            string_threading.start();
-        }
-
-        if(short_data != null) {
-
-            short_thread = new CalculateSize(2, null,
-                    null, short_data, null, null, null, null, null, null, null);
-
-            short_threading = new Thread(short_thread);
-            short_threading.start();
-        }
-
-        if(long_data != null) {
-
-            long_thread = new CalculateSize(3, null,
-                    null, null, long_data, null, null, null, null, null, null);
-
-            long_threading = new Thread(long_thread);
-            long_threading.start();
-        }
-
-        if(byte_data != null) {
-
-            byte_thread = new CalculateSize(4, null,
-                    null, null, null, byte_data, null, null, null, null, null);
-
-            byte_threading = new Thread(byte_thread);
-            byte_threading.start();
-        }
-
-        if(float_data != null) {
-
-            float_thread = new CalculateSize(5, null,
-                    null, null, null, null, float_data, null, null, null, null);
-
-            float_threading = new Thread(float_thread);
-            float_threading.start();
-        }
-
-        if(double_data != null) {
-
-            double_thread = new CalculateSize(6, null,
-                    null, null, null, null, null, double_data, null, null, null);
-
-            double_threading = new Thread(double_thread);
-            double_threading.start();
-        }
-
-        if(char_data != null) {
-
-            char_thread = new CalculateSize(7, null,
-                    null, null, null, null, null, null, char_data, null, null);
-
-            char_threading = new Thread(char_thread);
-            char_threading.start();
-        }
-
-        if(boolean_data != null) {
-
-            boolean_thread = new CalculateSize(8, null,
-                    null, null, null, null, null, null, null, boolean_data, null);
-
-            boolean_threading = new Thread(boolean_thread);
-            boolean_threading.start();
-        }
-
-        if(bitmap_data != null) {
-
-            bitmap_thread = new CalculateSize(9, null,
-                    null, null, null, null, null, null, null, null, bitmap_data);
-
-            bitmap_threading = new Thread(bitmap_thread);
-            bitmap_threading.start();
-        }
-
-        if(int_threading != null)
-        {
-            try
-            {
-                int_threading.join();
-                value = value + int_thread.getValue();
-            }
-            catch (InterruptedException e)
-            {
-                e.printStackTrace();
-                value = -1;
-                Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
-            }
-        }
-        if(string_threading != null)
-        {
-            try
-            {
-                string_threading.join();
-                value = value + string_thread.getValue();
-            }
-            catch (InterruptedException e)
-            {
-                e.printStackTrace();
-                value = -1;
-                Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
-            }
-        }
-        if(short_threading != null)
-        {
-            try
-            {
-                short_threading.join();
-                value = value + short_thread.getValue();
-            }
-            catch (InterruptedException e)
-            {
-                e.printStackTrace();
-                value = -1;
-                Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
-            }
-        }
-        if(long_threading != null)
-        {
-            try
-            {
-                long_threading.join();
-                value = value + long_thread.getValue();
-            }
-            catch (InterruptedException e)
-            {
-                e.printStackTrace();
-                value = -1;
-                Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
-            }
-        }
-        if(byte_threading != null)
-        {
-            try
-            {
-                byte_threading.join();
-                value = value + byte_thread.getValue();
-            }
-            catch (InterruptedException e)
-            {
-                e.printStackTrace();
-                value = -1;
-                Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
-            }
-        }
-        if(float_threading != null)
-        {
-            try
-            {
-                float_threading.join();
-                value = value + float_thread.getValue();
-            }
-            catch (InterruptedException e)
-            {
-                e.printStackTrace();
-                value = -1;
-                Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
-            }
-        }
-        if(double_threading != null)
-        {
-            try
-            {
-                double_threading.join();
-                value = value + double_thread.getValue();
-            }
-            catch (InterruptedException e)
-            {
-                e.printStackTrace();
-                value = -1;
-                Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
-            }
-        }
-        if(char_threading != null)
-        {
-            try
-            {
-                char_threading.join();
-                value = value + char_thread.getValue();
-            }
-            catch (InterruptedException e)
-            {
-                e.printStackTrace();
-                value = -1;
-                Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
-            }
-        }
-        if(boolean_threading != null)
-        {
-            try
-            {
-                boolean_threading.join();
-                value = value + boolean_thread.getValue();
-            }
-            catch (InterruptedException e)
-            {
-                e.printStackTrace();
-                value = -1;
-                Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
-            }
-        }
-        if(bitmap_threading != null)
-        {
-            try
-            {
-                bitmap_threading.join();
-                value = value + bitmap_thread.getValue();
-            }
-            catch (InterruptedException e)
-            {
-                e.printStackTrace();
-                value = -1;
-                Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
-            }
-        }
-
-        return value;
-    }
-
-    public int run(Object[] objects)
-    {
-        int value = 0;
-
-        for(int i = 0; i < objects.length; i++)
-        {
-            switch (objects[i].getClass().toString()) {
-                case "class java.lang.String":
-                    Log.d("" + this.getClass().getName(), "String");
-                    break;
-                case "class java.lang.Integer":
-                    Log.d("" + this.getClass().getName(), "Integer");
-                    break;
-                case "class java.lang.Short":
-                    Log.d("" + this.getClass().getName(), "Short");
-                    break;
-                case "class java.lang.Long":
-                    Log.d("" + this.getClass().getName(), "Long");
-                    break;
-                case "class java.lang.Byte":
-                    Log.d("" + this.getClass().getName(), "Byte");
-                    break;
-                case "class java.lang.Float":
-                    Log.d("" + this.getClass().getName(), "Float");
-                    break;
-                case "class java.lang.Double":
-                    Log.d("" + this.getClass().getName(), "Double");
-                    break;
-                case "class java.lang.Char":
-                    Log.d("" + this.getClass().getName(), "Char");
-                    break;
-                case "class java.lang.Boolean":
-                    Log.d("" + this.getClass().getName(), "Boolean");
-                    break;
-                case "class android.graphics.Bitmap":
-                    Log.d("" + this.getClass().getName(), "Bitmap");
-                    break;
-                default:
-                    Log.d("" + this.getClass().getName(), "" + objects[i].getClass().getComponentType());
-                    break;
-            }
-        }
-
-        return value;
-    }
-
     /**
      *  Run begins the multithreading process of calculating the bits in a given array of ints.
      *
@@ -846,16 +690,141 @@ public class ByteMe {
     //================================================
     public void setAllocationMax(int allocation_max_m)
     {
-        this.allocation_max = allocation_max_m;
+        int tempMaxMemory = (int) getTotal_ram();
+        this.allocation_max = tempMaxMemory / allocation_max_m;
     }
 
     public int getAllocationMax()
     {
         return this.allocation_max;
     }
+
+    public int getAllocation_current() {
+        return allocation_current;
+    }
+
+    private void setAllocation_current(int allocation_current) {
+        this.allocation_current = allocation_current;
+    }
+
+    public long getTotal_ram() {
+        // get the current SDK level of the device
+        int currentapiVersion = android.os.Build.VERSION.SDK_INT;
+
+        // if API 15 or lower
+        if (currentapiVersion <= Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1){
+            android_total_ram = getTotalMemoryOld();
+        }
+        // API is 16 or higher
+        else{
+            android_total_ram = getTotalMemoryNew();
+        }
+        return android_total_ram;
+    }
+
+    /**
+     * getTotalMemoryOld
+     *
+     * getTotalMemoryOld is a method which will return the long byte value of TOTAL ram.
+     * This style is meant for pre-16 API.
+     *
+     * http://stackoverflow.com/questions/12551547/is-there-a-way-to-get-total-device-rami-need-it-for-an-optimization
+     * @return Byte value of total ram.
+     */
+    public static long getTotalMemoryOld() {
+
+        String str1 = "/proc/meminfo";
+        String str2;
+        String[] arrayOfString;
+        long initial_memory = 0;
+        try {
+            FileReader localFileReader = new FileReader(str1);
+            BufferedReader localBufferedReader = new BufferedReader(    localFileReader, 8192);
+            str2 = localBufferedReader.readLine();//meminfo
+            arrayOfString = str2.split("\\s+");
+            for (String num : arrayOfString) {
+                Log.i(str2, num + "\t");
+            }
+            //total Memory
+            initial_memory = Integer.valueOf(arrayOfString[1]).intValue() * 1024;
+            localBufferedReader.close();
+            return initial_memory;
+        }
+        catch (IOException e)
+        {
+            return -1;
+        }
+    }
+
+    /**
+     * getTotalMemoryOld
+     *
+     * getTotalMemoryOld is a method which will return the long byte value of TOTAL ram.
+     * This style is meant for 16 API and above.
+     *
+     * http://stackoverflow.com/questions/12551547/is-there-a-way-to-get-total-device-rami-need-it-for-an-optimization
+     * @return Byte value of total ram.
+     */
+    public static long getTotalMemoryNew() {
+
+        ActivityManager actManager = (ActivityManager) mContext.getSystemService(mContext.ACTIVITY_SERVICE);
+        ActivityManager.MemoryInfo memInfo = new ActivityManager.MemoryInfo();
+        actManager.getMemoryInfo(memInfo);
+        return memInfo.totalMem;
+    }
+
+    public static Context getmContext() {
+        return mContext;
+    }
+
+    public static void setmContext(Context mContext) {
+        ByteMe.mContext = mContext;
+    }
+
+    public void setAlgorithm(int algorithm)
+    {
+        if(algorithm == LRU_ALGORITHM)
+        {
+            lru_cache = new LRU_Cache();
+        }
+        this.CHOSEN_ALGORITHM = algorithm;
+    }
+
+    public int getAlgorithm()
+    {
+        return CHOSEN_ALGORITHM;
+    }
     //================================================
     // </Get/Set Methods>
     //================================================
+
+    //================================================
+    // <General Cache Functions>
+    //================================================
+
+    public void addObjectToCache(Object obj)
+    {
+        if(getAlgorithm() == LRU_ALGORITHM)
+        {
+            lru_cache.add(obj.hashCode(), obj);
+        }
+    }
+
+    public Object getObjectFromCache(int hashcode)
+    {
+        Object obj = null;
+
+        if(getAlgorithm() == LRU_ALGORITHM)
+        {
+            obj = lru_cache.get(hashcode);
+        }
+
+        return obj;
+    }
+    //================================================
+    // </General Cache Functions>
+    //================================================
+
 
     //================================================
     // <Conversion Methods>

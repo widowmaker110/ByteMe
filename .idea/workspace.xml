@@ -39,19 +39,25 @@
       <file leaf-file-name="ByteMe.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.52641165">
-              <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.061930783">
+              <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
               <folding>
+                <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+                <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+                <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+                <element signature="class#Node#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+                <element signature="docComment;method#LRU_Cache#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
                 <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+                <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
                 <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
-                <element signature="docComment;method#examine#0;class#ByteMe#0" expanded="false" />
-                <element signature="method#examine#0;class#ByteMe#0" expanded="false" />
+                <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
+                <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+                <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
                 <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
                 <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+                <element signature="docComment;method#run#0;class#ByteMe#0" expanded="false" />
                 <element signature="method#run#0;class#ByteMe#0" expanded="false" />
-                <element signature="e#10497#10549#0" expanded="false" />
                 <element signature="method#run#1;class#ByteMe#0" expanded="false" />
-                <element signature="docComment;method#run#2;class#ByteMe#0" expanded="false" />
                 <element signature="method#run#2;class#ByteMe#0" expanded="false" />
                 <element signature="method#run#3;class#ByteMe#0" expanded="false" />
                 <element signature="method#run#4;class#ByteMe#0" expanded="false" />
@@ -60,14 +66,20 @@
                 <element signature="method#run#7;class#ByteMe#0" expanded="false" />
                 <element signature="method#run#8;class#ByteMe#0" expanded="false" />
                 <element signature="method#run#9;class#ByteMe#0" expanded="false" />
-                <element signature="method#run#10;class#ByteMe#0" expanded="false" />
-                <element signature="method#run#11;class#ByteMe#0" expanded="false" />
-                <element signature="e#27494#27544#0" expanded="false" />
-                <element signature="e#27969#28019#0" expanded="false" />
-                <element signature="e#28480#28530#0" expanded="false" />
-                <element signature="e#28620#28670#0" expanded="false" />
+                <element signature="e#21421#21471#0" expanded="false" />
+                <element signature="method#setAllocationMax#0;class#ByteMe#0" expanded="false" />
+                <element signature="method#setAllocation_current#0;class#ByteMe#0" expanded="false" />
+                <element signature="method#getTotal_ram#0;class#ByteMe#0" expanded="false" />
+                <element signature="docComment;method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+                <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+                <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+                <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+                <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
+                <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+                <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
                 <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-                <element signature="e#35507#35557#0" expanded="false" />
+                <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+                <element signature="method#run#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -80,6 +92,7 @@
       <list>
         <option value="Class" />
         <option value="layoutResourceFile_vertical" />
+        <option value="Singleton" />
       </list>
     </option>
   </component>
@@ -1521,6 +1534,13 @@
       </list>
     </option>
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="NamedScopeManager">
     <order />
   </component>
@@ -1554,6 +1574,7 @@
     </navigator>
     <panes>
       <pane id="ProjectPane" />
+      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -1562,9 +1583,68 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ByteMe" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ByteMe" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ByteMe" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="byteme" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ByteMe" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Library" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
@@ -1784,38 +1864,6 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294621" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36523652" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39933994" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893288" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294621" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893288" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893288" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21638142" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -1830,7 +1878,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1840,16 +1888,22 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#Node#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#LRU_Cache#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#examine#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#examine#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#run#0;class#ByteMe#0" expanded="false" />
             <element signature="method#run#0;class#ByteMe#0" expanded="false" />
-            <element signature="e#10497#10549#0" expanded="false" />
             <element signature="method#run#1;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#run#2;class#ByteMe#0" expanded="false" />
             <element signature="method#run#2;class#ByteMe#0" expanded="false" />
             <element signature="method#run#3;class#ByteMe#0" expanded="false" />
             <element signature="method#run#4;class#ByteMe#0" expanded="false" />
@@ -1858,14 +1912,208 @@
             <element signature="method#run#7;class#ByteMe#0" expanded="false" />
             <element signature="method#run#8;class#ByteMe#0" expanded="false" />
             <element signature="method#run#9;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#10;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#11;class#ByteMe#0" expanded="false" />
-            <element signature="e#27494#27544#0" expanded="false" />
-            <element signature="e#27969#28019#0" expanded="false" />
-            <element signature="e#28480#28530#0" expanded="false" />
-            <element signature="e#28620#28670#0" expanded="false" />
+            <element signature="e#21421#21471#0" expanded="false" />
+            <element signature="method#setAllocationMax#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAllocation_current#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotal_ram#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="e#35507#35557#0" expanded="false" />
+            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#Node#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#LRU_Cache#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#run#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#1;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#2;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#3;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#4;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#5;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#6;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#7;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#8;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#9;class#ByteMe#0" expanded="false" />
+            <element signature="e#21421#21471#0" expanded="false" />
+            <element signature="method#setAllocationMax#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAllocation_current#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotal_ram#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#Node#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#LRU_Cache#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#run#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#1;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#2;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#3;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#4;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#5;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#6;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#7;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#8;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#9;class#ByteMe#0" expanded="false" />
+            <element signature="e#21421#21471#0" expanded="false" />
+            <element signature="method#setAllocationMax#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAllocation_current#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotal_ram#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+          <folding>
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#Node#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#LRU_Cache#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#run#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#1;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#2;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#3;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#4;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#5;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#6;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#7;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#8;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#9;class#ByteMe#0" expanded="false" />
+            <element signature="e#21421#21471#0" expanded="false" />
+            <element signature="method#setAllocationMax#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAllocation_current#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotal_ram#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#Node#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#LRU_Cache#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#run#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#1;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#2;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#3;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#4;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#5;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#6;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#7;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#8;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#9;class#ByteMe#0" expanded="false" />
+            <element signature="e#21421#21471#0" expanded="false" />
+            <element signature="method#setAllocationMax#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAllocation_current#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotal_ram#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1875,16 +2123,22 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="100" column="27" selection-start-line="100" selection-start-column="27" selection-end-line="100" selection-end-column="27" />
           <folding>
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#Node#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#LRU_Cache#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#examine#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#examine#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#run#0;class#ByteMe#0" expanded="false" />
             <element signature="method#run#0;class#ByteMe#0" expanded="false" />
-            <element signature="e#10497#10549#0" expanded="false" />
             <element signature="method#run#1;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#run#2;class#ByteMe#0" expanded="false" />
             <element signature="method#run#2;class#ByteMe#0" expanded="false" />
             <element signature="method#run#3;class#ByteMe#0" expanded="false" />
             <element signature="method#run#4;class#ByteMe#0" expanded="false" />
@@ -1893,14 +2147,20 @@
             <element signature="method#run#7;class#ByteMe#0" expanded="false" />
             <element signature="method#run#8;class#ByteMe#0" expanded="false" />
             <element signature="method#run#9;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#10;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#11;class#ByteMe#0" expanded="false" />
-            <element signature="e#27494#27544#0" expanded="false" />
-            <element signature="e#27969#28019#0" expanded="false" />
-            <element signature="e#28480#28530#0" expanded="false" />
-            <element signature="e#28620#28670#0" expanded="false" />
+            <element signature="e#21421#21471#0" expanded="false" />
+            <element signature="method#setAllocationMax#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAllocation_current#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotal_ram#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="e#35507#35557#0" expanded="false" />
+            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1910,16 +2170,22 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#Node#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#LRU_Cache#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#examine#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#examine#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#run#0;class#ByteMe#0" expanded="false" />
             <element signature="method#run#0;class#ByteMe#0" expanded="false" />
-            <element signature="e#10497#10549#0" expanded="false" />
             <element signature="method#run#1;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#run#2;class#ByteMe#0" expanded="false" />
             <element signature="method#run#2;class#ByteMe#0" expanded="false" />
             <element signature="method#run#3;class#ByteMe#0" expanded="false" />
             <element signature="method#run#4;class#ByteMe#0" expanded="false" />
@@ -1928,64 +2194,20 @@
             <element signature="method#run#7;class#ByteMe#0" expanded="false" />
             <element signature="method#run#8;class#ByteMe#0" expanded="false" />
             <element signature="method#run#9;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#10;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#11;class#ByteMe#0" expanded="false" />
-            <element signature="e#27494#27544#0" expanded="false" />
-            <element signature="e#27969#28019#0" expanded="false" />
-            <element signature="e#28480#28530#0" expanded="false" />
-            <element signature="e#28620#28670#0" expanded="false" />
+            <element signature="e#21421#21471#0" expanded="false" />
+            <element signature="method#setAllocationMax#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAllocation_current#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotal_ram#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="e#35507#35557#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/productions/widowmaker110/byteme/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/productions/widowmaker110/byteme/ExampleObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="80" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#examine#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#examine#0;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#0;class#ByteMe#0" expanded="false" />
-            <element signature="e#10497#10549#0" expanded="false" />
-            <element signature="method#run#1;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#run#2;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#2;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#3;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#4;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#5;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#6;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#7;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#8;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#9;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#10;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#11;class#ByteMe#0" expanded="false" />
-            <element signature="e#27494#27544#0" expanded="false" />
-            <element signature="e#27969#28019#0" expanded="false" />
-            <element signature="e#28480#28530#0" expanded="false" />
-            <element signature="e#28620#28670#0" expanded="false" />
-            <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="e#35507#35557#0" expanded="false" />
+            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2010,16 +2232,22 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#Node#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#LRU_Cache#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#examine#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#examine#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#run#0;class#ByteMe#0" expanded="false" />
             <element signature="method#run#0;class#ByteMe#0" expanded="false" />
-            <element signature="e#10497#10549#0" expanded="false" />
             <element signature="method#run#1;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#run#2;class#ByteMe#0" expanded="false" />
             <element signature="method#run#2;class#ByteMe#0" expanded="false" />
             <element signature="method#run#3;class#ByteMe#0" expanded="false" />
             <element signature="method#run#4;class#ByteMe#0" expanded="false" />
@@ -2028,14 +2256,20 @@
             <element signature="method#run#7;class#ByteMe#0" expanded="false" />
             <element signature="method#run#8;class#ByteMe#0" expanded="false" />
             <element signature="method#run#9;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#10;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#11;class#ByteMe#0" expanded="false" />
-            <element signature="e#27494#27544#0" expanded="false" />
-            <element signature="e#27969#28019#0" expanded="false" />
-            <element signature="e#28480#28530#0" expanded="false" />
-            <element signature="e#28620#28670#0" expanded="false" />
+            <element signature="e#21421#21471#0" expanded="false" />
+            <element signature="method#setAllocationMax#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAllocation_current#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotal_ram#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="e#35507#35557#0" expanded="false" />
+            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2060,16 +2294,22 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#Node#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#LRU_Cache#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#examine#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#examine#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#run#0;class#ByteMe#0" expanded="false" />
             <element signature="method#run#0;class#ByteMe#0" expanded="false" />
-            <element signature="e#10497#10549#0" expanded="false" />
             <element signature="method#run#1;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#run#2;class#ByteMe#0" expanded="false" />
             <element signature="method#run#2;class#ByteMe#0" expanded="false" />
             <element signature="method#run#3;class#ByteMe#0" expanded="false" />
             <element signature="method#run#4;class#ByteMe#0" expanded="false" />
@@ -2078,14 +2318,82 @@
             <element signature="method#run#7;class#ByteMe#0" expanded="false" />
             <element signature="method#run#8;class#ByteMe#0" expanded="false" />
             <element signature="method#run#9;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#10;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#11;class#ByteMe#0" expanded="false" />
-            <element signature="e#27494#27544#0" expanded="false" />
-            <element signature="e#27969#28019#0" expanded="false" />
-            <element signature="e#28480#28530#0" expanded="false" />
-            <element signature="e#28620#28670#0" expanded="false" />
+            <element signature="e#21421#21471#0" expanded="false" />
+            <element signature="method#setAllocationMax#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAllocation_current#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotal_ram#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="e#35507#35557#0" expanded="false" />
+            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/productions/widowmaker110/byteme/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/productions/widowmaker110/byteme/ExampleObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="80" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#Node#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#LRU_Cache#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#run#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#1;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#2;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#3;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#4;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#5;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#6;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#7;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#8;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#9;class#ByteMe#0" expanded="false" />
+            <element signature="e#21421#21471#0" expanded="false" />
+            <element signature="method#setAllocationMax#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAllocation_current#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotal_ram#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2110,16 +2418,22 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="772" column="0" selection-start-line="772" selection-start-column="0" selection-end-line="772" selection-end-column="0" />
           <folding>
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#Node#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#LRU_Cache#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#examine#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#examine#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#run#0;class#ByteMe#0" expanded="false" />
             <element signature="method#run#0;class#ByteMe#0" expanded="false" />
-            <element signature="e#10497#10549#0" expanded="false" />
             <element signature="method#run#1;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#run#2;class#ByteMe#0" expanded="false" />
             <element signature="method#run#2;class#ByteMe#0" expanded="false" />
             <element signature="method#run#3;class#ByteMe#0" expanded="false" />
             <element signature="method#run#4;class#ByteMe#0" expanded="false" />
@@ -2128,14 +2442,20 @@
             <element signature="method#run#7;class#ByteMe#0" expanded="false" />
             <element signature="method#run#8;class#ByteMe#0" expanded="false" />
             <element signature="method#run#9;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#10;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#11;class#ByteMe#0" expanded="false" />
-            <element signature="e#27494#27544#0" expanded="false" />
-            <element signature="e#27969#28019#0" expanded="false" />
-            <element signature="e#28480#28530#0" expanded="false" />
-            <element signature="e#28620#28670#0" expanded="false" />
+            <element signature="e#21421#21471#0" expanded="false" />
+            <element signature="method#setAllocationMax#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAllocation_current#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotal_ram#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="e#35507#35557#0" expanded="false" />
+            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2160,16 +2480,22 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="772" column="0" selection-start-line="772" selection-start-column="0" selection-end-line="772" selection-end-column="0" />
           <folding>
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#Node#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#LRU_Cache#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#examine#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#examine#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#run#0;class#ByteMe#0" expanded="false" />
             <element signature="method#run#0;class#ByteMe#0" expanded="false" />
-            <element signature="e#10497#10549#0" expanded="false" />
             <element signature="method#run#1;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#run#2;class#ByteMe#0" expanded="false" />
             <element signature="method#run#2;class#ByteMe#0" expanded="false" />
             <element signature="method#run#3;class#ByteMe#0" expanded="false" />
             <element signature="method#run#4;class#ByteMe#0" expanded="false" />
@@ -2178,14 +2504,20 @@
             <element signature="method#run#7;class#ByteMe#0" expanded="false" />
             <element signature="method#run#8;class#ByteMe#0" expanded="false" />
             <element signature="method#run#9;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#10;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#11;class#ByteMe#0" expanded="false" />
-            <element signature="e#27494#27544#0" expanded="false" />
-            <element signature="e#27969#28019#0" expanded="false" />
-            <element signature="e#28480#28530#0" expanded="false" />
-            <element signature="e#28620#28670#0" expanded="false" />
+            <element signature="e#21421#21471#0" expanded="false" />
+            <element signature="method#setAllocationMax#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAllocation_current#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotal_ram#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="e#35507#35557#0" expanded="false" />
+            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2210,16 +2542,22 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#Node#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#LRU_Cache#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#examine#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#examine#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#run#0;class#ByteMe#0" expanded="false" />
             <element signature="method#run#0;class#ByteMe#0" expanded="false" />
-            <element signature="e#10497#10549#0" expanded="false" />
             <element signature="method#run#1;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#run#2;class#ByteMe#0" expanded="false" />
             <element signature="method#run#2;class#ByteMe#0" expanded="false" />
             <element signature="method#run#3;class#ByteMe#0" expanded="false" />
             <element signature="method#run#4;class#ByteMe#0" expanded="false" />
@@ -2228,14 +2566,20 @@
             <element signature="method#run#7;class#ByteMe#0" expanded="false" />
             <element signature="method#run#8;class#ByteMe#0" expanded="false" />
             <element signature="method#run#9;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#10;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#11;class#ByteMe#0" expanded="false" />
-            <element signature="e#27494#27544#0" expanded="false" />
-            <element signature="e#27969#28019#0" expanded="false" />
-            <element signature="e#28480#28530#0" expanded="false" />
-            <element signature="e#28620#28670#0" expanded="false" />
+            <element signature="e#21421#21471#0" expanded="false" />
+            <element signature="method#setAllocationMax#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAllocation_current#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotal_ram#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="e#35507#35557#0" expanded="false" />
+            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2260,16 +2604,22 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#Node#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#LRU_Cache#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#examine#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#examine#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#run#0;class#ByteMe#0" expanded="false" />
             <element signature="method#run#0;class#ByteMe#0" expanded="false" />
-            <element signature="e#10497#10549#0" expanded="false" />
             <element signature="method#run#1;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#run#2;class#ByteMe#0" expanded="false" />
             <element signature="method#run#2;class#ByteMe#0" expanded="false" />
             <element signature="method#run#3;class#ByteMe#0" expanded="false" />
             <element signature="method#run#4;class#ByteMe#0" expanded="false" />
@@ -2278,14 +2628,20 @@
             <element signature="method#run#7;class#ByteMe#0" expanded="false" />
             <element signature="method#run#8;class#ByteMe#0" expanded="false" />
             <element signature="method#run#9;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#10;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#11;class#ByteMe#0" expanded="false" />
-            <element signature="e#27494#27544#0" expanded="false" />
-            <element signature="e#27969#28019#0" expanded="false" />
-            <element signature="e#28480#28530#0" expanded="false" />
-            <element signature="e#28620#28670#0" expanded="false" />
+            <element signature="e#21421#21471#0" expanded="false" />
+            <element signature="method#setAllocationMax#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAllocation_current#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotal_ram#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="e#35507#35557#0" expanded="false" />
+            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2306,27 +2662,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/productions/widowmaker110/byteme/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55737704">
-          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.5883424">
+          <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52641165">
-          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.061930783">
+          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
           <folding>
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#Node#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#LRU_Cache#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#examine#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#examine#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#run#0;class#ByteMe#0" expanded="false" />
             <element signature="method#run#0;class#ByteMe#0" expanded="false" />
-            <element signature="e#10497#10549#0" expanded="false" />
             <element signature="method#run#1;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#run#2;class#ByteMe#0" expanded="false" />
             <element signature="method#run#2;class#ByteMe#0" expanded="false" />
             <element signature="method#run#3;class#ByteMe#0" expanded="false" />
             <element signature="method#run#4;class#ByteMe#0" expanded="false" />
@@ -2335,14 +2697,20 @@
             <element signature="method#run#7;class#ByteMe#0" expanded="false" />
             <element signature="method#run#8;class#ByteMe#0" expanded="false" />
             <element signature="method#run#9;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#10;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#11;class#ByteMe#0" expanded="false" />
-            <element signature="e#27494#27544#0" expanded="false" />
-            <element signature="e#27969#28019#0" expanded="false" />
-            <element signature="e#28480#28530#0" expanded="false" />
-            <element signature="e#28620#28670#0" expanded="false" />
+            <element signature="e#21421#21471#0" expanded="false" />
+            <element signature="method#setAllocationMax#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAllocation_current#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotal_ram#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="e#35507#35557#0" expanded="false" />
+            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
