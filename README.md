@@ -25,7 +25,7 @@ ByteMe b = new ByteMe(MainActivity.this).getInstance();
 ```
 However, these configurations only need to be set once unless you'll be changing them in a safe manner.
 ```
-b.setAllocationMax(ByteMe.RAM_ONE_EIGHT);
+b.setAllocationMax(ByteMe.RAM_ONE_EIGHTH);
 b.setAlgorithm(ByteMe.ALGORITHM_LRU);
 ```
 setAllocationMax automatically gets the total amount of RAM in the device (tested and works will all SDK levels) and then divides it into the amount you choose. In this instance, I have set it to 1/8 of total RAM memory in the device to help ensure it doesn't cause the device to lag. The options available are 1/12, 1/10, 1/8, 1/7, 1/6, 1/5, 1/4. I would not recommend using more than 1/5 and even that is a lot on devices nowadays.
