@@ -3,7 +3,17 @@ Library to calculate runtime allocation of objects
 
 ## Installation
 
-I designed this whole project to be based around the [Library.ByteMe.java]  (https://github.com/widowmaker110/ByteMe/tree/master/app/src/main/java/Library/ByteMe.java) file. Instead of doing the pain-staking process of adding a module to your project, this whole API is within one java file for ease of installation and use.
+I designed this whole project to be based around the [Library.ByteMe.java]  (https://github.com/widowmaker110/ByteMe/tree/master/app/src/main/java/Library/ByteMe.java) file. Instead of doing the pain-staking process of adding a module to your project, this whole API is within one java file for ease of installation and use. All I ask is when you use this code, please keep the MIT License with it and a reference to this work (URL to this repository is preferable).
+
+## Cache Distinctions
+
+When developing this API, I wanted to give an in-depth guide into how these different caches operate. Some will work better for different loads and needs.
+
+| Cache Name  | Advantage | Disadvantage |
+| ------------- | ------------- | -------------
+| LRU (Least Recently Used)  | Overhead is constant, increases logarithmically with cache size. Simple algorithm overall | Not the most efficient since its likely to have objects in memory that you don't always need. |
+
+source(s): http://www.coderanch.com/how-to/java/CachingStrategies
 
 ## Usage
 
