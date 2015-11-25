@@ -10,8 +10,9 @@ I designed this whole project to be based around the [Library.ByteMe.java]  (htt
 When developing this API, I wanted to give an in-depth guide into how these different caches operate. Some will work better for different loads and needs.
 
 | Cache Name  | Advantage | Disadvantage |
-| ------------- | ------------- | -------------
+| ------------- | ------------- | -------------|
 | LRU (Least Recently Used)  | Overhead is constant. Simple algorithm overall and (relatively) fast. | Not the most efficient since its likely to have objects in memory that you don't always need. |
+| FIFO (First In First Out) | One of the simplest cache algorithms available. Cache overhead is constant. | No effort is made to keep items which are frequenly, or recently, used in memory. Not the most efficient at all.|
 
 source(s): http://www.coderanch.com/how-to/java/CachingStrategies
 
