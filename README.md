@@ -11,7 +11,7 @@ When developing this API, I wanted to give an in-depth guide into how these diff
 
 | Cache Name  | Advantage | Disadvantage |
 | ------------- | ------------- | -------------
-| LRU (Least Recently Used)  | Overhead is constant, increases logarithmically with cache size. Simple algorithm overall | Not the most efficient since its likely to have objects in memory that you don't always need. |
+| LRU (Least Recently Used)  | Overhead is constant. Simple algorithm overall and (relatively) fast. | Not the most efficient since its likely to have objects in memory that you don't always need. |
 
 source(s): http://www.coderanch.com/how-to/java/CachingStrategies
 
