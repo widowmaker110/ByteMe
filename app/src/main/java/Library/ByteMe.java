@@ -564,7 +564,7 @@ public class ByteMe {
     public static int RAM_ONE_FIFTH = 5;
     public static int RAM_ONE_SIXTH = 6;
     public static int RAM_ONE_SEVENTH = 7;
-    public static int RAM_ONE_EIGHT = 8;
+    public static int RAM_ONE_EIGHTH = 8;
     public static int RAM_ONE_TENTH = 10;
     public static int RAM_ONE_TWELFTH = 12;
 
