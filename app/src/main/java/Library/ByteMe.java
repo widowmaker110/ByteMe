@@ -377,11 +377,168 @@ public class ByteMe {
         }
     }
 
+    public MRU_Cache
+    {
+        // Node which will hold each object
+        private class Node{
+            int key;
+            Object value;
+            Node pre;
+            Node next;
+
+            public Node(int key, Object value){
+                this.key = key;
+                this.value = value;
+            }
+        }
+
+        // Actual cache
+        HashMap<Integer, Node> map = new HashMap<Integer, Node>();
+        Node head=null;
+        Node end=null;
+
+        /**
+         * Empty Constructor
+         */
+        public MRU_Cache() {}
+
+        public Object get(int key) {
+            if(map.containsKey(key)){
+                Node n = map.get(key);
+                remove(n);
+                setHead(n);
+
+                if(developerMode)
+                {
+                    Log.d(""+this.getClass().getName(),"MRU, get(), removed from position and set as head. Value: " + n.value);
+                }
+
+                return n.value;
+            }
+
+            return -1;
+        }
+
+        public void remove(Node n){
+            if(n.pre!=null){
+                n.pre.next = n.next;
+                if(developerMode)
+                {
+                    Log.d(""+this.getClass().getName(),"MRU, remove(), set previous node to next node.");
+                }
+            }else{
+                head = n.next;
+                if(developerMode)
+                {
+                    Log.d(""+this.getClass().getName(),"MRU, remove(), set head node to next node.");
+                }
+            }
+
+            if(n.next!=null){
+                n.next.pre = n.pre;
+                if(developerMode)
+                {
+                    Log.d(""+this.getClass().getName(),"MRU, remove(), set next node to previous node.");
+                }
+            }else{
+                end = n.pre;
+                if(developerMode)
+                {
+                    Log.d(""+this.getClass().getName(),"MRU, remove(), set end node to previous node.");
+                }
+            }
+
+        }
+
+        public void setHead(Node n){
+            n.next = head;
+            n.pre = null;
+
+            if(head!=null)
+                head.pre = n;
+
+            head = n;
+
+            if(end ==null)
+                end = head;
+
+            if(developerMode)
+            {
+                Log.d(""+this.getClass().getName(),"MRU, setHead(), set node as head of list.");
+            }
+        }
+
+        /**
+         * Add
+         *
+         * Add takes the object and adds it to the head of the linked list.
+         * If the Linked List has reached the max allocation, it will remove the last node in the list
+         * and make the new value the head.
+         * @param key hashcode value of the value being added
+         * @param value custom object given by the programmer
+         */
+        public void add(int key, Object value) {
+
+            // Replace the node if its already in the linked list.
+            if(map.containsKey(key)){
+
+                Node old = map.get(key);
+
+                int oldBitValue = getTotalBitOfSingleObject(value);
+                setAllocation_current(getAllocation_current() - oldBitValue);
+
+                old.value = value;
+
+                int newBitValue = getTotalBitOfSingleObject(value);
+                setAllocation_current(getAllocation_current() + newBitValue);
+
+                remove(old);
+                setHead(old);
+
+                if(developerMode)
+                {
+                    Log.d(""+this.getClass().getName(),"MRU, add(), found node with the same key, replaced the value. Made it the head of the list");
+                }
+            }
+            // create a new one if it doesn't exist
+            else{
+                Node created = new Node(key, value);
+
+                if(getAllocation_current() >= getAllocationMax()){
+
+                    int oldBitValue = getTotalBitOfSingleObject(head.value);
+                    setAllocation_current(getAllocation_current() - oldBitValue);
+
+                    map.remove(head.key);
+                    remove(head);
+                    setHead(created);
+
+                    int newBitValue = getTotalBitOfSingleObject(value);
+                    setAllocation_current(getAllocation_current() + newBitValue);
+
+                    if(developerMode)
+                    {
+                        Log.d(""+this.getClass().getName(),"MRU, add(), created a new node and made it the head of the list. Had to remove the head due to going over max allocation.");
+                    }
+                }else{
+                    setHead(created);
+                    int newBitValue = getTotalBitOfSingleObject(value);
+                    setAllocation_current(getAllocation_current() + newBitValue);
+
+                    if(developerMode)
+                    {
+                        Log.d(""+this.getClass().getName(),"MRU, add(), created a new node and made it the head of the list.");
+                    }
+                }
+
+                map.put(key, created);
+            }
+        }
+    }
+
     // LRU2 Class
 
     // ARC Class
-
-    // MRU Class
 
     //================================================
     // </Cache Algorithms>
@@ -397,6 +554,7 @@ public class ByteMe {
     private LRU_Cache lru_cache;
     private FIFO_Cache fifo_cache;
     private LFU_Cache lfu_cache;
+    private MRU_Cache mru_cache;
 
     private int allocation_max;
     private int allocation_current;
@@ -702,6 +860,36 @@ public class ByteMe {
             if(developerMode)
             {
                 Log.d(""+this.getClass().getName(),"ByteMe, clearCache(), LRU cache cleared, allocation_current set to 0, and an instance of LRU made again.");
+            }
+        }
+        else if(getAlgorithm() == ALGORITHM_FIFO)
+        {
+            fifo_cache = null;
+            setAllocation_current(0);
+            fifo_cache = new FIFO_Cache();
+            if(developerMode)
+            {
+                Log.d(""+this.getClass().getName(),"ByteMe, clearCache(), FIFO cache cleared, allocation_current set to 0, and an instance of FIFO made again.");
+            }
+        }
+        else if(getAlgorithm() == ALGORITHM_MRU)
+        {
+            mru_cache = null;
+            setAllocation_current(0);
+            mru_cache = new MRU_Cache();
+            if(developerMode)
+            {
+                Log.d(""+this.getClass().getName(),"ByteMe, clearCache(), MRU cache cleared, allocation_current set to 0, and an instance of MRU made again.");
+            }
+        }
+        else if(getAlgorithm() == ALGORITHM_LFU)
+        {
+            lfu_cache = null;
+            setAllocation_current(0);
+            lfu_cache = new LFU_Cache();
+            if(developerMode)
+            {
+                Log.d(""+this.getClass().getName(),"ByteMe, clearCache(), LFU cache cleared, allocation_current set to 0, and an instance of LFU made again.");
             }
         }
     }
@@ -1161,6 +1349,14 @@ public class ByteMe {
                 Log.d(""+this.getClass().getName(),"ByteMe, setAlgorithm(), LFU cache chosen. Instance of cache created.");
             }
         }
+        else if(algorithm == ALGORITHM_MRU)
+        {
+            mru_cache = MRU_Cache();
+            if(developerMode)
+            {
+                Log.d(""+this.getClass().getName(),"ByteMe, setAlgorithm(), MRU cache chosen. Instance of cache created.");
+            }
+        }
         this.CHOSEN_ALGORITHM = algorithm;
     }
 
@@ -1201,6 +1397,14 @@ public class ByteMe {
                 Log.d(""+this.getClass().getName(),"ByteMe, addObjectToCache(), Object added to LFU cache.");
             }
         }
+        else if(getAlgorithm() == ALGORITHM_MRU)
+        {
+            mru_cache.addCacheEntry(obj.hashCode(), obj);
+            if(developerMode)
+            {
+                Log.d(""+this.getClass().getName(),"ByteMe, addObjectToCache(), Object added to MRU cache.");
+            }
+        }
     }
 
     public Object getObjectFromCache(int hashcode) {
@@ -1214,6 +1418,7 @@ public class ByteMe {
         {
             obj = fifo_cache.getHead();
         }
+        //TODO write get method for LFU and MRU?
 
         return obj;
     }
