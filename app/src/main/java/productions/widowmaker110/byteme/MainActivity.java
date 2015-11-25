@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Create an instance of the ByteMe Class
         ByteMe b = new ByteMe(MainActivity.this).getInstance();
-        b.setAllocationMax(ByteMe.RAM_ONE_EIGHT);
+        b.setAllocationMax(ByteMe.RAM_ONE_EIGHTH);
         b.setAlgorithm(ByteMe.ALGORITHM_LRU);
 
         // Create a custom object with a given set of variables
