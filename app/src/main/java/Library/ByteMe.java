@@ -11,9 +11,14 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.Queue;
 
 /**
  * ByteMe.java
@@ -25,15 +30,15 @@ import java.util.List;
  *
  * Cache algorithms available:
  * -Least Recently Used (LinkedList)
+ * -Least Frequently Used (LinkedHashMap)
+ * -First In First Out (Queue)
  *
  * http://javalandscape.blogspot.com/2009/01/cachingcaching-algorithms-and-caching.html
  * http://www.coderanch.com/how-to/java/CachingStrategies
  *
- * Least Frequently Used: counter associated with each cache object
  * Least Recently Used 2: objects must be used twice to be cached.
  * Adaptive Replacement Cache: Combination of LRU and LFU; two LRU lists, one of objects seen once "recently", and one contains entries seen twice or more "recently"
  * Most Recently Used: Remove the most recently used object
- * First In First Out: queue which removes the first in line when space is needed.
  */
 public class ByteMe {
 
@@ -47,13 +52,12 @@ public class ByteMe {
      */
     private boolean developerMode = false;
 
-
     //================================================
     // <Cache Algorithms>
     //================================================
 
     /**
-     * LRU Cache code. Using a array, able to store all of the data
+     * LRU Cache code.
      *
      * http://www.programcreek.com/2013/03/leetcode-lru-cache-java/
      */
@@ -87,6 +91,12 @@ public class ByteMe {
                 Node n = map.get(key);
                 remove(n);
                 setHead(n);
+
+                if(developerMode)
+                {
+                    Log.d(""+this.getClass().getName(),"LRU, get(), removed from position and set as head. Value: " + n.value);
+                }
+
                 return n.value;
             }
 
@@ -96,14 +106,30 @@ public class ByteMe {
         public void remove(Node n){
             if(n.pre!=null){
                 n.pre.next = n.next;
+                if(developerMode)
+                {
+                    Log.d(""+this.getClass().getName(),"LRU, remove(), set previous node to next node.");
+                }
             }else{
                 head = n.next;
+                if(developerMode)
+                {
+                    Log.d(""+this.getClass().getName(),"LRU, remove(), set head node to next node.");
+                }
             }
 
             if(n.next!=null){
                 n.next.pre = n.pre;
+                if(developerMode)
+                {
+                    Log.d(""+this.getClass().getName(),"LRU, remove(), set next node to previous node.");
+                }
             }else{
                 end = n.pre;
+                if(developerMode)
+                {
+                    Log.d(""+this.getClass().getName(),"LRU, remove(), set end node to previous node.");
+                }
             }
 
         }
@@ -119,6 +145,11 @@ public class ByteMe {
 
             if(end ==null)
                 end = head;
+
+            if(developerMode)
+            {
+                Log.d(""+this.getClass().getName(),"LRU, setHead(), set node as head of list.");
+            }
         }
 
         /**
@@ -127,8 +158,8 @@ public class ByteMe {
          * Add takes the object and adds it to the head of the linked list.
          * If the Linked List has reached the max allocation, it will remove the last node in the list
          * and make the new value the head.
-         * @param key
-         * @param value
+         * @param key hashcode value of the value being added
+         * @param value custom object given by the programmer
          */
         public void add(int key, Object value) {
 
@@ -147,6 +178,11 @@ public class ByteMe {
 
                 remove(old);
                 setHead(old);
+
+                if(developerMode)
+                {
+                    Log.d(""+this.getClass().getName(),"LRU, add(), found node with the same key, replaced the value. Made it the head of the list");
+                }
             }
             // create a new one if it doesn't exist
             else{
@@ -164,10 +200,19 @@ public class ByteMe {
                     int newBitValue = getTotalBitOfSingleObject(value);
                     setAllocation_current(getAllocation_current() + newBitValue);
 
+                    if(developerMode)
+                    {
+                        Log.d(""+this.getClass().getName(),"LRU, add(), created a new node and made it the head of the list. Had to remove the tail due to going over max allocation.");
+                    }
                 }else{
                     setHead(created);
                     int newBitValue = getTotalBitOfSingleObject(value);
                     setAllocation_current(getAllocation_current() + newBitValue);
+
+                    if(developerMode)
+                    {
+                        Log.d(""+this.getClass().getName(),"LRU, add(), created a new node and made it the head of the list.");
+                    }
                 }
 
                 map.put(key, created);
@@ -175,7 +220,162 @@ public class ByteMe {
         }
     }
 
-    // LFU Class
+    /**
+     * FIFO Cache code.
+     */
+    public class FIFO_Cache
+    {
+        Queue fifo_cache = new LinkedList();
+
+        /**
+         * empty constructor
+         */
+        public FIFO_Cache(){}
+
+        /**
+         * add
+         *
+         * Add takes the object and adds it to the head of the queue.
+         * If the queue has reached the max allocation, it will remove the first node in the queue
+         * and make the new value the head.
+         * @param obj custom object.
+         */
+        public void add(Object obj)
+        {
+            int cacheOfObject = getTotalBitOfSingleObject(obj);
+            if(getAllocation_current() >= getAllocationMax())
+            {
+                // remove the head of the queue.
+                fifo_cache.remove();
+                boolean flag = fifo_cache.offer(obj);
+                if(developerMode)
+                {
+                    Log.d(""+this.getClass().getName(),"FIFO, add(), cache too big, removed head, added object if true: " + flag);
+                }
+                setAllocation_current(getAllocation_current() + cacheOfObject);
+            }
+            else
+            {
+                boolean flag = fifo_cache.offer(obj);
+                if(developerMode)
+                {
+                    Log.d(""+this.getClass().getName(),"FIFO, add(), added object if true: " + flag);
+                }
+                setAllocation_current(getAllocation_current() + cacheOfObject);
+            }
+        }
+
+        /**
+         * getHead
+         * @return Object of the head of the queue.
+         */
+        public Object getHead()
+        {
+            return fifo_cache.peek();
+        }
+
+        /**
+         * removeHead
+         *
+         * Removes the head node of the queue.
+         */
+        public void removeHead()
+        {
+            fifo_cache.poll();
+        }
+    }
+
+    /**
+     * LFU Class
+     *
+     * Cache design inspired by http://stackoverflow.com/questions/21117636/how-to-implement-a-least-frequently-used-lfu-cache
+     */
+    public class LFU_Cache
+    {
+        private class CacheEntry
+        {
+            private Object data;
+            private int frequency;
+
+            // default constructor
+            private CacheEntry()
+            {}
+
+            public Object getData() {
+                return data;
+            }
+            public void setData(Object data) {
+                this.data = data;
+            }
+
+            public int getFrequency() {
+                return frequency;
+            }
+            public void setFrequency(int frequency) {
+                this.frequency = frequency;
+            }
+
+        }
+
+        /* LinkedHashMap is used because it has features of both HashMap and LinkedList.
+         * Thus, we can get an entry in O(1) and also, we can iterate over it easily.
+         */
+        private LinkedHashMap<Integer, CacheEntry> cacheMap = new LinkedHashMap<Integer, CacheEntry>();
+
+        public LFU_Cache(){}
+
+        public void addCacheEntry(int key, Object data)
+        {
+            if(getAllocation_current() >= getAllocationMax())
+            {
+                CacheEntry temp = new CacheEntry();
+                temp.setData(data);
+                temp.setFrequency(0);
+
+                cacheMap.put(key, temp);
+            }
+            else
+            {
+                int entryKeyToBeRemoved = getLFUKey();
+                cacheMap.remove(entryKeyToBeRemoved);
+
+                CacheEntry temp = new CacheEntry();
+                temp.setData(data);
+                temp.setFrequency(0);
+
+                cacheMap.put(key, temp);
+            }
+        }
+
+        public int getLFUKey()
+        {
+            int key = 0;
+            int minFreq = Integer.MAX_VALUE;
+
+            for(Map.Entry<Integer, CacheEntry> entry : cacheMap.entrySet())
+            {
+                if(minFreq > entry.getValue().frequency)
+                {
+                    key = entry.getKey();
+                    minFreq = entry.getValue().frequency;
+                }
+            }
+
+            return key;
+        }
+
+        public Object getCacheEntry(int key)
+        {
+            if(cacheMap.containsKey(key))  // cache hit
+            {
+                CacheEntry temp = cacheMap.get(key);
+                temp.frequency++;
+                cacheMap.put(key, temp);
+                return temp.data;
+            }
+            return null; // cache miss
+        }
+    }
 
     // LRU2 Class
 
@@ -183,11 +383,10 @@ public class ByteMe {
 
     // MRU Class
 
-    // FIFO Class
-
     //================================================
     // </Cache Algorithms>
     //================================================
+
 
     //================================================
     // <Global Variables>
@@ -196,6 +395,8 @@ public class ByteMe {
     private static Context mContext;
 
     private LRU_Cache lru_cache;
+    private FIFO_Cache fifo_cache;
+    private LFU_Cache lfu_cache;
 
     private int allocation_max;
     private int allocation_current;
@@ -206,6 +407,8 @@ public class ByteMe {
     public static int RAM_ONE_SIXTH = 6;
     public static int RAM_ONE_SEVENTH = 7;
     public static int RAM_ONE_EIGHT = 8;
+    public static int RAM_ONE_TENTH = 10;
+    public static int RAM_ONE_TWELFTH = 12;
 
     private static long android_total_ram;
 
@@ -215,7 +418,12 @@ public class ByteMe {
 
     // static variable to say which algorithm the objects will be held in.
     public int CHOSEN_ALGORITHM = 0;
-    public static int LRU_ALGORITHM = 1;
+    public static int ALGORITHM_LRU = 1;
+    public static int ALGORITHM_FIFO = 2;
+    public static int ALGORITHM_LFU = 3;
+    public static int ALGORITHM_LRU2 = 4;
+    public static int ALGORITHM_ARC = 5;
+    public static int ALGORITHM_MRU = 6;
 
     // list of method names which are java API based.
     private List<String> restrictedMethods = Arrays.asList("equals","getClass",
@@ -284,7 +492,13 @@ public class ByteMe {
 
                         try {
                             String temp = (String) method.invoke(obj);
-                            bytesUsed += run(new String[]{temp});
+                            int tempInt = run(new String[]{temp});
+                            bytesUsed += tempInt;
+
+                            if(developerMode)
+                            {
+                                Log.d(""+this.getClass().getName(),"ByteMe, getTotalBitOfSingleObject(), class java.lang.String. Value: " + temp+ "  byte amount: " + tempInt);
+                            }
                         } catch (InvocationTargetException e) {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
@@ -296,7 +510,12 @@ public class ByteMe {
 
                         try {
                             int temp = (int) method.invoke(obj);
-                            bytesUsed += run(new int[]{temp});
+                            int tempInt = run(new int[]{temp});
+                            bytesUsed += tempInt;
+                            if(developerMode)
+                            {
+                                Log.d(""+this.getClass().getName(),"ByteMe, getTotalBitOfSingleObject(), int. Value: " + temp+ "  byte amount: " + tempInt);
+                            }
                         } catch (InvocationTargetException e) {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
@@ -308,7 +527,12 @@ public class ByteMe {
 
                         try {
                             short temp = (short) method.invoke(obj);
-                            bytesUsed += run(new short[]{temp});
+                            int tempInt = run(new short[]{temp});
+                            bytesUsed += tempInt;
+                            if(developerMode)
+                            {
+                                Log.d(""+this.getClass().getName(),"ByteMe, getTotalBitOfSingleObject(), class java.lang.Short. Value: " + temp+ "  byte amount: " + tempInt);
+                            }
                         } catch (InvocationTargetException e) {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
@@ -320,7 +544,12 @@ public class ByteMe {
 
                         try {
                             long temp = (long) method.invoke(obj);
-                            bytesUsed += run(new long[]{temp});
+                            int tempInt = run(new long[]{temp});
+                            bytesUsed += tempInt;
+                            if(developerMode)
+                            {
+                                Log.d(""+this.getClass().getName(),"ByteMe, getTotalBitOfSingleObject(), class java.lang.Long. Value: " + temp+ "  byte amount: " + tempInt);
+                            }
                         } catch (InvocationTargetException e) {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
@@ -332,7 +561,12 @@ public class ByteMe {
 
                         try {
                             byte temp = (byte) method.invoke(obj);
-                            bytesUsed += run(new byte[]{temp});
+                            int tempInt = run(new byte[]{temp});
+                            bytesUsed += tempInt;
+                            if(developerMode)
+                            {
+                                Log.d(""+this.getClass().getName(),"ByteMe, getTotalBitOfSingleObject(), class java.lang.Byte. Value: " + temp+ "  byte amount: " + tempInt);
+                            }
                         } catch (InvocationTargetException e) {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
@@ -344,7 +578,12 @@ public class ByteMe {
 
                         try {
                             float temp = (float) method.invoke(obj);
-                            bytesUsed += run(new float[]{temp});
+                            int tempInt = run(new float[]{temp});
+                            bytesUsed += tempInt;
+                            if(developerMode)
+                            {
+                                Log.d(""+this.getClass().getName(),"ByteMe, getTotalBitOfSingleObject(), class java.lang.Float. Value: " + temp+ "  byte amount: " + tempInt);
+                            }
                         } catch (InvocationTargetException e) {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
@@ -356,7 +595,12 @@ public class ByteMe {
 
                         try {
                             double temp = (double) method.invoke(obj);
-                            bytesUsed += run(new double[]{temp});
+                            int tempInt = run(new double[]{temp});
+                            bytesUsed += tempInt;
+                            if(developerMode)
+                            {
+                                Log.d(""+this.getClass().getName(),"ByteMe, getTotalBitOfSingleObject(), class java.lang.Double. Value: " + temp+ "  byte amount: " + tempInt);
+                            }
                         } catch (InvocationTargetException e) {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
@@ -368,7 +612,12 @@ public class ByteMe {
 
                         try {
                             char temp = (char) method.invoke(obj);
-                            bytesUsed += run(new char[]{temp});
+                            int tempInt = run(new char[]{temp});
+                            bytesUsed += tempInt;
+                            if(developerMode)
+                            {
+                                Log.d(""+this.getClass().getName(),"ByteMe, getTotalBitOfSingleObject(), class java.lang.Char. Value: " + temp+ "  byte amount: " + tempInt);
+                            }
                         } catch (InvocationTargetException e) {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
@@ -380,7 +629,12 @@ public class ByteMe {
 
                         try {
                             boolean temp = (boolean) method.invoke(obj);
-                            bytesUsed += run(new boolean[]{temp});
+                            int tempInt = run(new boolean[]{temp});
+                            bytesUsed += tempInt;
+                            if(developerMode)
+                            {
+                                Log.d(""+this.getClass().getName(),"ByteMe, getTotalBitOfSingleObject(), class java.lang.Boolean. Value: " + temp+ "  byte amount: " + tempInt);
+                            }
                         } catch (InvocationTargetException e) {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
@@ -392,7 +646,12 @@ public class ByteMe {
 
                         try {
                             Bitmap temp = (Bitmap) method.invoke(obj);
-                            bytesUsed += run(new Bitmap[]{temp});
+                            int tempInt = run(new Bitmap[]{temp});
+                            bytesUsed += tempInt;
+                            if(developerMode)
+                            {
+                                Log.d(""+this.getClass().getName(),"ByteMe, getTotalBitOfSingleObject(), class android.graphics.Bitmap. Value: " + temp+ "  byte amount: " + tempInt);
+                            }
                         } catch (InvocationTargetException e) {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
@@ -400,6 +659,10 @@ public class ByteMe {
                         }
 
                         break;
+                }
+                if(developerMode)
+                {
+                    Log.d(""+this.getClass().getName(),"ByteMe, getTotalBitOfSingleObject(), bytesUsed Value: " + bytesUsed);
                 }
             }
         }
@@ -415,13 +678,85 @@ public class ByteMe {
      * @param method This is the name of the method.
      * @return True if the method name is a non-java base API (toString, hashCode, etc).
      */
-    private boolean isRestrictedMethod(String method)
-    {
+    private boolean isRestrictedMethod(String method) {
         if(restrictedMethods.contains(method))
         {
             return true;
         }
         return false;
+    }
+
+    /**
+     * clearCache
+     *
+     * clearCache sets the cache being used to null, then sets the current allocation
+     * amount to zero, and finally remakes an instance of the same cache.
+     */
+    public void clearCache() {
+
+        if (getAlgorithm() == ALGORITHM_LRU)
+        {
+            lru_cache = null;
+            setAllocation_current(0);
+            lru_cache = new LRU_Cache();
+            if(developerMode)
+            {
+                Log.d(""+this.getClass().getName(),"ByteMe, clearCache(), LRU cache cleared, allocation_current set to 0, and an instance of LRU made again.");
+            }
+        }
+    }
+
+    /**
+     * addToCache
+     *
+     * addToCache sends a single object into the cache which was already chosen.
+     *
+     * @param obj Custom object being added to the cache.
+     */
+    public void addToCache(Object obj) {
+        addObjectToCache(obj);
+    }
+
+    /**
+     * addToCache
+     *
+     * addToCache sends an array of objects into the cache which was already chosen.
+     *
+     * @param obj Custom object array being added to the cache.
+     */
+    public void addToCache(Object[] obj) {
+        for(int i = 0; i < obj.length; i++)
+        {
+            addObjectToCache(obj[i]);
+        }
+    }
+
+    /**
+     * addToCache
+     *
+     * addToCache sends an arraylist of objects into the cache which was already chosen.
+     *
+     * @param obj Custom object arraylist being added to the cache.
+     */
+    public void addToCache(ArrayList<Object> obj) {
+        for(int i = 0; i < obj.size(); i++)
+        {
+            addObjectToCache(obj.get(i));
+        }
+    }
+
+    /**
+     * addToCache
+     *
+     * addToCache sends a list of object into the cache which was already chosen.
+     *
+     * @param obj Custom list of objects being added to the cache.
+     */
+    public void addToCache(List<Object> obj) {
+        for(int i = 0; i < obj.size(); i++)
+        {
+            addObjectToCache(obj.get(i));
+        }
     }
 
     //================================================
@@ -434,8 +769,7 @@ public class ByteMe {
      * @return numbers of bits if calculation completes, -1 if the thread was interrupted. -2
      * would be returned if the array given was null.
      */
-    public int run(int[] int_data)
-    {
+    public int run(int[] int_data) {
         if(int_data == null)
         {
             return -2;
@@ -688,10 +1022,19 @@ public class ByteMe {
     //================================================
     // <Get/Set Methods>
     //================================================
-    public void setAllocationMax(int allocation_max_m)
-    {
+    public Object[] getAllFromCache() {
+        //TODO work on this
+        Object[] arrayOfObjects = {};
+        return null;
+    }
+
+    public void setAllocationMax(int allocation_max_m) {
         int tempMaxMemory = (int) getTotal_ram();
         this.allocation_max = tempMaxMemory / allocation_max_m;
+        if(developerMode)
+        {
+            Log.d(""+this.getClass().getName(),"ByteMe, setAllocationMax(), Allocation Max: " + this.allocation_max);
+        }
     }
 
     public int getAllocationMax()
@@ -705,6 +1048,10 @@ public class ByteMe {
 
     private void setAllocation_current(int allocation_current) {
         this.allocation_current = allocation_current;
+        if(developerMode)
+        {
+            Log.d(""+this.getClass().getName(),"ByteMe, setAllocationMax(), Allocation Max: " + this.allocation_current);
+        }
     }
 
     public long getTotal_ram() {
@@ -714,10 +1061,18 @@ public class ByteMe {
         // if API 15 or lower
         if (currentapiVersion <= Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1){
             android_total_ram = getTotalMemoryOld();
+            if(developerMode)
+            {
+                Log.d(""+this.getClass().getName(),"ByteMe, getTotal_ram(), SDK level 15 or lower.");
+            }
         }
         // API is 16 or higher
         else{
             android_total_ram = getTotalMemoryNew();
+            if(developerMode)
+            {
+                Log.d(""+this.getClass().getName(),"ByteMe, getTotal_ram(), SDK level 16 or higher.");
+            }
         }
         return android_total_ram;
     }
@@ -781,11 +1136,30 @@ public class ByteMe {
         ByteMe.mContext = mContext;
     }
 
-    public void setAlgorithm(int algorithm)
-    {
-        if(algorithm == LRU_ALGORITHM)
+    public void setAlgorithm(int algorithm){
+        if(algorithm == ALGORITHM_LRU)
         {
             lru_cache = new LRU_Cache();
+            if(developerMode)
+            {
+                Log.d(""+this.getClass().getName(),"ByteMe, setAlgorithm(), LRU cache chosen. Instance of cache created.");
+            }
+        }
+        else if(algorithm == ALGORITHM_FIFO)
+        {
+            fifo_cache = new FIFO_Cache();
+            if(developerMode)
+            {
+                Log.d(""+this.getClass().getName(),"ByteMe, setAlgorithm(), FIFO cache chosen. Instance of cache created.");
+            }
+        }
+        else if(algorithm == ALGORITHM_LFU)
+        {
+            lfu_cache = new LFU_Cache();
+            if(developerMode)
+            {
+                Log.d(""+this.getClass().getName(),"ByteMe, setAlgorithm(), LFU cache chosen. Instance of cache created.");
+            }
         }
         this.CHOSEN_ALGORITHM = algorithm;
     }
@@ -802,21 +1176,43 @@ public class ByteMe {
     // <General Cache Functions>
     //================================================
 
-    public void addObjectToCache(Object obj)
-    {
-        if(getAlgorithm() == LRU_ALGORITHM)
+    private void addObjectToCache(Object obj) {
+        if(getAlgorithm() == ALGORITHM_LRU)
         {
             lru_cache.add(obj.hashCode(), obj);
+            if(developerMode)
+            {
+                Log.d(""+this.getClass().getName(),"ByteMe, addObjectToCache(), Object added to LRU cache.");
+            }
+        }
+        else if(getAlgorithm() == ALGORITHM_FIFO)
+        {
+            fifo_cache.add(obj);
+            if(developerMode)
+            {
+                Log.d(""+this.getClass().getName(),"ByteMe, addObjectToCache(), Object added to FIFO cache.");
+            }
+        }
+        else if(getAlgorithm() == ALGORITHM_LFU)
+        {
+            lfu_cache.addCacheEntry(obj.hashCode(), obj);
+            if(developerMode)
+            {
+                Log.d(""+this.getClass().getName(),"ByteMe, addObjectToCache(), Object added to LFU cache.");
+            }
         }
     }
 
-    public Object getObjectFromCache(int hashcode)
-    {
+    public Object getObjectFromCache(int hashcode) {
         Object obj = null;
 
-        if(getAlgorithm() == LRU_ALGORITHM)
+        if(getAlgorithm() == ALGORITHM_LRU)
         {
             obj = lru_cache.get(hashcode);
+        }
+        else if(getAlgorithm() == ALGORITHM_FIFO)
+        {
+            obj = fifo_cache.getHead();
         }
 
         return obj;

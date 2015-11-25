@@ -16,11 +16,11 @@ public class MainActivity extends AppCompatActivity {
         // Create an instance of the ByteMe Class
         ByteMe b = new ByteMe(MainActivity.this).getInstance();
         b.setAllocationMax(ByteMe.RAM_ONE_EIGHT);
-        b.setAlgorithm(ByteMe.LRU_ALGORITHM);
+        b.setAlgorithm(ByteMe.ALGORITHM_LRU);
 
         // Create a custom object with a given set of variables
         ExampleObject object = new ExampleObject("Bob", 20, "indy", "male", "its bobby");
-        b.addObjectToCache(object);
+        b.addToCache(object);
         ExampleObject object2 = (ExampleObject) b.getObjectFromCache(object.hashCode());
     }
 }
