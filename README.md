@@ -3,7 +3,7 @@ Library to calculate runtime allocation of objects
 
 ## Installation
 
-I designed this whole project to be based around the [Library.ByteMe.java]  (ByteMe/tree/master/app/src/main/java/Library/ByteMe.java) file. Instead of doing the pain-staking process of adding a module to your project, this whole API is within one java file for ease of installation and use.
+I designed this whole project to be based around the [Library.ByteMe.java]  (ByteMe.java) file. Instead of doing the pain-staking process of adding a module to your project, this whole API is within one java file for ease of installation and use.
 
 ## Usage
 
