@@ -14,6 +14,7 @@ When developing this API, I wanted to give an in-depth guide into how these diff
 | LRU (Least Recently Used)  | Overhead is constant. Simple algorithm overall and (relatively) fast. | Not the most efficient since its likely to have objects in memory that you don't always need. |
 | FIFO (First In First Out) | One of the simplest cache algorithms available. Cache overhead is constant. | No effort is made to keep items which are frequenly, or recently, used in memory. Not the most efficient at all
 | LFU (Least Frequently Used) | Scan Resistant, long-term benefits of maintaining most used data in memory.| Larger Access overhead. Doesn't adapt quickly to changing patterns in data.|
+| MRU (Most Recently Used) | See LRU | See LRU |
 
 source(s): http://www.coderanch.com/how-to/java/CachingStrategies
 
@@ -46,6 +47,7 @@ setAlgorithm must be set before placing objects into the cache. You are able to 
 * [LRU] - Least Recently Used (https://www.youtube.com/watch?v=I9_BpSXBodU)
 * LFU - Least Frequently Used
 * FIFO - First In First Out
+* MRU - Most Recently Used
 
 The library automatically calculates the runtime bit usage of your custom objects and makes sure that the caches don't go over the maximum set. 
 
