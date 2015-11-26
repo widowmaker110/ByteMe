@@ -16,7 +16,7 @@ When developing this API, I wanted to give an in-depth guide into how these diff
 | LFU (Least Frequently Used) | Scan Resistant, long-term benefits of maintaining most used data in memory.| Larger Access overhead. Doesn't adapt quickly to changing patterns in data.|
 | MRU (Most Recently Used) | See LRU | See LRU |
 
-source(s): http://www.coderanch.com/how-to/java/CachingStrategies
+source(s): http://www.coderanch.com/how-to/java/CachingStrategies , http://javalandscape.blogspot.com/2009/01/cachingcaching-algorithms-and-caching.html
 
 ## Usage
 
