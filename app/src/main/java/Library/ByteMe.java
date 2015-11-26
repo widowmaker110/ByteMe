@@ -47,22 +47,16 @@ import java.util.Queue;
 /**
  * ByteMe.java
  *
- * This class calculates the bits within any given object by instanitating the run() function
+ * This class calculates the bits within any given object by instantiating the run() function
  * with an array of a given primitive type or bitmap.
  *
  * Created by Alexander on 10/17/2015.
  *
  * Cache algorithms available:
- * -Least Recently Used (LinkedList)
- * -Least Frequently Used (LinkedHashMap)
- * -First In First Out (Queue)
- * -Most Recently Used (LinkedList)
- *
- * http://javalandscape.blogspot.com/2009/01/cachingcaching-algorithms-and-caching.html
- * http://www.coderanch.com/how-to/java/CachingStrategies
- *
- * Adaptive Replacement Cache: Combination of LRU and LFU; two LRU lists, one of objects seen once "recently", and one contains entries seen twice or more "recently"
- * 2Q (two queues): I am Two Queues; I add entries to an LRU cache as they are accessed. If an entry is accessed again, I move them to second, larger, LRU cache.
+ * - First In First Out (Queue)
+ * - Least Recently Used (LinkedList)
+ * - Most Recently Used (LinkedList)
+ * - Least Frequently Used (LinkedHashMap)
  */
 public class ByteMe {
 
@@ -127,6 +121,19 @@ public class ByteMe {
             return -1;
         }
 
+        public Object[] getAllObjects()
+        {
+            List<Object> array = new ArrayList<>();
+
+            for ( Integer key : map.keySet() ) {
+                array.add(get(key));
+            }
+
+            Object[] objArray = new Object[array.size()];
+
+            return array.toArray(objArray);
+        }
+
         public void remove(Node n){
             if(n.pre!=null){
                 n.pre.next = n.next;
@@ -155,7 +162,6 @@ public class ByteMe {
                     Log.d(""+this.getClass().getName(),"LRU, remove(), set end node to previous node.");
                 }
             }
-
         }
 
         public void setHead(Node n){
@@ -289,6 +295,19 @@ public class ByteMe {
             }
         }
 
+        public Object[] getAllObjects() {
+
+            List<Object> array = new ArrayList<>();
+
+            for(Object s : fifo_cache) {
+                array.add(s);
+            }
+
+            Object[] objArray = new Object[array.size()];
+
+            return array.toArray(objArray);
+        }
+
         /**
          * getHead
          * @return Object of the head of the queue.
@@ -388,6 +407,18 @@ public class ByteMe {
             return key;
         }
 
+        public Object[] getAllObjects()
+        {
+            ArrayList<Object> array = new ArrayList<>();
+            for ( Integer key : cacheMap.keySet() ) {
+                array.add(getCacheEntry(key));
+            }
+
+            Object[] objArray = new Object[array.size()];
+
+            return array.toArray(objArray);
+        }
+
         public Object getCacheEntry(int key)
         {
             if(cacheMap.containsKey(key))  // cache hit
@@ -471,7 +502,19 @@ public class ByteMe {
                     Log.d(""+this.getClass().getName(),"MRU, remove(), set end node to previous node.");
                 }
             }
+        }
 
+        public Object[] getAllObjects()
+        {
+            List<Object> array = new ArrayList<>();
+
+            for ( Integer key : map.keySet() ) {
+                array.add(get(key));
+            }
+
+            Object[] objArray = new Object[array.size()];
+
+            return array.toArray(objArray);
         }
 
         public void setHead(Node n){
@@ -560,19 +603,6 @@ public class ByteMe {
         }
     }
 
-    // 2Q Class
-    public class TWOQ_Class
-    {
-
-    }
-
-    // ARC Class
-
-    //================================================
-    // </Cache Algorithms>
-    //================================================
-
-
     //================================================
     // <Global Variables>
     //================================================
@@ -607,9 +637,7 @@ public class ByteMe {
     public static int ALGORITHM_LRU = 1;
     public static int ALGORITHM_FIFO = 2;
     public static int ALGORITHM_LFU = 3;
-    public static int ALGORITHM_LRU2 = 4;
-    public static int ALGORITHM_ARC = 5;
-    public static int ALGORITHM_MRU = 6;
+    public static int ALGORITHM_MRU = 4;
 
     // list of method names which are java API based.
     private List<String> restrictedMethods = Arrays.asList("equals","getClass",
@@ -625,6 +653,15 @@ public class ByteMe {
      */
     public ByteMe(Context context) {
         mContext = context;
+    }
+
+    /**
+     * Constructor with Context in order to perform some needed operations. Also
+     * set the Algorithm instantly.
+     */
+    public ByteMe(Context context, int algorithm) {
+        mContext = context;
+        setAlgorithm(algorithm);
     }
 
     /**
@@ -985,7 +1022,7 @@ public class ByteMe {
      * @return numbers of bits if calculation completes, -1 if the thread was interrupted. -2
      * would be returned if the array given was null.
      */
-    public int run(int[] int_data) {
+    private int run(int[] int_data) {
         if(int_data == null)
         {
             return -2;
@@ -1014,7 +1051,7 @@ public class ByteMe {
         return value;
     }
 
-    public int run(String[] string_data) {
+    private int run(String[] string_data) {
 
         // Initialize the multithreading class with the data
         // and settings
@@ -1040,7 +1077,7 @@ public class ByteMe {
         return value;
     }
 
-    public int run(short[] short_data) {
+    private int run(short[] short_data) {
         // Initialize the multithreading class with the data
         // and settings
         CalculateSize foo = new CalculateSize(2, null,
@@ -1064,7 +1101,7 @@ public class ByteMe {
         return value;
     }
 
-    public int run(long[] long_data) {
+    private int run(long[] long_data) {
         // Initialize the multithreading class with the data
         // and settings
         CalculateSize foo = new CalculateSize(3, null,
@@ -1088,7 +1125,7 @@ public class ByteMe {
         return value;
     }
 
-    public int run(byte[] byte_data) {
+    private int run(byte[] byte_data) {
         // Initialize the multithreading class with the data
         // and settings
         CalculateSize foo = new CalculateSize(4, null,
@@ -1112,7 +1149,7 @@ public class ByteMe {
         return value;
     }
 
-    public int run(float[] float_data) {
+    private int run(float[] float_data) {
         // Initialize the multithreading class with the data
         // and settings
         CalculateSize foo = new CalculateSize(5, null,
@@ -1136,7 +1173,7 @@ public class ByteMe {
         return value;
     }
 
-    public int run(double[] double_data) {
+    private int run(double[] double_data) {
         // Initialize the multithreading class with the data
         // and settings
         CalculateSize foo = new CalculateSize(6, null,
@@ -1160,7 +1197,7 @@ public class ByteMe {
         return value;
     }
 
-    public int run(char[] char_data) {
+    private int run(char[] char_data) {
         // Initialize the multithreading class with the data
         // and settings
         CalculateSize foo = new CalculateSize(7, null,
@@ -1184,7 +1221,7 @@ public class ByteMe {
         return value;
     }
 
-    public int run(boolean[] boolean_data) {
+    private int run(boolean[] boolean_data) {
         // Initialize the multithreading class with the data
         // and settings
         CalculateSize foo = new CalculateSize(8, null,
@@ -1208,7 +1245,7 @@ public class ByteMe {
         return value;
     }
 
-    public int run(Bitmap[] bitmap_data) {
+    private int run(Bitmap[] bitmap_data) {
         // Initialize the multithreading class with the data
         // and settings
         CalculateSize foo = new CalculateSize(9, null,
@@ -1231,19 +1268,10 @@ public class ByteMe {
         }
         return value;
     }
-    //================================================
-    // </Asynchronous Methods>
-    //================================================
 
     //================================================
     // <Get/Set Methods>
     //================================================
-    public Object[] getAllFromCache() {
-        //TODO work on this
-        Object[] arrayOfObjects = {};
-        return null;
-    }
-
     public void setAllocationMax(int allocation_max_m) {
         int tempMaxMemory = (int) getTotal_ram();
         this.allocation_max = tempMaxMemory / allocation_max_m;
@@ -1392,14 +1420,18 @@ public class ByteMe {
     {
         return CHOSEN_ALGORITHM;
     }
-    //================================================
-    // </Get/Set Methods>
-    //================================================
 
     //================================================
     // <General Cache Functions>
     //================================================
-
+    /**
+     * addObjectToCache
+     *
+     * addObjectToCache adds an object to a chosen cache which has already been set by
+     * setAlgorithm(). If no algorithm was selected, message
+     * "ERROR: addObjectToCache(), no algorithm selected. Object not saved in cache."
+     * @param obj Custom object of choosing
+     */
     private void addObjectToCache(Object obj) {
         if(getAlgorithm() == ALGORITHM_LRU)
         {
@@ -1433,8 +1465,23 @@ public class ByteMe {
                 Log.d(""+this.getClass().getName(),"ByteMe, addObjectToCache(), Object added to MRU cache.");
             }
         }
+        else
+        {
+            //ERROR
+            Log.d(""+this.getClass().getName(),"ERROR: addObjectToCache(), no algorithm selected. Object not saved in cache.");
+        }
     }
 
+    /**
+     * getObjectFromCache
+     *
+     * getObjectFromCache using a hashcode (only works with LRU, LFU, and MRU) retrieve
+     * a given object based on hashcode. If retrieving from FIFO, will only return head;
+     * make sure to set hashcode to null or zero.
+     *
+     * @param hashcode java built-in hashcode of a given object.
+     * @return Object matched to hashcode. Returns null if object not found in cache.
+     */
     public Object getObjectFromCache(int hashcode) {
         Object obj = null;
 
@@ -1446,14 +1493,52 @@ public class ByteMe {
         {
             obj = fifo_cache.getHead();
         }
-        //TODO write get method for LFU and MRU?
+        else if(getAlgorithm() == ALGORITHM_LFU)
+        {
+            obj = lfu_cache.getCacheEntry(hashcode);
+        }
+        else if(getAlgorithm() == ALGORITHM_MRU)
+        {
+            obj = mru_cache.get(hashcode);
+        }
 
-        return obj;
+        if(obj.equals(-1))
+            return null;
+        else
+            return obj;
     }
-    //================================================
-    // </General Cache Functions>
-    //================================================
 
+    /**
+     * getAllObjectsFromCache
+     *
+     * getAllObjectsFromCache based on chosen algorithm, returns all objects
+     * found in said cache.
+     *
+     * @return All objects found in chosen cache. Null if no cache is found or cache is empty.
+     */
+    public Object[] getAllObjectsFromCache() {
+
+        if(getAlgorithm() == ALGORITHM_LRU)
+        {
+            return lru_cache.getAllObjects();
+        }
+        else if(getAlgorithm() == ALGORITHM_MRU)
+        {
+            return mru_cache.getAllObjects();
+        }
+        else if(getAlgorithm() == ALGORITHM_LFU)
+        {
+            return lfu_cache.getAllObjects();
+        }
+        else if(getAlgorithm() == ALGORITHM_FIFO)
+        {
+            return fifo_cache.getAllObjects();
+        }
+        else
+        {
+            return null;
+        }
+    }
 
     //================================================
     // <Conversion Methods>
@@ -1472,9 +1557,6 @@ public class ByteMe {
     {
         return value/Gb;
     }
-    //================================================
-    // </Conversion Methods>
-    //================================================
 
     //================================================
     // <Async Calculation Method>
@@ -1670,7 +1752,4 @@ public class ByteMe {
             return byteAmount;
         }
     }
-    //================================================
-    // <Async Calculation Method>
-    //================================================
 }
