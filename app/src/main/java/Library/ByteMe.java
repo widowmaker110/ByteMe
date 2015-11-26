@@ -56,13 +56,13 @@ import java.util.Queue;
  * -Least Recently Used (LinkedList)
  * -Least Frequently Used (LinkedHashMap)
  * -First In First Out (Queue)
+ * -Most Recently Used (LinkedList)
  *
  * http://javalandscape.blogspot.com/2009/01/cachingcaching-algorithms-and-caching.html
  * http://www.coderanch.com/how-to/java/CachingStrategies
  *
- * Least Recently Used 2: objects must be used twice to be cached.
  * Adaptive Replacement Cache: Combination of LRU and LFU; two LRU lists, one of objects seen once "recently", and one contains entries seen twice or more "recently"
- * Most Recently Used: Remove the most recently used object
+ * 2Q (two queues): I am Two Queues; I add entries to an LRU cache as they are accessed. If an entry is accessed again, I move them to second, larger, LRU cache.
  */
 public class ByteMe {
 
@@ -401,7 +401,7 @@ public class ByteMe {
         }
     }
 
-    public MRU_Cache
+    public class MRU_Cache
     {
         // Node which will hold each object
         private class Node{
@@ -560,7 +560,11 @@ public class ByteMe {
         }
     }
 
-    // LRU2 Class
+    // 2Q Class
+    public class TWOQ_Class
+    {
+
+    }
 
     // ARC Class
 
@@ -1375,7 +1379,7 @@ public class ByteMe {
         }
         else if(algorithm == ALGORITHM_MRU)
         {
-            mru_cache = MRU_Cache();
+            mru_cache = new MRU_Cache();
             if(developerMode)
             {
                 Log.d(""+this.getClass().getName(),"ByteMe, setAlgorithm(), MRU cache chosen. Instance of cache created.");
@@ -1423,7 +1427,7 @@ public class ByteMe {
         }
         else if(getAlgorithm() == ALGORITHM_MRU)
         {
-            mru_cache.addCacheEntry(obj.hashCode(), obj);
+            mru_cache.add(obj.hashCode(), obj);
             if(developerMode)
             {
                 Log.d(""+this.getClass().getName(),"ByteMe, addObjectToCache(), Object added to MRU cache.");
