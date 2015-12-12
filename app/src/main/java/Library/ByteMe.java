@@ -68,7 +68,7 @@ public class ByteMe {
      * true = messages on.
      * false = messages off.
      */
-    private boolean developerMode = false;
+    private boolean developerMode = true;
 
     //================================================
     // <Cache Algorithms>
@@ -1278,6 +1278,15 @@ public class ByteMe {
         if(developerMode)
         {
             Log.d(""+this.getClass().getName(),"ByteMe, setAllocationMax(), Allocation Max: " + this.allocation_max);
+            Log.d(""+this.getClass().getName(),"ByteMe, setAllocationMax(), Ram Max memory: " + tempMaxMemory);
+        }
+    }
+
+    public void setAllocationMaxManually(int allocation_max_m) {
+        this.allocation_max = allocation_max_m;
+        if(developerMode)
+        {
+            Log.d(""+this.getClass().getName(),"ByteMe, setAllocationMaxManually(), Allocation Max: " + this.allocation_max);
         }
     }
 
@@ -1294,7 +1303,7 @@ public class ByteMe {
         this.allocation_current = allocation_current;
         if(developerMode)
         {
-            Log.d(""+this.getClass().getName(),"ByteMe, setAllocationMax(), Allocation Max: " + this.allocation_current);
+            Log.d(""+this.getClass().getName(),"ByteMe, setAllocation_current(), Allocation Current: " + this.allocation_current);
         }
     }
 
@@ -1433,6 +1442,7 @@ public class ByteMe {
      * @param obj Custom object of choosing
      */
     private void addObjectToCache(Object obj) {
+
         if(getAlgorithm() == ALGORITHM_LRU)
         {
             lru_cache.add(obj.hashCode(), obj);
@@ -1471,6 +1481,7 @@ public class ByteMe {
             Log.d(""+this.getClass().getName(),"ERROR: addObjectToCache(), no algorithm selected. Object not saved in cache.");
         }
     }
+
 
     /**
      * getObjectFromCache
@@ -1626,8 +1637,6 @@ public class ByteMe {
              */
             switch (algorithm_type)
             {
-                default:
-                    break;
                 case 0:
                     String binary_temp = "";
 
@@ -1637,7 +1646,6 @@ public class ByteMe {
                     }
 
                     byteAmount = binary_temp.length();
-
                     break;
                 case 1:
                     StringBuilder  binary = new StringBuilder();
