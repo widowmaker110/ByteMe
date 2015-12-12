@@ -24,9 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Create an instance of the ByteMe Class
         ByteMe b = new ByteMe(getApplicationContext()).getInstance();
-        b.setAllocationMaxManually(1000);
-        b.setAlgorithm(ByteMe.ALGORITHM_LRU);
-        Log.d("" + this.getClass().getName(), "" + b.convertBitToMb(b.getAllocationMax()));
+        b.setAllocationMaxManually(200000);
+        b.setAlgorithm(ByteMe.ALGORITHM_LFU);
 
         fillArray();
 
@@ -57,13 +56,18 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
             Log.d(""+this.getClass().getName(), "AsyncAddToCache: finished");
+            Log.d("" + this.getClass().getName(), "Max allocation in bits: " + byteMe.getAllocationMax());
         }
     }
 
     private void fillArray(){
         for(int i = 0; i < 100; i++)
         {
-            ExampleArray.add(new ExampleObject(randomString(10), rnd.nextInt(), randomString(20), randomString(4), randomString(20)));
+            ExampleArray.add(new ExampleObject(randomString(rnd.nextInt(100) + 1),
+                    rnd.nextInt(100) + 1,
+                    randomString(rnd.nextInt(200) + 1),
+                    randomString(rnd.nextInt(50) + 1),
+                    randomString(rnd.nextInt(200) + 1)));
         }
     }
 

@@ -220,20 +220,24 @@ public class ByteMe {
 
                 if(getAllocation_current() >= getAllocationMax()){
 
-                    int oldBitValue = getTotalBitOfSingleObject(end.value);
-                    setAllocation_current(getAllocation_current() - oldBitValue);
+                    int cacheOfObject = getTotalBitOfSingleObject(created);
 
-                    map.remove(end.key);
-                    remove(end);
+                    while(getAllocation_current() + cacheOfObject >= getAllocationMax())
+                    {
+                        int oldBitValue = getTotalBitOfSingleObject(end.value);
+                        setAllocation_current(getAllocation_current() - oldBitValue);
+
+                        map.remove(end.key);
+                        remove(end);
+
+                        if(developerMode)
+                        {
+                            Log.d(""+this.getClass().getName(),"LRU, add(), created a new node and made it the head of the list. Had to remove the tail due to going over max allocation.");
+                        }
+                    }
                     setHead(created);
-
                     int newBitValue = getTotalBitOfSingleObject(value);
                     setAllocation_current(getAllocation_current() + newBitValue);
-
-                    if(developerMode)
-                    {
-                        Log.d(""+this.getClass().getName(),"LRU, add(), created a new node and made it the head of the list. Had to remove the tail due to going over max allocation.");
-                    }
                 }else{
                     setHead(created);
                     int newBitValue = getTotalBitOfSingleObject(value);
@@ -273,6 +277,12 @@ public class ByteMe {
         public void add(Object obj)
         {
             int cacheOfObject = getTotalBitOfSingleObject(obj);
+
+            while(getAllocation_current() + cacheOfObject >= getAllocationMax())
+            {
+                removeHead();
+            }
+
             if(getAllocation_current() >= getAllocationMax())
             {
                 // remove the head of the queue.
@@ -324,7 +334,11 @@ public class ByteMe {
          */
         public void removeHead()
         {
+            int cacheAmountOfObject = getTotalBitOfSingleObject(getHead());
             fifo_cache.poll();
+            setAllocation_current(getAllocation_current() - cacheAmountOfObject);
+
+            Log.d("" + this.getClass().getName(), "FIFO, removeHead(), Removing head, bit value of head: " + cacheAmountOfObject);
         }
     }
 
@@ -717,11 +731,6 @@ public class ByteMe {
                             String temp = (String) method.invoke(obj);
                             int tempInt = run(new String[]{temp});
                             bytesUsed += tempInt;
-
-                            if(developerMode)
-                            {
-                                Log.d(""+this.getClass().getName(),"ByteMe, getTotalBitOfSingleObject(), class java.lang.String. Value: " + temp+ "  byte amount: " + tempInt);
-                            }
                         } catch (InvocationTargetException e) {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
@@ -735,10 +744,6 @@ public class ByteMe {
                             int temp = (int) method.invoke(obj);
                             int tempInt = run(new int[]{temp});
                             bytesUsed += tempInt;
-                            if(developerMode)
-                            {
-                                Log.d(""+this.getClass().getName(),"ByteMe, getTotalBitOfSingleObject(), int. Value: " + temp+ "  byte amount: " + tempInt);
-                            }
                         } catch (InvocationTargetException e) {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
@@ -752,10 +757,6 @@ public class ByteMe {
                             short temp = (short) method.invoke(obj);
                             int tempInt = run(new short[]{temp});
                             bytesUsed += tempInt;
-                            if(developerMode)
-                            {
-                                Log.d(""+this.getClass().getName(),"ByteMe, getTotalBitOfSingleObject(), class java.lang.Short. Value: " + temp+ "  byte amount: " + tempInt);
-                            }
                         } catch (InvocationTargetException e) {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
@@ -769,10 +770,6 @@ public class ByteMe {
                             long temp = (long) method.invoke(obj);
                             int tempInt = run(new long[]{temp});
                             bytesUsed += tempInt;
-                            if(developerMode)
-                            {
-                                Log.d(""+this.getClass().getName(),"ByteMe, getTotalBitOfSingleObject(), class java.lang.Long. Value: " + temp+ "  byte amount: " + tempInt);
-                            }
                         } catch (InvocationTargetException e) {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
@@ -786,10 +783,6 @@ public class ByteMe {
                             byte temp = (byte) method.invoke(obj);
                             int tempInt = run(new byte[]{temp});
                             bytesUsed += tempInt;
-                            if(developerMode)
-                            {
-                                Log.d(""+this.getClass().getName(),"ByteMe, getTotalBitOfSingleObject(), class java.lang.Byte. Value: " + temp+ "  byte amount: " + tempInt);
-                            }
                         } catch (InvocationTargetException e) {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
@@ -803,10 +796,6 @@ public class ByteMe {
                             float temp = (float) method.invoke(obj);
                             int tempInt = run(new float[]{temp});
                             bytesUsed += tempInt;
-                            if(developerMode)
-                            {
-                                Log.d(""+this.getClass().getName(),"ByteMe, getTotalBitOfSingleObject(), class java.lang.Float. Value: " + temp+ "  byte amount: " + tempInt);
-                            }
                         } catch (InvocationTargetException e) {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
@@ -820,10 +809,6 @@ public class ByteMe {
                             double temp = (double) method.invoke(obj);
                             int tempInt = run(new double[]{temp});
                             bytesUsed += tempInt;
-                            if(developerMode)
-                            {
-                                Log.d(""+this.getClass().getName(),"ByteMe, getTotalBitOfSingleObject(), class java.lang.Double. Value: " + temp+ "  byte amount: " + tempInt);
-                            }
                         } catch (InvocationTargetException e) {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
@@ -837,10 +822,6 @@ public class ByteMe {
                             char temp = (char) method.invoke(obj);
                             int tempInt = run(new char[]{temp});
                             bytesUsed += tempInt;
-                            if(developerMode)
-                            {
-                                Log.d(""+this.getClass().getName(),"ByteMe, getTotalBitOfSingleObject(), class java.lang.Char. Value: " + temp+ "  byte amount: " + tempInt);
-                            }
                         } catch (InvocationTargetException e) {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
@@ -854,10 +835,6 @@ public class ByteMe {
                             boolean temp = (boolean) method.invoke(obj);
                             int tempInt = run(new boolean[]{temp});
                             bytesUsed += tempInt;
-                            if(developerMode)
-                            {
-                                Log.d(""+this.getClass().getName(),"ByteMe, getTotalBitOfSingleObject(), class java.lang.Boolean. Value: " + temp+ "  byte amount: " + tempInt);
-                            }
                         } catch (InvocationTargetException e) {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
@@ -871,10 +848,6 @@ public class ByteMe {
                             Bitmap temp = (Bitmap) method.invoke(obj);
                             int tempInt = run(new Bitmap[]{temp});
                             bytesUsed += tempInt;
-                            if(developerMode)
-                            {
-                                Log.d(""+this.getClass().getName(),"ByteMe, getTotalBitOfSingleObject(), class android.graphics.Bitmap. Value: " + temp+ "  byte amount: " + tempInt);
-                            }
                         } catch (InvocationTargetException e) {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
@@ -882,10 +855,6 @@ public class ByteMe {
                         }
 
                         break;
-                }
-                if(developerMode)
-                {
-                    Log.d(""+this.getClass().getName(),"ByteMe, getTotalBitOfSingleObject(), bytesUsed Value: " + bytesUsed);
                 }
             }
         }
