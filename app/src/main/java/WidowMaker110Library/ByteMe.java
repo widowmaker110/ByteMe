@@ -22,7 +22,7 @@
 * SOFTWARE.
 */
 
-package Library;
+package WidowMaker110Library;
 
 import android.app.ActivityManager;
 import android.content.Context;
@@ -38,10 +38,8 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Queue;
 
 /**
@@ -56,7 +54,6 @@ import java.util.Queue;
  * - First In First Out (Queue)
  * - Least Recently Used (LinkedList)
  * - Most Recently Used (LinkedList)
- * - Least Frequently Used (LinkedHashMap)
  */
 public class ByteMe {
 
@@ -68,7 +65,7 @@ public class ByteMe {
      * true = messages on.
      * false = messages off.
      */
-    private boolean developerMode = true;
+    private boolean developerMode = false;
 
     //================================================
     // <Cache Algorithms>
@@ -135,6 +132,7 @@ public class ByteMe {
         }
 
         public void remove(Node n){
+
             if(n.pre!=null){
                 n.pre.next = n.next;
                 if(developerMode)
@@ -218,39 +216,24 @@ public class ByteMe {
             else{
                 Node created = new Node(key, value);
 
-                if(getAllocation_current() >= getAllocationMax()){
+                int cacheOfObject = getTotalBitOfSingleObject(value);
 
-                    int cacheOfObject = getTotalBitOfSingleObject(created);
-
-                    while(getAllocation_current() + cacheOfObject >= getAllocationMax())
-                    {
-                        int oldBitValue = getTotalBitOfSingleObject(end.value);
-                        setAllocation_current(getAllocation_current() - oldBitValue);
-
-                        map.remove(end.key);
-                        remove(end);
-
-                        if(developerMode)
-                        {
-                            Log.d(""+this.getClass().getName(),"LRU, add(), created a new node and made it the head of the list. Had to remove the tail due to going over max allocation.");
-                        }
-                    }
-                    setHead(created);
-                    int newBitValue = getTotalBitOfSingleObject(value);
-                    setAllocation_current(getAllocation_current() + newBitValue);
-                }else{
-                    setHead(created);
-                    int newBitValue = getTotalBitOfSingleObject(value);
-                    setAllocation_current(getAllocation_current() + newBitValue);
-
-                    if(developerMode)
-                    {
-                        Log.d(""+this.getClass().getName(),"LRU, add(), created a new node and made it the head of the list.");
-                    }
+                while(getAllocation_current() + cacheOfObject >= getAllocationMax())
+                {
+                    removeLestRecentlyUsed();
                 }
 
+                setHead(created);
+                setAllocation_current(getAllocation_current() + cacheOfObject);
                 map.put(key, created);
             }
+        }
+
+        public void removeLestRecentlyUsed()
+        {
+            setAllocation_current(getAllocation_current() - getTotalBitOfSingleObject(end.value));
+            map.remove(end.key);
+            remove(end);
         }
     }
 
@@ -283,7 +266,7 @@ public class ByteMe {
                 removeHead();
             }
 
-            if(getAllocation_current() >= getAllocationMax())
+            if(getAllocation_current() + cacheOfObject >= getAllocationMax())
             {
                 // remove the head of the queue.
                 fifo_cache.remove();
@@ -294,8 +277,7 @@ public class ByteMe {
                 }
                 setAllocation_current(getAllocation_current() + cacheOfObject);
             }
-            else
-            {
+            else {
                 boolean flag = fifo_cache.offer(obj);
                 if(developerMode)
                 {
@@ -343,109 +325,8 @@ public class ByteMe {
     }
 
     /**
-     * LFU Class
-     *
-     * Cache design inspired by http://stackoverflow.com/questions/21117636/how-to-implement-a-least-frequently-used-lfu-cache
+     * MRU Cache code.
      */
-    public class LFU_Cache
-    {
-        private class CacheEntry
-        {
-            private Object data;
-            private int frequency;
-
-            // default constructor
-            private CacheEntry()
-            {}
-
-            public Object getData() {
-                return data;
-            }
-            public void setData(Object data) {
-                this.data = data;
-            }
-
-            public int getFrequency() {
-                return frequency;
-            }
-            public void setFrequency(int frequency) {
-                this.frequency = frequency;
-            }
-
-        }
-
-        /* LinkedHashMap is used because it has features of both HashMap and LinkedList.
-         * Thus, we can get an entry in O(1) and also, we can iterate over it easily.
-         */
-        private LinkedHashMap<Integer, CacheEntry> cacheMap = new LinkedHashMap<Integer, CacheEntry>();
-
-        public LFU_Cache(){}
-
-        public void addCacheEntry(int key, Object data)
-        {
-            if(getAllocation_current() >= getAllocationMax())
-            {
-                CacheEntry temp = new CacheEntry();
-                temp.setData(data);
-                temp.setFrequency(0);
-
-                cacheMap.put(key, temp);
-            }
-            else
-            {
-                int entryKeyToBeRemoved = getLFUKey();
-                cacheMap.remove(entryKeyToBeRemoved);
-
-                CacheEntry temp = new CacheEntry();
-                temp.setData(data);
-                temp.setFrequency(0);
-
-                cacheMap.put(key, temp);
-            }
-        }
-
-        public int getLFUKey()
-        {
-            int key = 0;
-            int minFreq = Integer.MAX_VALUE;
-
-            for(Map.Entry<Integer, CacheEntry> entry : cacheMap.entrySet())
-            {
-                if(minFreq > entry.getValue().frequency)
-                {
-                    key = entry.getKey();
-                    minFreq = entry.getValue().frequency;
-                }
-            }
-
-            return key;
-        }
-
-        public Object[] getAllObjects()
-        {
-            ArrayList<Object> array = new ArrayList<>();
-            for ( Integer key : cacheMap.keySet() ) {
-                array.add(getCacheEntry(key));
-            }
-
-            Object[] objArray = new Object[array.size()];
-
-            return array.toArray(objArray);
-        }
-
-        public Object getCacheEntry(int key)
-        {
-            if(cacheMap.containsKey(key))  // cache hit
-            {
-                CacheEntry temp = cacheMap.get(key);
-                temp.frequency++;
-                cacheMap.put(key, temp);
-                return temp.data;
-            }
-            return null; // cache miss
-        }
-    }
-
     public class MRU_Cache
     {
         // Node which will hold each object
@@ -585,35 +466,26 @@ public class ByteMe {
             else{
                 Node created = new Node(key, value);
 
-                if(getAllocation_current() >= getAllocationMax()){
+                int cacheOfObject = getTotalBitOfSingleObject(value);
 
-                    int oldBitValue = getTotalBitOfSingleObject(head.value);
-                    setAllocation_current(getAllocation_current() - oldBitValue);
-
-                    map.remove(head.key);
-                    remove(head);
-                    setHead(created);
-
-                    int newBitValue = getTotalBitOfSingleObject(value);
-                    setAllocation_current(getAllocation_current() + newBitValue);
-
-                    if(developerMode)
-                    {
-                        Log.d(""+this.getClass().getName(),"MRU, add(), created a new node and made it the head of the list. Had to remove the head due to going over max allocation.");
-                    }
-                }else{
-                    setHead(created);
-                    int newBitValue = getTotalBitOfSingleObject(value);
-                    setAllocation_current(getAllocation_current() + newBitValue);
-
-                    if(developerMode)
-                    {
-                        Log.d(""+this.getClass().getName(),"MRU, add(), created a new node and made it the head of the list.");
-                    }
+                while(getAllocation_current() + cacheOfObject >= getAllocationMax())
+                {
+                    removeMostRecentlyUsed();
                 }
 
+                setHead(created);
+                setAllocation_current(getAllocation_current() + getTotalBitOfSingleObject(value));
                 map.put(key, created);
             }
+        }
+
+        public void removeMostRecentlyUsed()
+        {
+            setAllocation_current(getAllocation_current() - getTotalBitOfSingleObject(head.value));
+            map.remove(head.key);
+            Node newHead = head.next;
+            remove(head);
+            setHead(newHead);
         }
     }
 
@@ -625,7 +497,6 @@ public class ByteMe {
 
     private LRU_Cache lru_cache;
     private FIFO_Cache fifo_cache;
-    private LFU_Cache lfu_cache;
     private MRU_Cache mru_cache;
 
     private int allocation_max;
@@ -650,8 +521,7 @@ public class ByteMe {
     public int CHOSEN_ALGORITHM = 0;
     public static int ALGORITHM_LRU = 1;
     public static int ALGORITHM_FIFO = 2;
-    public static int ALGORITHM_LFU = 3;
-    public static int ALGORITHM_MRU = 4;
+    public static int ALGORITHM_MRU = 3;
 
     // list of method names which are java API based.
     private List<String> restrictedMethods = Arrays.asList("equals","getClass",
@@ -916,16 +786,6 @@ public class ByteMe {
                 Log.d(""+this.getClass().getName(),"ByteMe, clearCache(), MRU cache cleared, allocation_current set to 0, and an instance of MRU made again.");
             }
         }
-        else if(getAlgorithm() == ALGORITHM_LFU)
-        {
-            lfu_cache = null;
-            setAllocation_current(0);
-            lfu_cache = new LFU_Cache();
-            if(developerMode)
-            {
-                Log.d(""+this.getClass().getName(),"ByteMe, clearCache(), LFU cache cleared, allocation_current set to 0, and an instance of LFU made again.");
-            }
-        }
     }
 
     /**
@@ -981,9 +841,6 @@ public class ByteMe {
         }
     }
 
-    //================================================
-    // <Asynchronous Methods>
-    //================================================
     /**
      *  Run begins the multithreading process of calculating the bits in a given array of ints.
      *
@@ -999,243 +856,121 @@ public class ByteMe {
 
         // Initialize the multithreading class with the data
         // and settings
-        CalculateSize foo = new CalculateSize(0, int_data,
-                null, null, null, null, null, null, null, null, null);
+        String binary_temp = "";
 
-        Thread thread = new Thread(foo);
-        thread.start();
-        int value = 0;
+        for(int i = 0; i < int_data.length; i++)
+        {
+            binary_temp += Integer.toString(int_data[i], 2);
+        }
 
-        try
-        {
-            thread.join();
-            value = foo.getValue();
-        }
-        catch (InterruptedException e)
-        {
-            e.printStackTrace();
-            value = -1;
-            Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
-        }
-        return value;
+        return binary_temp.length();
     }
 
     private int run(String[] string_data) {
-
-        // Initialize the multithreading class with the data
-        // and settings
-        CalculateSize foo = new CalculateSize(1, null,
-                string_data, null, null, null, null, null, null, null, null);
-
-        Thread thread = new Thread(foo);
-        thread.start();
-        int value = 0;
-
-        try
+        StringBuilder  binary = new StringBuilder();
+        for(int i = 0; i < string_data.length; i++)
         {
-            thread.join();
-            value = foo.getValue();
-        }
-        catch (InterruptedException e)
-        {
-            e.printStackTrace();
-            value = -1;
-            Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
+            byte[] bytes = string_data[i].getBytes();
+            binary = new StringBuilder();
+            for (byte b : bytes)
+            {
+                int val = b;
+                for (int m = 0; m < 8; m++)
+                {
+                    binary.append((val & 128) == 0 ? 0 : 1);
+                    val <<= 1;
+                }
+            }
         }
 
-        return value;
+        return binary.length();
     }
 
     private int run(short[] short_data) {
-        // Initialize the multithreading class with the data
-        // and settings
-        CalculateSize foo = new CalculateSize(2, null,
-                null, short_data, null, null, null, null, null, null, null);
-
-        Thread thread = new Thread(foo);
-        thread.start();
-        int value = 0;
-
-        try
+        String binary_short = "";
+        for(int i = 0; i < short_data.length; i++)
         {
-            thread.join();
-            value = foo.getValue();
+            binary_short += Integer.toString(0xFFFF & short_data[i], 2);
         }
-        catch (InterruptedException e)
-        {
-            e.printStackTrace();
-            value = -1;
-            Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
-        }
-        return value;
+
+        return binary_short.length();
     }
 
     private int run(long[] long_data) {
-        // Initialize the multithreading class with the data
-        // and settings
-        CalculateSize foo = new CalculateSize(3, null,
-                null, null, long_data, null, null, null, null, null, null);
-
-        Thread thread = new Thread(foo);
-        thread.start();
-        int value = 0;
-
-        try
+        String binary_long = "";
+        for(int i = 0; i < long_data.length; i++)
         {
-            thread.join();
-            value = foo.getValue();
+            binary_long += Long.toString(long_data[i], 2);
         }
-        catch (InterruptedException e)
-        {
-            e.printStackTrace();
-            value = -1;
-            Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
-        }
-        return value;
+
+        return binary_long.length();
     }
 
     private int run(byte[] byte_data) {
-        // Initialize the multithreading class with the data
-        // and settings
-        CalculateSize foo = new CalculateSize(4, null,
-                null, null, null, byte_data, null, null, null, null, null);
-
-        Thread thread = new Thread(foo);
-        thread.start();
-        int value = 0;
-
-        try
+        String binary_byte = "";
+        for(int i = 0; i < byte_data.length; i++)
         {
-            thread.join();
-            value = foo.getValue();
+            binary_byte += String.format("%8s", Integer.toBinaryString(byte_data[i] & 0xFF)).replace(' ', '0');
         }
-        catch (InterruptedException e)
-        {
-            e.printStackTrace();
-            value = -1;
-            Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
-        }
-        return value;
+
+        return binary_byte.length();
     }
 
     private int run(float[] float_data) {
-        // Initialize the multithreading class with the data
-        // and settings
-        CalculateSize foo = new CalculateSize(5, null,
-                null, null, null, null, float_data, null, null, null, null);
-
-        Thread thread = new Thread(foo);
-        thread.start();
-        int value = 0;
-
-        try
+        String binary_float = "";
+        for(int i = 0; i < float_data.length; i++)
         {
-            thread.join();
-            value = foo.getValue();
+            binary_float += Integer.toString(Float.floatToIntBits(float_data[i]), 2);
         }
-        catch (InterruptedException e)
-        {
-            e.printStackTrace();
-            value = -1;
-            Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
-        }
-        return value;
+
+        return binary_float.length();
     }
 
     private int run(double[] double_data) {
-        // Initialize the multithreading class with the data
-        // and settings
-        CalculateSize foo = new CalculateSize(6, null,
-                null, null, null, null, null, double_data, null, null, null);
-
-        Thread thread = new Thread(foo);
-        thread.start();
-        int value = 0;
-
-        try
+        String binary_double = "";
+        for(int i = 0; i < double_data.length; i++)
         {
-            thread.join();
-            value = foo.getValue();
+            long bits = Double.doubleToLongBits(double_data[i]);
+            binary_double += Long.toString(bits, 2);
         }
-        catch (InterruptedException e)
-        {
-            e.printStackTrace();
-            value = -1;
-            Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
-        }
-        return value;
+
+        return binary_double.length();
     }
 
     private int run(char[] char_data) {
-        // Initialize the multithreading class with the data
-        // and settings
-        CalculateSize foo = new CalculateSize(7, null,
-                null, null, null, null, null, null, char_data, null, null);
-
-        Thread thread = new Thread(foo);
-        thread.start();
-        int value = 0;
-
-        try
+        String binary_char = "";
+        for(int i = 0; i < char_data.length; i++)
         {
-            thread.join();
-            value = foo.getValue();
+            int value = (int)char_data[i];
+            binary_char += Integer.toString(value, 2);
         }
-        catch (InterruptedException e)
-        {
-            e.printStackTrace();
-            value = -1;
-            Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
-        }
-        return value;
+
+        return binary_char.length();
     }
 
     private int run(boolean[] boolean_data) {
-        // Initialize the multithreading class with the data
-        // and settings
-        CalculateSize foo = new CalculateSize(8, null,
-                null, null, null, null, null, null, null, boolean_data, null);
-
-        Thread thread = new Thread(foo);
-        thread.start();
-        int value = 0;
-
-        try
+        String binary_boolean = "";
+        for(int i = 0; i < boolean_data.length; i++)
         {
-            thread.join();
-            value = foo.getValue();
+            int myInt = (boolean_data[i]) ? 1 : 0;
+            binary_boolean += Integer.toString(myInt, 2);
         }
-        catch (InterruptedException e)
-        {
-            e.printStackTrace();
-            value = -1;
-            Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
-        }
-        return value;
+
+        return binary_boolean.length();
     }
 
     private int run(Bitmap[] bitmap_data) {
-        // Initialize the multithreading class with the data
-        // and settings
-        CalculateSize foo = new CalculateSize(9, null,
-                null, null, null, null, null, null, null, null, bitmap_data);
-
-        Thread thread = new Thread(foo);
-        thread.start();
-        int value = 0;
-
-        try
+        int bitmap_temp = 0;
+        for(int i = 0; i < bitmap_data.length; i++)
         {
-            thread.join();
-            value = foo.getValue();
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB_MR1) {
+                bitmap_temp += bitmap_data[i].getRowBytes() * bitmap_data[i].getHeight();
+            } else {
+                bitmap_temp += bitmap_data[i].getByteCount();
+            }
         }
-        catch (InterruptedException e)
-        {
-            e.printStackTrace();
-            value = -1;
-            Log.d("" + this.getClass().getName(), "Error: ByteMe Asynchronous Constructor: " + e.getLocalizedMessage().toString());
-        }
-        return value;
+
+        return bitmap_temp;
     }
 
     //================================================
@@ -1375,14 +1110,6 @@ public class ByteMe {
                 Log.d(""+this.getClass().getName(),"ByteMe, setAlgorithm(), FIFO cache chosen. Instance of cache created.");
             }
         }
-        else if(algorithm == ALGORITHM_LFU)
-        {
-            lfu_cache = new LFU_Cache();
-            if(developerMode)
-            {
-                Log.d(""+this.getClass().getName(),"ByteMe, setAlgorithm(), LFU cache chosen. Instance of cache created.");
-            }
-        }
         else if(algorithm == ALGORITHM_MRU)
         {
             mru_cache = new MRU_Cache();
@@ -1428,16 +1155,7 @@ public class ByteMe {
                 Log.d(""+this.getClass().getName(),"ByteMe, addObjectToCache(), Object added to FIFO cache.");
             }
         }
-        else if(getAlgorithm() == ALGORITHM_LFU)
-        {
-            lfu_cache.addCacheEntry(obj.hashCode(), obj);
-            if(developerMode)
-            {
-                Log.d(""+this.getClass().getName(),"ByteMe, addObjectToCache(), Object added to LFU cache.");
-            }
-        }
-        else if(getAlgorithm() == ALGORITHM_MRU)
-        {
+        else if(getAlgorithm() == ALGORITHM_MRU) {
             mru_cache.add(obj.hashCode(), obj);
             if(developerMode)
             {
@@ -1451,12 +1169,11 @@ public class ByteMe {
         }
     }
 
-
     /**
      * getObjectFromCache
      *
-     * getObjectFromCache using a hashcode (only works with LRU, LFU, and MRU) retrieve
-     * a given object based on hashcode. If retrieving from FIFO, will only return head;
+     * getObjectFromCache using a hashcode (only works with LRU, LFU, and MRU) or some other int key set
+     * retrieve  a given object based on hashcode. If retrieving from FIFO, will only return head;
      * make sure to set hashcode to null or zero.
      *
      * @param hashcode java built-in hashcode of a given object.
@@ -1472,10 +1189,6 @@ public class ByteMe {
         else if(getAlgorithm() == ALGORITHM_FIFO)
         {
             obj = fifo_cache.getHead();
-        }
-        else if(getAlgorithm() == ALGORITHM_LFU)
-        {
-            obj = lfu_cache.getCacheEntry(hashcode);
         }
         else if(getAlgorithm() == ALGORITHM_MRU)
         {
@@ -1506,10 +1219,6 @@ public class ByteMe {
         {
             return mru_cache.getAllObjects();
         }
-        else if(getAlgorithm() == ALGORITHM_LFU)
-        {
-            return lfu_cache.getAllObjects();
-        }
         else if(getAlgorithm() == ALGORITHM_FIFO)
         {
             return fifo_cache.getAllObjects();
@@ -1536,197 +1245,5 @@ public class ByteMe {
     public int convertBitToGb(int value)
     {
         return value/Gb;
-    }
-
-    //================================================
-    // <Async Calculation Method>
-    //================================================
-    public class CalculateSize implements Runnable {
-
-        private volatile int byteAmount;
-        private volatile int algorithm_type;
-
-        private volatile int[] int_data;
-        private volatile String[] string_data;
-        private volatile short[] short_data;
-        private volatile long[] long_data;
-        private volatile byte[] byte_data;
-        private volatile float[] float_data;
-        private volatile double[] double_data;
-        private volatile char[] char_data;
-        private volatile boolean[] boolean_data;
-        private volatile Bitmap[] bitmap_data;
-
-        public CalculateSize(int alogorithm,
-                             int[] int_data,
-                             String[] string_data,
-                             short[] short_data,
-                             long[] long_data,
-                             byte[] byte_data,
-                             float[] float_data,
-                             double[] double_data,
-                             char[] char_data,
-                             boolean[] boolean_data,
-                             Bitmap[] bitmap_data)
-        {
-            this.algorithm_type = alogorithm;
-            this.int_data = int_data;
-            this.string_data = string_data;
-            this.short_data = short_data;
-            this.long_data = long_data;
-            this.byte_data = byte_data;
-            this.float_data = float_data;
-            this.double_data = double_data;
-            this.char_data = char_data;
-            this.boolean_data = boolean_data;
-            this.bitmap_data = bitmap_data;
-        }
-
-        @Override
-        public void run()
-        {
-            /**
-             * The reason why there isn't an 'All'
-             * option is due to the idea that for this
-             * to be a true multithreading function,
-             * the programmer should have all of the
-             * data types running at the same time.
-             *
-             * algorithm_type:
-             * 0 - int
-             * 1 - string
-             * 2 - short
-             * 3 - long
-             * 4 - byte
-             * 5 - float
-             * 6 - double
-             * 7 - char
-             * 8 - boolean
-             * 9 - bitmap
-             */
-            switch (algorithm_type)
-            {
-                case 0:
-                    String binary_temp = "";
-
-                    for(int i = 0; i < int_data.length; i++)
-                    {
-                        binary_temp += Integer.toString(int_data[i],2);
-                    }
-
-                    byteAmount = binary_temp.length();
-                    break;
-                case 1:
-                    StringBuilder  binary = new StringBuilder();
-                    for(int i = 0; i < string_data.length; i++)
-                    {
-                        byte[] bytes = string_data[i].getBytes();
-                        binary = new StringBuilder();
-                        for (byte b : bytes)
-                        {
-                            int val = b;
-                            for (int m = 0; m < 8; m++)
-                            {
-                                binary.append((val & 128) == 0 ? 0 : 1);
-                                val <<= 1;
-                            }
-                        }
-                    }
-
-                    byteAmount = binary.length();
-                    break;
-                case 2:
-
-                    String binary_short = "";
-                    for(int i = 0; i < short_data.length; i++)
-                    {
-                        binary_short += Integer.toString(0xFFFF & short_data[i], 2);
-                    }
-
-                    byteAmount = binary_short.length();
-                    break;
-                case 3:
-
-                    String binary_long = "";
-                    for(int i = 0; i < long_data.length; i++)
-                    {
-                        binary_long += Long.toString(long_data[i], 2);
-                    }
-
-                    byteAmount = binary_long.length();
-                    break;
-                case 4:
-
-                    String binary_byte = "";
-                    for(int i = 0; i < byte_data.length; i++)
-                    {
-                        binary_byte += String.format("%8s", Integer.toBinaryString(byte_data[i] & 0xFF)).replace(' ', '0');
-                    }
-
-                    byteAmount = binary_byte.length();
-                    break;
-                case 5:
-
-                    String binary_float = "";
-                    for(int i = 0; i < float_data.length; i++)
-                    {
-                        binary_float += Integer.toString(Float.floatToIntBits(float_data[i]), 2);
-                    }
-
-                    byteAmount = binary_float.length();
-                    break;
-                case 6:
-
-                    String binary_double = "";
-                    for(int i = 0; i < double_data.length; i++)
-                    {
-                        long bits = Double.doubleToLongBits(double_data[i]);
-                        binary_double += Long.toString(bits, 2);
-                    }
-
-                    byteAmount = binary_double.length();
-                    break;
-                case 7:
-
-                    String binary_char = "";
-                    for(int i = 0; i < char_data.length; i++)
-                    {
-                        int value = (int)char_data[i];
-                        binary_char += Integer.toString(value, 2);
-                    }
-
-                    byteAmount = binary_char.length();
-                    break;
-                case 8:
-
-                    String binary_boolean = "";
-                    for(int i = 0; i < boolean_data.length; i++)
-                    {
-                        int myInt = (boolean_data[i]) ? 1 : 0;
-                        binary_boolean += Integer.toString(myInt, 2);
-                    }
-
-                    byteAmount = binary_boolean.length();
-                    break;
-                case 9:
-
-                    int bitmap_temp = 0;
-                    for(int i = 0; i < bitmap_data.length; i++)
-                    {
-                        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB_MR1) {
-                            bitmap_temp += bitmap_data[i].getRowBytes() * bitmap_data[i].getHeight();
-                        } else {
-                            bitmap_temp += bitmap_data[i].getByteCount();
-                        }
-                    }
-
-                    byteAmount = bitmap_temp;
-                    break;
-            }
-        }
-
-        public int getValue() {
-            return byteAmount;
-        }
     }
 }

@@ -8,7 +8,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.Random;
 
-import Library.ByteMe;
+import WidowMaker110Library.ByteMe;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         // Create an instance of the ByteMe Class
         ByteMe b = new ByteMe(getApplicationContext()).getInstance();
         b.setAllocationMaxManually(200000);
-        b.setAlgorithm(ByteMe.ALGORITHM_LFU);
+        b.setAlgorithm(ByteMe.ALGORITHM_MRU);
 
         fillArray();
 
@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(String result) {
             Log.d(""+this.getClass().getName(), "AsyncAddToCache: finished");
             Log.d("" + this.getClass().getName(), "Max allocation in bits: " + byteMe.getAllocationMax());
+            Log.d("" + this.getClass().getName(), "Current allocation in bits: " + byteMe.getAllocation_current());
         }
     }
 

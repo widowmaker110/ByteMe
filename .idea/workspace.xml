@@ -36,22 +36,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ByteMe.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
+      <file leaf-file-name="ByteMe.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/WidowMaker110Library/ByteMe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.291939">
-              <caret line="343" column="0" selection-start-line="343" selection-start-column="0" selection-end-line="343" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="243" column="0" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="docComment;class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
-                <element signature="class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
+                <element signature="docComment;class#ByteMe#0" expanded="false" />
+                <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+                <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+                <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+                <element signature="method#get#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+                <element signature="method#getAllObjects#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+                <element signature="method#remove#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+                <element signature="method#setHead#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+                <element signature="method#removeLestRecentlyUsed#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+                <element signature="docComment;class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+                <element signature="class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+                <element signature="e#9336#9337#0" expanded="true" />
+                <element signature="e#9384#9385#0" expanded="true" />
+                <element signature="docComment;class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
                 <element signature="class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
+                <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+                <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
                 <element signature="docComment;method#ByteMe#2;class#ByteMe#0" expanded="false" />
                 <element signature="method#ByteMe#2;class#ByteMe#0" expanded="false" />
                 <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
                 <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
                 <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+                <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+                <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
                 <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+                <element signature="docComment;method#clearCache#0;class#ByteMe#0" expanded="false" />
+                <element signature="method#clearCache#0;class#ByteMe#0" expanded="false" />
                 <element signature="docComment;method#addToCache#0;class#ByteMe#0" expanded="false" />
                 <element signature="docComment;method#addToCache#1;class#ByteMe#0" expanded="false" />
                 <element signature="method#addToCache#1;class#ByteMe#0" expanded="false" />
@@ -78,22 +95,26 @@
                 <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
                 <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
                 <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+                <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
                 <element signature="docComment;method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+                <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+                <element signature="docComment;method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+                <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
                 <element signature="docComment;method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
-                <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-                <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+                <element signature="method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/productions/widowmaker110/byteme/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="0.92354125">
               <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#fillArray#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#randomString#0;class#MainActivity#0" expanded="false" />
               </folding>
             </state>
@@ -1434,8 +1455,11 @@
         <option value="$PROJECT_DIR$/app/src/main/java/productions/widowmaker110/byteme/ExampleObject.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/Library/MethodModifierSpy.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/samplelayout.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/productions/widowmaker110/byteme/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/androidTest/java/productions/widowmaker110/byteme/ApplicationTest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/WidowMaker110Library/ByteMe.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/productions/widowmaker110/byteme/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -1478,6 +1502,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -1486,11 +1511,34 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ByteMe" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ByteMe" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="ProjectPane" />
       <pane id="Scope" />
+      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -1503,6 +1551,7 @@
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_4_API_23" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/java" />
   </component>
   <component name="RunManager" selected="Android Application.app">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -1688,7 +1737,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43234324" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42244226" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893288" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893288" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1725,26 +1774,146 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="36" />
+      <option name="time" value="46" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/productions/widowmaker110/byteme/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#fillArray#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#randomString#0;class#MainActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/WidowMaker110Library/ByteMe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#get#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjects#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#remove#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setHead#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#removeLestRecentlyUsed#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="e#9336#9337#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
+            <element signature="docComment;class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#2;class#ByteMe#0" expanded="false" />
+            <element signature="method#ByteMe#2;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#clearCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#clearCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#addToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#addToCache#1;class#ByteMe#0" expanded="false" />
+            <element signature="method#addToCache#1;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#addToCache#2;class#ByteMe#0" expanded="false" />
+            <element signature="method#addToCache#2;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#addToCache#3;class#ByteMe#0" expanded="false" />
+            <element signature="method#addToCache#3;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#run#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#1;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#2;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#3;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#4;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#5;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#6;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#7;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#8;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#9;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAllocationMax#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAllocationMaxManually#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAllocation_current#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotal_ram#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/productions/widowmaker110/byteme/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#fillArray#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#randomString#0;class#MainActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/WidowMaker110Library/ByteMe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="141" column="67" selection-start-line="141" selection-start-column="61" selection-end-line="141" selection-end-column="67" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#get#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjects#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#remove#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setHead#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#removeLestRecentlyUsed#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="e#9336#9337#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
+            <element signature="docComment;class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#clearCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#clearCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#1;class#ByteMe#0" expanded="false" />
             <element signature="method#addToCache#1;class#ByteMe#0" expanded="false" />
@@ -1771,10 +1940,13 @@
             <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1785,26 +1957,44 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#fillArray#0;class#MainActivity#0" expanded="false" />
             <element signature="method#randomString#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/WidowMaker110Library/ByteMe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="238" column="0" selection-start-line="238" selection-start-column="0" selection-end-line="238" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#get#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjects#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#remove#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setHead#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#removeLestRecentlyUsed#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="e#9336#9337#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
+            <element signature="docComment;class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#clearCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#clearCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#1;class#ByteMe#0" expanded="false" />
             <element signature="method#addToCache#1;class#ByteMe#0" expanded="false" />
@@ -1831,10 +2021,13 @@
             <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1845,26 +2038,44 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#fillArray#0;class#MainActivity#0" expanded="false" />
             <element signature="method#randomString#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/WidowMaker110Library/ByteMe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#get#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjects#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#remove#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setHead#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#removeLestRecentlyUsed#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="e#9336#9337#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
+            <element signature="docComment;class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#clearCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#clearCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#1;class#ByteMe#0" expanded="false" />
             <element signature="method#addToCache#1;class#ByteMe#0" expanded="false" />
@@ -1891,70 +2102,13 @@
             <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/productions/widowmaker110/byteme/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#randomString#0;class#MainActivity#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#ByteMe#2;class#ByteMe#0" expanded="false" />
-            <element signature="method#ByteMe#2;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#addToCache#0;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#addToCache#1;class#ByteMe#0" expanded="false" />
-            <element signature="method#addToCache#1;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#addToCache#2;class#ByteMe#0" expanded="false" />
-            <element signature="method#addToCache#2;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#addToCache#3;class#ByteMe#0" expanded="false" />
-            <element signature="method#addToCache#3;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#run#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#1;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#2;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#3;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#4;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#5;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#6;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#7;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#8;class#ByteMe#0" expanded="false" />
-            <element signature="method#run#9;class#ByteMe#0" expanded="false" />
-            <element signature="method#setAllocationMax#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#setAllocationMaxManually#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#setAllocation_current#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#getTotal_ram#0;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
-            <element signature="docComment;method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1965,26 +2119,44 @@
           <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#fillArray#0;class#MainActivity#0" expanded="false" />
             <element signature="method#randomString#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/WidowMaker110Library/ByteMe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#get#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjects#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#remove#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setHead#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#removeLestRecentlyUsed#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="e#9336#9337#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
+            <element signature="docComment;class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#clearCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#clearCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#1;class#ByteMe#0" expanded="false" />
             <element signature="method#addToCache#1;class#ByteMe#0" expanded="false" />
@@ -2011,10 +2183,13 @@
             <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2025,26 +2200,44 @@
           <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#fillArray#0;class#MainActivity#0" expanded="false" />
             <element signature="method#randomString#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/WidowMaker110Library/ByteMe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#get#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjects#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#remove#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setHead#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#removeLestRecentlyUsed#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="e#9336#9337#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
+            <element signature="docComment;class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#clearCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#clearCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#1;class#ByteMe#0" expanded="false" />
             <element signature="method#addToCache#1;class#ByteMe#0" expanded="false" />
@@ -2071,10 +2264,94 @@
             <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/productions/widowmaker110/byteme/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#fillArray#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#randomString#0;class#MainActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/WidowMaker110Library/ByteMe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#get#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjects#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#remove#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setHead#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#removeLestRecentlyUsed#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="e#9336#9337#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
+            <element signature="docComment;class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#2;class#ByteMe#0" expanded="false" />
+            <element signature="method#ByteMe#2;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#clearCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#clearCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#addToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#addToCache#1;class#ByteMe#0" expanded="false" />
+            <element signature="method#addToCache#1;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#addToCache#2;class#ByteMe#0" expanded="false" />
+            <element signature="method#addToCache#2;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#addToCache#3;class#ByteMe#0" expanded="false" />
+            <element signature="method#addToCache#3;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#run#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#1;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#2;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#3;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#4;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#5;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#6;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#7;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#8;class#ByteMe#0" expanded="false" />
+            <element signature="method#run#9;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAllocationMax#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAllocationMaxManually#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAllocation_current#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotal_ram#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2085,26 +2362,44 @@
           <caret line="23" column="68" selection-start-line="23" selection-start-column="68" selection-end-line="23" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#fillArray#0;class#MainActivity#0" expanded="false" />
             <element signature="method#randomString#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/WidowMaker110Library/ByteMe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#get#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjects#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#remove#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setHead#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#removeLestRecentlyUsed#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="e#9336#9337#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
+            <element signature="docComment;class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#clearCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#clearCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#1;class#ByteMe#0" expanded="false" />
             <element signature="method#addToCache#1;class#ByteMe#0" expanded="false" />
@@ -2131,10 +2426,13 @@
             <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2145,26 +2443,44 @@
           <caret line="23" column="68" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#fillArray#0;class#MainActivity#0" expanded="false" />
             <element signature="method#randomString#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/WidowMaker110Library/ByteMe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#get#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjects#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#remove#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setHead#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#removeLestRecentlyUsed#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="e#9336#9337#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
+            <element signature="docComment;class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#clearCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#clearCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#1;class#ByteMe#0" expanded="false" />
             <element signature="method#addToCache#1;class#ByteMe#0" expanded="false" />
@@ -2191,10 +2507,13 @@
             <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2205,26 +2524,44 @@
           <caret line="23" column="68" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#fillArray#0;class#MainActivity#0" expanded="false" />
             <element signature="method#randomString#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/WidowMaker110Library/ByteMe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#get#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjects#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#remove#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setHead#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#removeLestRecentlyUsed#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="e#9336#9337#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
+            <element signature="docComment;class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#clearCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#clearCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#1;class#ByteMe#0" expanded="false" />
             <element signature="method#addToCache#1;class#ByteMe#0" expanded="false" />
@@ -2251,10 +2588,13 @@
             <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2265,26 +2605,44 @@
           <caret line="23" column="68" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#fillArray#0;class#MainActivity#0" expanded="false" />
             <element signature="method#randomString#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/WidowMaker110Library/ByteMe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#get#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjects#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#remove#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setHead#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#removeLestRecentlyUsed#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="e#9336#9337#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
+            <element signature="docComment;class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#clearCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#clearCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#1;class#ByteMe#0" expanded="false" />
             <element signature="method#addToCache#1;class#ByteMe#0" expanded="false" />
@@ -2311,29 +2669,49 @@
             <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/WidowMaker110Library/ByteMe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#get#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjects#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#remove#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setHead#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#removeLestRecentlyUsed#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="e#9336#9337#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
+            <element signature="docComment;class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#clearCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#clearCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#1;class#ByteMe#0" expanded="false" />
             <element signature="method#addToCache#1;class#ByteMe#0" expanded="false" />
@@ -2360,29 +2738,49 @@
             <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/WidowMaker110Library/ByteMe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#get#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjects#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#remove#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setHead#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#removeLestRecentlyUsed#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="e#9336#9337#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
+            <element signature="docComment;class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#clearCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#clearCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#1;class#ByteMe#0" expanded="false" />
             <element signature="method#addToCache#1;class#ByteMe#0" expanded="false" />
@@ -2409,29 +2807,49 @@
             <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/WidowMaker110Library/ByteMe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#get#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjects#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#remove#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setHead#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#removeLestRecentlyUsed#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="e#9336#9337#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
+            <element signature="docComment;class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#clearCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#clearCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#1;class#ByteMe#0" expanded="false" />
             <element signature="method#addToCache#1;class#ByteMe#0" expanded="false" />
@@ -2458,29 +2876,49 @@
             <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/WidowMaker110Library/ByteMe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#get#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjects#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#remove#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setHead#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#removeLestRecentlyUsed#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="e#9336#9337#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
+            <element signature="docComment;class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#clearCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#clearCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#1;class#ByteMe#0" expanded="false" />
             <element signature="method#addToCache#1;class#ByteMe#0" expanded="false" />
@@ -2507,29 +2945,49 @@
             <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/WidowMaker110Library/ByteMe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#get#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjects#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#remove#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setHead#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#removeLestRecentlyUsed#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="e#9336#9337#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
+            <element signature="docComment;class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#clearCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#clearCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#1;class#ByteMe#0" expanded="false" />
             <element signature="method#addToCache#1;class#ByteMe#0" expanded="false" />
@@ -2556,29 +3014,49 @@
             <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/WidowMaker110Library/ByteMe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="100" column="27" selection-start-line="100" selection-start-column="27" selection-end-line="100" selection-end-column="27" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#get#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjects#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#remove#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setHead#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#removeLestRecentlyUsed#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="e#9336#9337#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
+            <element signature="docComment;class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#clearCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#clearCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#1;class#ByteMe#0" expanded="false" />
             <element signature="method#addToCache#1;class#ByteMe#0" expanded="false" />
@@ -2605,29 +3083,49 @@
             <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/WidowMaker110Library/ByteMe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#get#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjects#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#remove#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setHead#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#removeLestRecentlyUsed#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="e#9336#9337#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
+            <element signature="docComment;class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#clearCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#clearCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#1;class#ByteMe#0" expanded="false" />
             <element signature="method#addToCache#1;class#ByteMe#0" expanded="false" />
@@ -2654,10 +3152,13 @@
             <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2668,26 +3169,44 @@
           <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#fillArray#0;class#MainActivity#0" expanded="false" />
             <element signature="method#randomString#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/WidowMaker110Library/ByteMe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#get#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjects#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#remove#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setHead#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#removeLestRecentlyUsed#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="e#9336#9337#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
+            <element signature="docComment;class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#clearCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#clearCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#1;class#ByteMe#0" expanded="false" />
             <element signature="method#addToCache#1;class#ByteMe#0" expanded="false" />
@@ -2714,10 +3233,13 @@
             <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2728,26 +3250,44 @@
           <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#fillArray#0;class#MainActivity#0" expanded="false" />
             <element signature="method#randomString#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/WidowMaker110Library/ByteMe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#get#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjects#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#remove#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setHead#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#removeLestRecentlyUsed#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="e#9336#9337#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
+            <element signature="docComment;class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#clearCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#clearCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#1;class#ByteMe#0" expanded="false" />
             <element signature="method#addToCache#1;class#ByteMe#0" expanded="false" />
@@ -2774,10 +3314,13 @@
             <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2788,26 +3331,44 @@
           <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#fillArray#0;class#MainActivity#0" expanded="false" />
             <element signature="method#randomString#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/WidowMaker110Library/ByteMe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#get#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjects#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#remove#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setHead#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#removeLestRecentlyUsed#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="e#9336#9337#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
+            <element signature="docComment;class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#clearCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#clearCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#1;class#ByteMe#0" expanded="false" />
             <element signature="method#addToCache#1;class#ByteMe#0" expanded="false" />
@@ -2834,10 +3395,13 @@
             <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2848,26 +3412,44 @@
           <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#fillArray#0;class#MainActivity#0" expanded="false" />
             <element signature="method#randomString#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/WidowMaker110Library/ByteMe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="772" column="0" selection-start-line="772" selection-start-column="0" selection-end-line="772" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#get#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjects#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#remove#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setHead#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#removeLestRecentlyUsed#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="e#9336#9337#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
+            <element signature="docComment;class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#clearCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#clearCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#1;class#ByteMe#0" expanded="false" />
             <element signature="method#addToCache#1;class#ByteMe#0" expanded="false" />
@@ -2894,10 +3476,13 @@
             <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2908,26 +3493,44 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#fillArray#0;class#MainActivity#0" expanded="false" />
             <element signature="method#randomString#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/WidowMaker110Library/ByteMe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="772" column="0" selection-start-line="772" selection-start-column="0" selection-end-line="772" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#get#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjects#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#remove#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setHead#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#removeLestRecentlyUsed#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="e#9336#9337#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
+            <element signature="docComment;class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#clearCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#clearCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#1;class#ByteMe#0" expanded="false" />
             <element signature="method#addToCache#1;class#ByteMe#0" expanded="false" />
@@ -2954,10 +3557,13 @@
             <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2968,26 +3574,44 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#fillArray#0;class#MainActivity#0" expanded="false" />
             <element signature="method#randomString#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/WidowMaker110Library/ByteMe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#get#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjects#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#remove#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setHead#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#removeLestRecentlyUsed#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="e#9336#9337#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
+            <element signature="docComment;class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#clearCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#clearCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#1;class#ByteMe#0" expanded="false" />
             <element signature="method#addToCache#1;class#ByteMe#0" expanded="false" />
@@ -3014,10 +3638,13 @@
             <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3028,26 +3655,44 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#fillArray#0;class#MainActivity#0" expanded="false" />
             <element signature="method#randomString#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/WidowMaker110Library/ByteMe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#get#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjects#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#remove#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setHead#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#removeLestRecentlyUsed#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="e#9336#9337#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
+            <element signature="docComment;class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#clearCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#clearCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#1;class#ByteMe#0" expanded="false" />
             <element signature="method#addToCache#1;class#ByteMe#0" expanded="false" />
@@ -3074,10 +3719,13 @@
             <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3100,36 +3748,58 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.31636363">
           <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/productions/widowmaker110/byteme/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/productions/widowmaker110/byteme/ApplicationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06967213">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/WidowMaker110Library/ByteMe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+          <caret line="243" column="0" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#randomString#0;class#MainActivity#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Library/ByteMe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.291939">
-          <caret line="343" column="0" selection-start-line="343" selection-start-column="0" selection-end-line="343" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#LFU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;field#developerMode#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#get#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjects#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#remove#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setHead#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#removeLestRecentlyUsed#0;class#LRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="class#FIFO_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="e#9336#9337#0" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
+            <element signature="docComment;class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
             <element signature="class#MRU_Cache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#ByteMe#1;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="method#ByteMe#2;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getInstance#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getTotalBitOfSingleObject#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
             <element signature="method#isRestrictedMethod#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#clearCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#clearCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addToCache#1;class#ByteMe#0" expanded="false" />
             <element signature="method#addToCache#1;class#ByteMe#0" expanded="false" />
@@ -3156,10 +3826,25 @@
             <element signature="method#getTotalMemoryOld#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
             <element signature="method#getTotalMemoryNew#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#setAlgorithm#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#addObjectToCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="docComment;method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getObjectFromCache#0;class#ByteMe#0" expanded="false" />
             <element signature="docComment;method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
-            <element signature="class#CalculateSize#0;class#ByteMe#0" expanded="false" />
-            <element signature="method#CalculateSize#0;class#CalculateSize#0;class#ByteMe#0" expanded="false" />
+            <element signature="method#getAllObjectsFromCache#0;class#ByteMe#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/productions/widowmaker110/byteme/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.92354125">
+          <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#fillArray#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#randomString#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
