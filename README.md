@@ -1,6 +1,24 @@
 # ByteMe
 Evolving Library which calculates the bit allocation of custom objects and handles them based on a given cache algorithm (e.g. LRU, FIFO, etc.). This library is intended to help programmers have an all inclusive algorithm for all their memory handling needs within an application. While ByteMe may be more CPU intensive than other libraries, it offers a wider range of control when it comes to data being held in memory.
 
+## Preface
+- Coming Soon
+- How it works
+- Installation
+- Cache Distinctions
+- Usage
+- Contributing
+- Credits
+- License
+
+## Coming Soon
+The following is a list of objectives already set out by the developerin order to make the library more functional and stable. This list has no order or importance. If you have a suggestion, please see the Credits section of this readme to contact me.
+
+- Fine-tuning the bit calculation section of the algorithm
+- Addition of LFU cache algortihm
+- More stable error handling (Currently the library does no offer sufficient error handling to alert the programmer which section of the code is throwing the error and reasons why it would. If certain exceptions are raised, this library can cause the whole program to crash).
+
+
 ## How it works
 
 This library uses the [Relfect Java api](https://docs.oracle.com/javase/7/docs/api/java/lang/reflect/package-summary.html)  to get all of the methods within a given object. Once the methods such as `.equal()` and `.class()` are not in the list of methods of a given object, all of the methods are then called to return one of the following values:
