@@ -1,26 +1,10 @@
 # ByteMe
-Library to calculate runtime allocation of objects
+Evolving Library which calculates the bit allocation of custom objects and handles them based on a given cache algorithm (e.g. LRU, FIFO, etc.). This library is intended to help programmers have an all inclusive algorithm for all their memory handling needs within an application. While ByteMe may be more CPU intensive than other libraries, it offers a wider range of control when it comes to data being held in memory.
 
-## Installation
+## How it works
 
-I designed this whole project to be based around the [Library.ByteMe.java]  (https://github.com/widowmaker110/ByteMe/tree/master/app/src/main/java/Library/ByteMe.java) file. Instead of doing the pain-staking process of adding a module to your project, this whole API is within one java file for ease of installation and use. All I ask is when you use this code, please keep the MIT License with it and a reference to this work (URL to this repository is preferable).
+This library uses the [Relfect Java api](https://docs.oracle.com/javase/7/docs/api/java/lang/reflect/package-summary.html)  to get all of the methods within a given object. Once the methods such as `.equal()` and `.class()` are not in the list of methods of a given object, all of the methods are then called to return one of the following values:
 
-## Cache Distinctions
-
-When developing this API, I wanted to give an in-depth guide into how these different caches operate. Some will work better for different loads and needs.
-
-| Cache Name  | Advantage | Disadvantage |
-| ------------- | ------------- | -------------|
-| LRU (Least Recently Used)  | Overhead is constant. Simple algorithm overall and (relatively) fast. | Not the most efficient since its likely to have objects in memory that you don't always need. |
-| FIFO (First In First Out) | One of the simplest cache algorithms available. Cache overhead is constant. | No effort is made to keep items which are frequenly, or recently, used in memory. Not the most efficient at all
-| LFU (Least Frequently Used) | Scan Resistant, long-term benefits of maintaining most used data in memory.| Larger Access overhead. Doesn't adapt quickly to changing patterns in data.|
-| MRU (Most Recently Used) | See LRU | See LRU |
-
-source(s): http://www.coderanch.com/how-to/java/CachingStrategies , http://javalandscape.blogspot.com/2009/01/cachingcaching-algorithms-and-caching.html
-
-## Usage
-
-Runtime allocation measurements of:
 * Int
 * String
 * Short
@@ -32,24 +16,57 @@ Runtime allocation measurements of:
 * Boolean
 * [Bitmap](http://developer.android.com/reference/android/graphics/Bitmap.html)
 
+Then it figures out how many bits make up the object. For example, if given the integer value of 10, it would produce 1010. When the conversion is done, it would return a value of 4 bits since thats the byte representation of 10 in decimal. The function handling this calcuation would continously loop until all functions within a given object is called and returns the total value of bits. Then, based on which cache algorithm chosen, the object which might be exceeding a preset maxmimum bit allocation would be evicted. 
+
+## Installation
+
+I designed this whole project to be based around the [ByteMe.java](https://github.com/widowmaker110/ByteMe/tree/master/app/src/main/java/Library/ByteMe.java) file. Instead of doing the pain-staking process of adding a module to your project, this whole API is within one java file for ease of installation and use. All I ask is when you use this code, please keep the MIT License with it and a reference to this work (URL to this repository is preferable).
+
+An acceptable way of referencing would be
+```
+/**
+ * Repository can be found at https://github.com/widowmaker110/ByteMe
+ * 
+ * The MIT License (MIT)
+ *
+ * Copyright © 2015-2016 Alexander Miller
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ *
+ */
+```
+
+## Cache Distinctions
+
+When developing this library, I wanted to give an in-depth guide into how these different caches operate. Some will work better for different loads and needs.
+
+| Cache Name  | Advantage | Disadvantage |
+| ------------- | ------------- | -------------|
+| LRU (Least Recently Used)  | This algorithm tends to be a favorite among applications and is relatively fast. Majority of apps would use this algorithm for their needs. | Not always the somewhat most efficient since its likely to have objects in memory that you don't always need. Overhead is slightly higher than algorithms such as FIFO. |
+| FIFO (First In First Out) | One of the simplest cache algorithms available. Cache overhead is arguably the lowest in this list. Very little CPU power is needed to operate this algorithm | No effort is made to keep items which are frequenly, or recently, used in memory. Not the most efficient at all.
+| MRU (Most Recently Used) | See LRU | See LRU |
+
+## Usage
+
 In any class this library will be used in, you need to gather an instance of said library.
 ```
-ByteMe b = new ByteMe(MainActivity.this).getInstance();
+ByteMe b = new ByteMe(getApplicationContext()).getInstance();
 ```
 However, these configurations only need to be set once unless you'll be changing them in a safe manner.
 ```
 b.setAllocationMax(ByteMe.RAM_ONE_EIGHTH);
 b.setAlgorithm(ByteMe.ALGORITHM_LRU);
 ```
-setAllocationMax automatically gets the total amount of RAM in the device (tested and works will all SDK levels) and then divides it into the amount you choose. In this instance, I have set it to 1/8 of total RAM memory in the device to help ensure it doesn't cause the device to lag. The options available are 1/12, 1/10, 1/8, 1/7, 1/6, 1/5, 1/4. I would not recommend using more than 1/5 and even that is a lot on devices nowadays.
+setAllocationMax automatically gets the total amount of RAM in the device (tested and works will all SDK levels) and then divides it into the amount you choose. In this instance, I have set it to 1/8 of total RAM memory in the device to help ensure it doesn't cause the device to lag. The options available are 1/12, 1/10, 1/8, 1/7, 1/6, 1/5, 1/4. I would not recommend using more than 1/8 and even that is a lot on devices nowadays.
 
 setAlgorithm must be set before placing objects into the cache. You are able to choose from any in the list:
-* [LRU] - Least Recently Used (https://www.youtube.com/watch?v=I9_BpSXBodU)
-* LFU - Least Frequently Used
+* LRU - Least Recently Used
 * FIFO - First In First Out
 * MRU - Most Recently Used
-
-The library automatically calculates the runtime bit usage of your custom objects and makes sure that the caches don't go over the maximum set. 
 
 ## Contributing
 
@@ -61,13 +78,16 @@ The library automatically calculates the runtime bit usage of your custom object
 
 ## Credits
 
-Alexander Miller, DePauw University (2016)
+Alexander Miller
 
+Bachelor of Arts in Computer Science, DePauw University (2016)
+
+alexander.miller110@gmail.com
 ## License
 
 The MIT License (MIT)
 
-Copyright (c) 2015 Alexander Miller
+Copyright (c) 2015-2016 Alexander Miller
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
