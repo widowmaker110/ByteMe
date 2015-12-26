@@ -3,6 +3,7 @@ Evolving Library which calculates the bit allocation of custom objects and handl
 
 ## Preface
 - Coming Soon
+- History
 - How it works
 - Installation
 - Cache Distinctions
@@ -14,10 +15,13 @@ Evolving Library which calculates the bit allocation of custom objects and handl
 ## Coming Soon
 The following is a list of objectives already set out by the developerin order to make the library more functional and stable. This list has no order or importance. If you have a suggestion, please see the Credits section of this readme to contact me.
 
-- Fine-tuning the bit calculation section of the algorithm
 - Addition of LFU cache algortihm
 - More stable error handling (Currently the library does no offer sufficient error handling to alert the programmer which section of the code is throwing the error and reasons why it would. If certain exceptions are raised, this library can cause the whole program to crash).
 
+## History
+##### 12/26/2015
+
+- Added a more fine-tuned bit calculation algorithm. The problem with the version before this is that it would only count the bits without padding the left-hand side with zeros for an accurate byte length. For instance, if the integer 10 was given to be calculated as 1010 in binary. Unfortunately, this is not a byte (since a byte is 8 bits). So the function called `correctBitsToByteFormat` deals with this in a simplistic fashion.
 
 ## How it works
 
@@ -47,13 +51,13 @@ An acceptable way of referencing would be
  * 
  * The MIT License (MIT)
  *
- * Copyright © 2015-2016 Alexander Miller
+ * Copyright ¬© 2015-2016 Alexander Miller
  *
- * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the ìSoftwareî), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the ‚ÄúSoftware‚Äù), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
  *
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED ìAS ISî, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ * THE SOFTWARE IS PROVIDED ‚ÄúAS IS‚Äù, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  */
 ```
