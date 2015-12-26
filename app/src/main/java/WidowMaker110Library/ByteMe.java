@@ -24,6 +24,7 @@
 
 package WidowMaker110Library;
 
+import android.annotation.TargetApi;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -863,7 +864,7 @@ public class ByteMe {
             binary_temp += Integer.toString(int_data[i], 2);
         }
 
-        return binary_temp.length();
+        return correctBitsToByteFormat(binary_temp.length());
     }
 
     private int run(String[] string_data) {
@@ -883,7 +884,7 @@ public class ByteMe {
             }
         }
 
-        return binary.length();
+        return correctBitsToByteFormat(binary.length());
     }
 
     private int run(short[] short_data) {
@@ -903,7 +904,7 @@ public class ByteMe {
             binary_long += Long.toString(long_data[i], 2);
         }
 
-        return binary_long.length();
+        return correctBitsToByteFormat(binary_long.length());
     }
 
     private int run(byte[] byte_data) {
@@ -913,7 +914,7 @@ public class ByteMe {
             binary_byte += String.format("%8s", Integer.toBinaryString(byte_data[i] & 0xFF)).replace(' ', '0');
         }
 
-        return binary_byte.length();
+        return correctBitsToByteFormat(binary_byte.length());
     }
 
     private int run(float[] float_data) {
@@ -923,7 +924,7 @@ public class ByteMe {
             binary_float += Integer.toString(Float.floatToIntBits(float_data[i]), 2);
         }
 
-        return binary_float.length();
+        return correctBitsToByteFormat(binary_float.length());
     }
 
     private int run(double[] double_data) {
@@ -934,7 +935,7 @@ public class ByteMe {
             binary_double += Long.toString(bits, 2);
         }
 
-        return binary_double.length();
+        return correctBitsToByteFormat(binary_double.length());
     }
 
     private int run(char[] char_data) {
@@ -945,7 +946,7 @@ public class ByteMe {
             binary_char += Integer.toString(value, 2);
         }
 
-        return binary_char.length();
+        return correctBitsToByteFormat(binary_char.length());
     }
 
     private int run(boolean[] boolean_data) {
@@ -956,7 +957,7 @@ public class ByteMe {
             binary_boolean += Integer.toString(myInt, 2);
         }
 
-        return binary_boolean.length();
+        return correctBitsToByteFormat(binary_boolean.length());
     }
 
     private int run(Bitmap[] bitmap_data) {
@@ -970,7 +971,35 @@ public class ByteMe {
             }
         }
 
-        return bitmap_temp;
+        return correctBitsToByteFormat(bitmap_temp);
+    }
+
+    /**
+     * correctBitsToByteFormat
+     *
+     * if the length is not in an 8-bit format,
+     * e.g. only 5 bits such as 10000, then 3
+     * more bits needed to be added to make it accurate.
+     *
+     * @param value the length of the bits to be corrected
+     * @return corrected bit length
+     */
+    public int correctBitsToByteFormat(int value)
+    {
+        // "The logarithm is your friend"
+        int length = (int)(Math.log10(value)+1);
+
+
+        if(!(length % 8 == 0))
+        {
+            int newLength = length;
+            while(!(newLength % 8 == 0 ))
+            {
+                newLength += 1;
+            }
+            return newLength;
+        }
+        return length;
     }
 
     //================================================
@@ -1077,6 +1106,7 @@ public class ByteMe {
      * http://stackoverflow.com/questions/12551547/is-there-a-way-to-get-total-device-rami-need-it-for-an-optimization
      * @return Byte value of total ram.
      */
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public static long getTotalMemoryNew() {
 
         ActivityManager actManager = (ActivityManager) mContext.getSystemService(mContext.ACTIVITY_SERVICE);
