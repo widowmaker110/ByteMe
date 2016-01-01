@@ -1,5 +1,5 @@
 # ByteMe
-Evolving Library which calculates the bit allocation of custom objects and handles them based on a given cache algorithm (e.g. LRU, FIFO, etc.). This library is intended to help programmers have an all inclusive algorithm for all their memory handling needs within an application. While ByteMe may be more CPU intensive than other libraries, it offers a wider range of control when it comes to data being held in memory.
+Evolving library which calculates the bit allocation of custom objects and handles them based on a given cache algorithm (e.g. LRU, FIFO, etc.). This library is intended to help programmers have an all inclusive algorithm for all their memory handling needs within an application. While ByteMe may be more CPU intensive than other libraries, it offers a wider range of control when it comes to data being held in memory.
 
 ## Preface
 - Coming Soon
@@ -15,8 +15,10 @@ Evolving Library which calculates the bit allocation of custom objects and handl
 ## Coming Soon
 The following is a list of objectives already set out by the developerin order to make the library more functional and stable. This list has no order or importance. If you have a suggestion, please see the Credits section of this readme to contact me.
 
-- Addition of LFU cache algortihm
+- Addition of LFU cache algortihm.
 - More stable error handling (Currently the library does no offer sufficient error handling to alert the programmer which section of the code is throwing the error and reasons why it would. If certain exceptions are raised, this library can cause the whole program to crash).
+- Fully functioning app to demonstrate how to use this library
+- Adjust the algorithm to handle null values. Give them the appropriate bit value calculation and then also give a Log.w (warning) to notify the user of said null value.
 
 ## History
 ##### 12/26/2015
@@ -83,7 +85,7 @@ However, these configurations only need to be set once unless you'll be changing
 b.setAllocationMax(ByteMe.RAM_ONE_EIGHTH);
 b.setAlgorithm(ByteMe.ALGORITHM_LRU);
 ```
-setAllocationMax automatically gets the total amount of RAM in the device (tested and works will all SDK levels) and then divides it into the amount you choose. In this instance, I have set it to 1/8 of total RAM memory in the device to help ensure it doesn't cause the device to lag. The options available are 1/12, 1/10, 1/8, 1/7, 1/6, 1/5, 1/4. I would not recommend using more than 1/8 and even that is a lot on devices nowadays.
+setAllocationMax automatically gets the total amount of RAM in the device (tested and works will all SDK levels) and then divides it into the amount you choose. In this instance, I have set it to 1/8 of total RAM memory in the device to help ensure it doesn't cause the device to lag. The options available are 1/12, 1/10, 1/8, 1/7, 1/6, 1/5, 1/4. I would not recommend using more than 1/8 and even that is a lot on devices nowadays. For instance, something such as the (HTC One M8)[https://www.google.com/shopping/product/3602112225780779300/specs?sourceid=chrome-psyapi2&ion=1&espv=2&ie=UTF-8&q=htc+one+m8+specs&oq=htc+one+m8+specs&aqs=chrome..69i57j0l5.4142j0j1&sa=X&ved=0ahUKEwjJqtyA7ojKAhXF7D4KHeeRDpYQuC8IvAI] has 2GB of RAM. 2GB dvided by 8 equals 262.144 MB. 
 
 setAlgorithm must be set before placing objects into the cache. You are able to choose from any in the list:
 * LRU - Least Recently Used
