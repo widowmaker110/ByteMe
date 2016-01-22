@@ -44,7 +44,7 @@ Then it figures out how many bits make up the object. For example, if given the 
 
 ## Installation
 
-I designed this whole project to be based around the [ByteMe.java](https://github.com/widowmaker110/ByteMe/tree/master/app/src/main/java/Library/ByteMe.java) file. Instead of doing the pain-staking process of adding a module to your project, this whole API is within one java file for ease of installation and use. All I ask is when you use this code, please keep the MIT License with it and a reference to this work (URL to this repository is preferable).
+I designed this whole project to be based around the [ByteMe.java](https://github.com/widowmaker110/ByteMe/blob/master/app/src/main/java/WidowMaker110Library/ByteMe.java) file. Instead of doing the pain-staking process of adding a module to your project, this whole API is within one java file for ease of installation and use. All I ask is when you use this code, please keep the MIT License with it and a reference to this work (URL to this repository is preferable).
 
 An acceptable way of referencing would be
 ```
