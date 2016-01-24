@@ -18,12 +18,14 @@ The following is a list of objectives already set out by the developerin order t
 - Addition of LFU cache algortihm.
 - Fully functioning app to demonstrate how to use this library
 - Create a runtime 2D array which records all of each classe's functions to reduce CPU load. Use a 2D array because each cell in the first dimension of the array will house the object's class name. Every row appending the first dimension will house the object's list of functions separately in each cell. 
+- Provide functionality for the programmer to define certain classes for the library not to compute for bit allication.
 
 ## History
 ##### 1/23/2016
 
 - Added some error handling to alert the programmer of specific issues. Most of the stacktraces are turned off but the `Log.e()` messages give the programmer a good idea of which function threw the error and why.
 - Researched more about how to handle `null` values in calculating their respective bit allocation and found out that, at least according to my research, null values are actually pointers to a null instance which doesn't appear to take up memory.
+
 ##### 12/26/2015
 
 - Added a more fine-tuned bit calculation algorithm. The problem with the version before this is that it would only count the bits without padding the left-hand side with zeros for an accurate byte length. For instance, if the integer 10 was given to be calculated as 1010 in binary. Unfortunately, this is not a byte (since a byte is 8 bits). So the function called `correctBitsToByteFormat` deals with this in a simplistic fashion.
