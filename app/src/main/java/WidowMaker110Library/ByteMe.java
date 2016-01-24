@@ -528,6 +528,9 @@ public class ByteMe {
     private List<String> restrictedMethods = Arrays.asList("equals","getClass",
             "hashCode", "notify", "notifyAll", "toString", "wait");
 
+    // list of methods set by the programmer to ignore when calculating the bits
+    private List<String> restrictedMethodsByProgrammer = new ArrayList<>();
+
     /**
      * Empty Constructor
      */
@@ -813,6 +816,64 @@ public class ByteMe {
     }
 
     /**
+     * getRestrictedMethodsByProgrammer
+     *
+     * returns a List of Strings containing the function names
+     * of restricted methods to ignore when calculating the
+     * bit values of objects.
+     * @return List<String> of method names to ignore when calculating bits of objects.
+     */
+    public List<String> getRestrictedMethodsByProgrammer() {
+        return restrictedMethodsByProgrammer;
+    }
+
+    /**
+     * setRestrictedMethodsByProgrammer
+     *
+     * For example, if I have a function
+     * to get a user's age written as
+     * 'public int getUserAge(){}' and I want to ignore it,
+     * then I would ensure that the string
+     * "getUserAge" is included in the list.
+     * @param restrictedMethodsByProgrammer List<String> of method names to ignore aside from preset non-primitive or bitmap data types.
+     */
+    public void setRestrictedMethodsByProgrammer(List<String> restrictedMethodsByProgrammer) {
+        this.restrictedMethodsByProgrammer = restrictedMethodsByProgrammer;
+    }
+
+    /**
+     * setRestrictedMethodsByProgrammer
+     *
+     * For example, if I have a function
+     * to get a user's age written as
+     * 'public int getUserAge(){}' and I want to ignore it,
+     * then I would ensure that the param string is
+     * "getUserAge".
+     * @param functionName String of method name to ignore aside from preset non-primitive or bitmap data types.
+     */
+    public void setRestrictedMethodsByProgrammer(String functionName)
+    {
+        this.restrictedMethodsByProgrammer.add(functionName);
+    }
+
+    /**
+     * removeRestrictedMethodsByProgrammer
+     *
+     * If, for one reason or another, you want to
+     * remove a function name from the restricted list
+     * during runtime, then all you need to do is specify it
+     * in this method. For example, If I want to remove
+     * the function which returns the int representation of a user
+     * called 'getUserAge(){}' then I would set the string param to
+     * "getUserAge"
+     * @param functionName String of function name to remove during runtime.
+     */
+    public void removeRestrictedMethodsByProgrammer(String functionName)
+    {
+        this.restrictedMethodsByProgrammer.remove(restrictedMethodsByProgrammer.indexOf(functionName));
+    }
+
+    /**
      * isRestrictedMethod
      *
      * isRestrictedMethod returns boolean value saying whether or not the name of the method
@@ -822,7 +883,7 @@ public class ByteMe {
      * @return True if the method name is a non-java base API (toString, hashCode, etc).
      */
     private boolean isRestrictedMethod(String method) {
-        if(restrictedMethods.contains(method))
+        if(restrictedMethods.contains(method) || restrictedMethodsByProgrammer.contains(method))
         {
             return true;
         }

@@ -18,9 +18,13 @@ The following is a list of objectives already set out by the developerin order t
 - Addition of LFU cache algortihm.
 - Fully functioning app to demonstrate how to use this library
 - Create a runtime 2D array which records all of each classe's functions to reduce CPU load. Use a 2D array because each cell in the first dimension of the array will house the object's class name. Every row appending the first dimension will house the object's list of functions separately in each cell. 
-- Provide functionality for the programmer to define certain classes for the library not to compute for bit allication.
 
-## History
+## History (shows the most recent 5 alterations)
+##### 1/24/2016
+
+- Worked on `correctBitsToByteFormat`. Realized it was inaccurate and inefficient. Converted the method to a recursive form.
+- Provided functionality for the programmer to define certain classes for the library not to compute for bit allication. In this library, if you want to set a list of your own methods to ignore during calculation, simply add either a `String` or `List<String` as the parameter to `setRestrictedMethodsByProgrammer`.
+
 ##### 1/23/2016
 
 - Added some error handling to alert the programmer of specific issues. Most of the stacktraces are turned off but the `Log.e()` messages give the programmer a good idea of which function threw the error and why.
