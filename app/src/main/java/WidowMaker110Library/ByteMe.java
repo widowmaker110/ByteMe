@@ -606,6 +606,14 @@ public class ByteMe {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
                             e.printStackTrace();
+                        } catch (NullPointerException e) {
+                            if(developerMode) {
+                                String error_message = "";
+                                error_message += "Error: NullPointer Exception raised. ";
+                                error_message += "On Method " + method.getName() + " which appears to contain a null value.";
+                                Log.e("ByteMe", error_message);
+                                //e.printStackTrace();
+                            }
                         }
 
                         break;
@@ -619,6 +627,14 @@ public class ByteMe {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
                             e.printStackTrace();
+                        } catch (NullPointerException e) {
+                            if(developerMode) {
+                                String error_message = "";
+                                error_message += "Error: NullPointer Exception raised. ";
+                                error_message += "On Method " + method.getName() + " which appears to contain a null value.";
+                                Log.e("ByteMe", error_message);
+                                //e.printStackTrace();
+                            }
                         }
 
                         break;
@@ -632,6 +648,14 @@ public class ByteMe {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
                             e.printStackTrace();
+                        } catch (NullPointerException e) {
+                            if(developerMode) {
+                                String error_message = "";
+                                error_message += "Error: NullPointer Exception raised. ";
+                                error_message += "On Method " + method.getName() + " which appears to contain a null value.";
+                                Log.e("ByteMe", error_message);
+                                //e.printStackTrace();
+                            }
                         }
 
                         break;
@@ -645,6 +669,14 @@ public class ByteMe {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
                             e.printStackTrace();
+                        } catch (NullPointerException e) {
+                            if(developerMode) {
+                                String error_message = "";
+                                error_message += "Error: NullPointer Exception raised. ";
+                                error_message += "On Method " + method.getName() + " which appears to contain a null value.";
+                                Log.e("ByteMe", error_message);
+                                //e.printStackTrace();
+                            }
                         }
 
                         break;
@@ -658,6 +690,14 @@ public class ByteMe {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
                             e.printStackTrace();
+                        } catch (NullPointerException e) {
+                            if(developerMode) {
+                                String error_message = "";
+                                error_message += "Error: NullPointer Exception raised. ";
+                                error_message += "On Method " + method.getName() + " which appears to contain a null value.";
+                                Log.e("ByteMe", error_message);
+                                //e.printStackTrace();
+                            }
                         }
 
                         break;
@@ -671,6 +711,14 @@ public class ByteMe {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
                             e.printStackTrace();
+                        } catch (NullPointerException e) {
+                            if(developerMode) {
+                                String error_message = "";
+                                error_message += "Error: NullPointer Exception raised. ";
+                                error_message += "On Method " + method.getName() + " which appears to contain a null value.";
+                                Log.e("ByteMe", error_message);
+                                //e.printStackTrace();
+                            }
                         }
 
                         break;
@@ -684,6 +732,14 @@ public class ByteMe {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
                             e.printStackTrace();
+                        } catch (NullPointerException e) {
+                            if(developerMode) {
+                                String error_message = "";
+                                error_message += "Error: NullPointer Exception raised. ";
+                                error_message += "On Method " + method.getName() + " which appears to contain a null value.";
+                                Log.e("ByteMe", error_message);
+                                //e.printStackTrace();
+                            }
                         }
 
                         break;
@@ -697,6 +753,14 @@ public class ByteMe {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
                             e.printStackTrace();
+                        } catch (NullPointerException e) {
+                            if(developerMode) {
+                                String error_message = "";
+                                error_message += "Error: NullPointer Exception raised. ";
+                                error_message += "On Method " + method.getName() + " which appears to contain a null value.";
+                                Log.e("ByteMe", error_message);
+                                //e.printStackTrace();
+                            }
                         }
 
                         break;
@@ -710,6 +774,14 @@ public class ByteMe {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
                             e.printStackTrace();
+                        } catch (NullPointerException e) {
+                            if(developerMode) {
+                                String error_message = "";
+                                error_message += "Error: NullPointer Exception raised. ";
+                                error_message += "On Method " + method.getName() + " which appears to contain a null value.";
+                                Log.e("ByteMe", error_message);
+                                //e.printStackTrace();
+                            }
                         }
 
                         break;
@@ -723,6 +795,14 @@ public class ByteMe {
                             e.printStackTrace();
                         } catch (IllegalAccessException e) {
                             e.printStackTrace();
+                        } catch (NullPointerException e) {
+                            if(developerMode) {
+                                String error_message = "";
+                                error_message += "Error: NullPointer Exception raised. ";
+                                error_message += "On Method " + method.getName() + " which appears to contain a null value.";
+                                Log.e("ByteMe", error_message);
+                                //e.printStackTrace();
+                            }
                         }
 
                         break;
@@ -843,7 +923,7 @@ public class ByteMe {
     }
 
     /**
-     *  Run begins the multithreading process of calculating the bits in a given array of ints.
+     *  Run calculates the bits in a given array of ints.
      *
      * @param int_data a static array of ints of any value within the scope of the Java API.
      * @return numbers of bits if calculation completes, -1 if the thread was interrupted. -2
@@ -852,126 +932,256 @@ public class ByteMe {
     private int run(int[] int_data) {
         if(int_data == null)
         {
+            if(developerMode)
+                Log.e("ByteMe","Error: int array was null");
             return -2;
         }
+        else {
 
-        // Initialize the multithreading class with the data
-        // and settings
-        String binary_temp = "";
+            // Initialize the multithreading class with the data
+            // and settings
+            String binary_temp = "";
 
-        for(int i = 0; i < int_data.length; i++)
-        {
-            binary_temp += Integer.toString(int_data[i], 2);
+            for (int i = 0; i < int_data.length; i++) {
+                binary_temp += Integer.toString(int_data[i], 2);
+            }
+
+            return correctBitsToByteFormat(binary_temp.length());
         }
-
-        return correctBitsToByteFormat(binary_temp.length());
     }
 
+    /**
+     *  Run calculates the bits in a given array of strings.
+     *
+     * @param string_data a static array of strings of any value within the scope of the Java API.
+     * @return numbers of bits if calculation completes, -1 if the thread was interrupted. -2
+     * would be returned if the array given was null.
+     */
     private int run(String[] string_data) {
-        StringBuilder  binary = new StringBuilder();
-        for(int i = 0; i < string_data.length; i++)
+
+        if(string_data == null)
         {
-            byte[] bytes = string_data[i].getBytes();
-            binary = new StringBuilder();
-            for (byte b : bytes)
-            {
-                int val = b;
-                for (int m = 0; m < 8; m++)
-                {
-                    binary.append((val & 128) == 0 ? 0 : 1);
-                    val <<= 1;
+            if(developerMode)
+                Log.e("ByteMe","Error: run(String[]): string array was null");
+            return -2;
+        }
+        else {
+
+            StringBuilder binary = new StringBuilder();
+            for (int i = 0; i < string_data.length; i++) {
+                byte[] bytes = string_data[i].getBytes();
+                binary = new StringBuilder();
+                for (byte b : bytes) {
+                    int val = b;
+                    for (int m = 0; m < 8; m++) {
+                        binary.append((val & 128) == 0 ? 0 : 1);
+                        val <<= 1;
+                    }
                 }
             }
-        }
 
-        return correctBitsToByteFormat(binary.length());
+            return correctBitsToByteFormat(binary.length());
+        }
     }
 
+    /**
+     *  Run calculates the bits in a given array of shorts.
+     *
+     * @param short_data a static array of shorts of any value within the scope of the Java API.
+     * @return numbers of bits if calculation completes, -1 if the thread was interrupted. -2
+     * would be returned if the array given was null.
+     */
     private int run(short[] short_data) {
-        String binary_short = "";
-        for(int i = 0; i < short_data.length; i++)
+        if(short_data == null)
         {
-            binary_short += Integer.toString(0xFFFF & short_data[i], 2);
+            if(developerMode)
+                Log.e("ByteMe","Error: run(short[]): short array was null");
+            return -2;
         }
-
-        return binary_short.length();
-    }
-
-    private int run(long[] long_data) {
-        String binary_long = "";
-        for(int i = 0; i < long_data.length; i++)
-        {
-            binary_long += Long.toString(long_data[i], 2);
-        }
-
-        return correctBitsToByteFormat(binary_long.length());
-    }
-
-    private int run(byte[] byte_data) {
-        String binary_byte = "";
-        for(int i = 0; i < byte_data.length; i++)
-        {
-            binary_byte += String.format("%8s", Integer.toBinaryString(byte_data[i] & 0xFF)).replace(' ', '0');
-        }
-
-        return correctBitsToByteFormat(binary_byte.length());
-    }
-
-    private int run(float[] float_data) {
-        String binary_float = "";
-        for(int i = 0; i < float_data.length; i++)
-        {
-            binary_float += Integer.toString(Float.floatToIntBits(float_data[i]), 2);
-        }
-
-        return correctBitsToByteFormat(binary_float.length());
-    }
-
-    private int run(double[] double_data) {
-        String binary_double = "";
-        for(int i = 0; i < double_data.length; i++)
-        {
-            long bits = Double.doubleToLongBits(double_data[i]);
-            binary_double += Long.toString(bits, 2);
-        }
-
-        return correctBitsToByteFormat(binary_double.length());
-    }
-
-    private int run(char[] char_data) {
-        String binary_char = "";
-        for(int i = 0; i < char_data.length; i++)
-        {
-            int value = (int)char_data[i];
-            binary_char += Integer.toString(value, 2);
-        }
-
-        return correctBitsToByteFormat(binary_char.length());
-    }
-
-    private int run(boolean[] boolean_data) {
-        String binary_boolean = "";
-        for(int i = 0; i < boolean_data.length; i++)
-        {
-            int myInt = (boolean_data[i]) ? 1 : 0;
-            binary_boolean += Integer.toString(myInt, 2);
-        }
-
-        return correctBitsToByteFormat(binary_boolean.length());
-    }
-
-    private int run(Bitmap[] bitmap_data) {
-        int bitmap_temp = 0;
-        for(int i = 0; i < bitmap_data.length; i++)
-        {
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB_MR1) {
-                bitmap_temp += bitmap_data[i].getRowBytes() * bitmap_data[i].getHeight();
-            } else {
-                bitmap_temp += bitmap_data[i].getByteCount();
+        else {
+            String binary_short = "";
+            for (int i = 0; i < short_data.length; i++) {
+                binary_short += Integer.toString(0xFFFF & short_data[i], 2);
             }
-        }
 
-        return correctBitsToByteFormat(bitmap_temp);
+            return binary_short.length();
+        }
+    }
+
+    /**
+     *  Run calculates the bits in a given array of longs.
+     *
+     * @param long_data a static array of longs of any value within the scope of the Java API.
+     * @return numbers of bits if calculation completes, -1 if the thread was interrupted. -2
+     * would be returned if the array given was null.
+     */
+    private int run(long[] long_data) {
+        if(long_data == null)
+        {
+            if(developerMode)
+                Log.e("ByteMe","Error: run(long[]): long array was null");
+            return -2;
+        }
+        else {
+            String binary_long = "";
+            for (int i = 0; i < long_data.length; i++) {
+                binary_long += Long.toString(long_data[i], 2);
+            }
+
+            return correctBitsToByteFormat(binary_long.length());
+        }
+    }
+
+    /**
+     *  Run calculates the bits in a given array of bytes.
+     *
+     * @param byte_data a static array of bytes of any value within the scope of the Java API.
+     * @return numbers of bits if calculation completes, -1 if the thread was interrupted. -2
+     * would be returned if the array given was null.
+     */
+    private int run(byte[] byte_data) {
+        if(byte_data == null)
+        {
+            if(developerMode)
+                Log.e("ByteMe","Error: run(byte[]): byte array was null");
+            return -2;
+        }
+        else {
+            String binary_byte = "";
+            for (int i = 0; i < byte_data.length; i++) {
+                binary_byte += String.format("%8s", Integer.toBinaryString(byte_data[i] & 0xFF)).replace(' ', '0');
+            }
+
+            return correctBitsToByteFormat(binary_byte.length());
+        }
+    }
+
+    /**
+     *  Run calculates the bits in a given array of floats.
+     *
+     * @param float_data a static array of floats of any value within the scope of the Java API.
+     * @return numbers of bits if calculation completes, -1 if the thread was interrupted. -2
+     * would be returned if the array given was null.
+     */
+    private int run(float[] float_data) {
+        if(float_data == null)
+        {
+            if(developerMode)
+                Log.e("ByteMe","Error: run(float[]): float array was null");
+            return -2;
+        }
+        else {
+            String binary_float = "";
+            for (int i = 0; i < float_data.length; i++) {
+                binary_float += Integer.toString(Float.floatToIntBits(float_data[i]), 2);
+            }
+
+            return correctBitsToByteFormat(binary_float.length());
+        }
+    }
+
+    /**
+     *  Run calculates the bits in a given array of doubles.
+     *
+     * @param double_data a static array of doubles of any value within the scope of the Java API.
+     * @return numbers of bits if calculation completes, -1 if the thread was interrupted. -2
+     * would be returned if the array given was null.
+     */
+    private int run(double[] double_data) {
+        if(double_data == null)
+        {
+            if(developerMode)
+                Log.e("ByteMe","Error: run(double[]): double array was null");
+            return -2;
+        }
+        else {
+            String binary_double = "";
+            for (int i = 0; i < double_data.length; i++) {
+                long bits = Double.doubleToLongBits(double_data[i]);
+                binary_double += Long.toString(bits, 2);
+            }
+
+            return correctBitsToByteFormat(binary_double.length());
+        }
+    }
+
+    /**
+     *  Run calculates the bits in a given array of chars.
+     *
+     * @param char_data a static array of chars of any value within the scope of the Java API.
+     * @return numbers of bits if calculation completes, -1 if the thread was interrupted. -2
+     * would be returned if the array given was null.
+     */
+    private int run(char[] char_data) {
+        if(char_data == null)
+        {
+            if(developerMode)
+                Log.e("ByteMe","Error: run(char[]): char array was null");
+            return -2;
+        }
+        else {
+            String binary_char = "";
+            for (int i = 0; i < char_data.length; i++) {
+                int value = (int) char_data[i];
+                binary_char += Integer.toString(value, 2);
+            }
+
+            return correctBitsToByteFormat(binary_char.length());
+        }
+    }
+
+    /**
+     *  Run calculates the bits in a given array of booleans.
+     *
+     * @param boolean_data a static array of booleans of any value within the scope of the Java API.
+     * @return numbers of bits if calculation completes, -1 if the thread was interrupted. -2
+     * would be returned if the array given was null.
+     */
+    private int run(boolean[] boolean_data) {
+        if(boolean_data == null)
+        {
+            if(developerMode)
+                Log.e("ByteMe","Error: run(boolean[]): boolean array was null");
+            return -2;
+        }
+        else {
+            String binary_boolean = "";
+            for (int i = 0; i < boolean_data.length; i++) {
+                int myInt = (boolean_data[i]) ? 1 : 0;
+                binary_boolean += Integer.toString(myInt, 2);
+            }
+
+            return correctBitsToByteFormat(binary_boolean.length());
+        }
+    }
+
+    /**
+     *  Run calculates the bits in a given array of bitmaps.
+     *
+     * @param bitmap_data a static array of bitmaps of any value within the scope of the Java API.
+     * @return numbers of bits if calculation completes, -1 if the thread was interrupted. -2
+     * would be returned if the array given was null.
+     */
+    private int run(Bitmap[] bitmap_data) {
+        if(bitmap_data == null)
+        {
+            if(developerMode) {
+                Log.e("ByteMe", "Error: run(Bitmap[]): bitmap array was null");
+            }
+            return -2;
+        }
+        else {
+            int bitmap_temp = 0;
+            for (int i = 0; i < bitmap_data.length; i++) {
+                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB_MR1) {
+                    bitmap_temp += bitmap_data[i].getRowBytes() * bitmap_data[i].getHeight();
+                } else {
+                    bitmap_temp += bitmap_data[i].getByteCount();
+                }
+            }
+
+            return correctBitsToByteFormat(bitmap_temp);
+        }
     }
 
     /**
@@ -1093,6 +1303,7 @@ public class ByteMe {
         }
         catch (IOException e)
         {
+            Log.e("ByteMe","Error: getTotalMemoryOld(): unknown IOException");
             return -1;
         }
     }
@@ -1225,8 +1436,10 @@ public class ByteMe {
             obj = mru_cache.get(hashcode);
         }
 
-        if(obj.equals(-1))
+        if(obj.equals(-1)) {
+            Log.e("ByteMe","Error: getObjectFromCache(): could not get object from cache");
             return null;
+        }
         else
             return obj;
     }
@@ -1255,6 +1468,7 @@ public class ByteMe {
         }
         else
         {
+            Log.e("ByteMe","Error: getAllObjectsFromCache(): could not get all objects from cache. Algorithm couldn't be determined.");
             return null;
         }
     }

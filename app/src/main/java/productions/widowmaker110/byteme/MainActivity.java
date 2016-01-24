@@ -62,12 +62,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void fillArray(){
-        for(int i = 0; i < 10000; i++)
+        for(int i = 0; i < 10; i++)
         {
             ExampleArray.add(new ExampleObject(randomString(rnd.nextInt(100) + 1),
                     rnd.nextInt(100) + 1,
                     randomString(rnd.nextInt(200) + 1),
-                    randomString(rnd.nextInt(50) + 1),
+                   randomString(rnd.nextInt(50) + 1),
                     randomString(rnd.nextInt(200) + 1)));
         }
     }
