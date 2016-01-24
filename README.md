@@ -23,7 +23,7 @@ The following is a list of objectives already set out by the developerin order t
 ##### 1/24/2016
 
 - Worked on `correctBitsToByteFormat`. Realized it was inaccurate and inefficient. Converted the method to a recursive form.
-- Provided functionality for the programmer to define certain classes for the library not to compute for bit allication. In this library, if you want to set a list of your own methods to ignore during calculation, simply add either a `String` or `List<String` as the parameter to `setRestrictedMethodsByProgrammer`.
+- Provided functionality for the programmer to define certain classes for the library not to compute for bit allication. In this library, if you want to set a list of your own methods to ignore during calculation, simply add either a `String` or `List<String>` as the parameter to `setRestrictedMethodsByProgrammer`.
 
 ##### 1/23/2016
 
@@ -93,6 +93,7 @@ However, these configurations only need to be set once unless you'll be changing
 ```
 b.setAllocationMax(ByteMe.RAM_ONE_EIGHTH);
 b.setAlgorithm(ByteMe.ALGORITHM_LRU);
+b.setRestrictedMethodsByProgrammer("getUserAge");
 ```
 setAllocationMax automatically gets the total amount of RAM in the device (tested and works will all SDK levels) and then divides it into the amount you choose. In this instance, I have set it to 1/8 of total RAM memory in the device to help ensure it doesn't cause the device to lag. The options available are 1/12, 1/10, 1/8, 1/7, 1/6, 1/5, 1/4. I would not recommend using more than 1/8 and even that is a lot on devices nowadays. For instance, something such as the [HTC One M8](https://www.google.com/shopping/product/3602112225780779300/specs?sourceid=chrome-psyapi2&ion=1&espv=2&ie=UTF-8&q=htc+one+m8+specs&oq=htc+one+m8+specs&aqs=chrome..69i57j0l5.4142j0j1&sa=X&ved=0ahUKEwjJqtyA7ojKAhXF7D4KHeeRDpYQuC8IvAI) has 2GB of RAM. 2GB dvided by 8 equals 262.144 MB. 
 
@@ -101,6 +102,7 @@ setAlgorithm must be set before placing objects into the cache. You are able to 
 * FIFO - First In First Out
 * MRU - Most Recently Used
 
+setRestrictedMethodsByProgrammer allows you to set your own methods to ignore while calculating an object's bit size. In this instance, I have restricted getUserAge to not be calculated. You can either add them one by one as a String or as one whole group of a List<String> by calling the same method name.
 ## Contributing
 
 1. Fork it!
