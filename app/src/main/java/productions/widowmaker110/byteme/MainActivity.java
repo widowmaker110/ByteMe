@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void fillArray(){
-        for(int i = 0; i < 10; i++)
+        for(int i = 0; i < 1000; i++)
         {
             ExampleArray.add(new ExampleObject(randomString(rnd.nextInt(100) + 1),
                     rnd.nextInt(100) + 1,

@@ -1196,20 +1196,14 @@ public class ByteMe {
      */
     public int correctBitsToByteFormat(int value)
     {
-        // "The logarithm is your friend"
-        int length = (int)(Math.log10(value)+1);
-
-
-        if(!(length % 8 == 0))
+        if(value % 8 == 0)
         {
-            int newLength = length;
-            while(!(newLength % 8 == 0 ))
-            {
-                newLength += 1;
-            }
-            return newLength;
+            return value;
         }
-        return length;
+        else
+        {
+            return correctBitsToByteFormat(value + 1);
+        }
     }
 
     //================================================
