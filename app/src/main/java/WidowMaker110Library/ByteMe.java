@@ -893,34 +893,6 @@ public class ByteMe {
     /**
      * addToCache
      *
-     * addToCache sends an array of objects into the cache which was already chosen.
-     *
-     * @param obj Custom object array being added to the cache.
-     */
-    public void addToCache(Object[] obj) {
-        for(int i = 0; i < obj.length; i++)
-        {
-            addObjectToCache(obj[i]);
-        }
-    }
-
-    /**
-     * addToCache
-     *
-     * addToCache sends an arraylist of objects into the cache which was already chosen.
-     *
-     * @param obj Custom object arraylist being added to the cache.
-     */
-    public void addToCache(ArrayList<Object> obj) {
-        for(int i = 0; i < obj.size(); i++)
-        {
-            addObjectToCache(obj.get(i));
-        }
-    }
-
-    /**
-     * addToCache
-     *
      * addToCache sends a list of object into the cache which was already chosen.
      *
      * @param obj Custom list of objects being added to the cache.
