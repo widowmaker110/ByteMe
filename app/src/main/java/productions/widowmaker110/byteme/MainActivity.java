@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... params) {
-
             for(int i = 0; i < array.size(); i++)
             {
                 byteMe.addToCache(array.get(i));

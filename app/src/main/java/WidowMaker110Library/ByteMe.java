@@ -59,13 +59,47 @@ import java.util.Queue;
 public class ByteMe {
 
     /**
-     * developerMode is a boolean variable used to turn on or off the
-     * Log.d messages of every action within the Library. Mostly used for
-     * debugging.
+     * Printout
+     *
+     * A sub-class which handles simple print out efficiently. Does this by checking
+     * a boolean variable before deciding to print out the given TAG or MESSAGE.
      *
      * true = messages on.
      * false = messages off.
      */
+    private class Printout{
+
+        private boolean developerMode = false;
+
+        public Printout(){}
+
+        public void printMessage(String TAG, String MESSAGE)
+        {
+            if(developerMode)
+            {
+                Log.d(TAG, MESSAGE);
+            }
+        }
+
+        public void printError(String TAG, String MESSAGE)
+        {
+            if(developerMode)
+            {
+                Log.e(TAG, MESSAGE);
+            }
+        }
+
+        public void printWarning(String TAG, String MESSAGE)
+        {
+            if(developerMode)
+            {
+                Log.w(TAG, MESSAGE);
+            }
+        }
+    }
+
+    private Printout printout = new Printout();
+
     private boolean developerMode = false;
 
     //================================================
@@ -73,25 +107,25 @@ public class ByteMe {
     //================================================
 
     /**
-     * LRU Cache code.
-     *
-     * http://www.programcreek.com/2013/03/leetcode-lru-cache-java/
+     * Node class for MRU and LRU algorithms
+     */
+    private class Node{
+        int key;
+        Object value;
+        Node pre;
+        Node next;
+
+        public Node(int key, Object value){
+            this.key = key;
+            this.value = value;
+        }
+    }
+
+    /**
+     * LRU Cache code
      */
     public class LRU_Cache
     {
-        // Node which will hold each object
-        private class Node{
-            int key;
-            Object value;
-            Node pre;
-            Node next;
-
-            public Node(int key, Object value){
-                this.key = key;
-                this.value = value;
-            }
-        }
-
         // Actual cache
         HashMap<Integer, Node> map = new HashMap<Integer, Node>();
         Node head=null;
@@ -102,16 +136,15 @@ public class ByteMe {
          */
         public LRU_Cache() {}
 
-        public Object get(int key) {
-            if(map.containsKey(key)){
+        public Object get(int key)
+        {
+            if(map.containsKey(key))
+            {
                 Node n = map.get(key);
                 remove(n);
                 setHead(n);
 
-                if(developerMode)
-                {
-                    Log.d(""+this.getClass().getName(),"LRU, get(), removed from position and set as head. Value: " + n.value);
-                }
+                printout.printMessage("ByteMe, LRU_Cache, get()", "removed from position and set as head. Value: " + n.value);
 
                 return n.value;
             }
@@ -134,32 +167,26 @@ public class ByteMe {
 
         public void remove(Node n){
 
-            if(n.pre!=null){
+            if(n.pre!=null)
+            {
                 n.pre.next = n.next;
-                if(developerMode)
-                {
-                    Log.d(""+this.getClass().getName(),"LRU, remove(), set previous node to next node.");
-                }
-            }else{
+                printout.printMessage("ByteMe, LRU_Cache, remove()", "set previous node to next node.");
+            }
+            else
+            {
                 head = n.next;
-                if(developerMode)
-                {
-                    Log.d(""+this.getClass().getName(),"LRU, remove(), set head node to next node.");
-                }
+                printout.printMessage("ByteMe, LRU_Cache, remove()", "set head node to next node.");
             }
 
-            if(n.next!=null){
+            if(n.next!=null)
+            {
                 n.next.pre = n.pre;
-                if(developerMode)
-                {
-                    Log.d(""+this.getClass().getName(),"LRU, remove(), set next node to previous node.");
-                }
-            }else{
+                printout.printMessage("ByteMe, LRU_Cache, remove()", "set next node to previous node.");
+            }
+            else
+            {
                 end = n.pre;
-                if(developerMode)
-                {
-                    Log.d(""+this.getClass().getName(),"LRU, remove(), set end node to previous node.");
-                }
+                printout.printMessage("ByteMe, LRU_Cache, remove()", "set end node to previous node.");
             }
         }
 
@@ -175,10 +202,7 @@ public class ByteMe {
             if(end ==null)
                 end = head;
 
-            if(developerMode)
-            {
-                Log.d(""+this.getClass().getName(),"LRU, setHead(), set node as head of list.");
-            }
+            printout.printMessage("ByteMe, LRU_Cache, setHead()", "set node as head of list.");
         }
 
         /**
@@ -208,13 +232,11 @@ public class ByteMe {
                 remove(old);
                 setHead(old);
 
-                if(developerMode)
-                {
-                    Log.d(""+this.getClass().getName(),"LRU, add(), found node with the same key, replaced the value. Made it the head of the list");
-                }
+                printout.printMessage("ByteMe, LRU_Cache, add()", "found node with the same key, replaced the value. Made it the head of the list");
             }
             // create a new one if it doesn't exist
-            else{
+            else
+            {
                 Node created = new Node(key, value);
 
                 int cacheOfObject = getTotalBitOfSingleObject(value);
@@ -330,18 +352,7 @@ public class ByteMe {
      */
     public class MRU_Cache
     {
-        // Node which will hold each object
-        private class Node{
-            int key;
-            Object value;
-            Node pre;
-            Node next;
 
-            public Node(int key, Object value){
-                this.key = key;
-                this.value = value;
-            }
-        }
 
         // Actual cache
         HashMap<Integer, Node> map = new HashMap<Integer, Node>();
@@ -359,10 +370,7 @@ public class ByteMe {
                 remove(n);
                 setHead(n);
 
-                if(developerMode)
-                {
-                    Log.d(""+this.getClass().getName(),"MRU, get(), removed from position and set as head. Value: " + n.value);
-                }
+                printout.printMessage("ByteMe, MRU_Cache, get()","removed from position and set as head. Value: " + n.value);
 
                 return n.value;
             }
@@ -370,33 +378,28 @@ public class ByteMe {
             return -1;
         }
 
-        public void remove(Node n){
-            if(n.pre!=null){
+        public void remove(Node n)
+        {
+            if(n.pre!=null)
+            {
                 n.pre.next = n.next;
-                if(developerMode)
-                {
-                    Log.d(""+this.getClass().getName(),"MRU, remove(), set previous node to next node.");
-                }
-            }else{
+                printout.printMessage("ByteMe, MRU_Cache, remove()","set previous node to next node.");
+            }
+            else
+            {
                 head = n.next;
-                if(developerMode)
-                {
-                    Log.d(""+this.getClass().getName(),"MRU, remove(), set head node to next node.");
-                }
+                printout.printMessage("ByteMe, MRU_Cache, remove()","set head node to next node.");
             }
 
-            if(n.next!=null){
+            if(n.next!=null)
+            {
                 n.next.pre = n.pre;
-                if(developerMode)
-                {
-                    Log.d(""+this.getClass().getName(),"MRU, remove(), set next node to previous node.");
-                }
-            }else{
+                printout.printMessage("ByteMe, MRU_Cache, remove()","set next node to previous node.");
+            }
+            else
+            {
                 end = n.pre;
-                if(developerMode)
-                {
-                    Log.d(""+this.getClass().getName(),"MRU, remove(), set end node to previous node.");
-                }
+                printout.printMessage("ByteMe, MRU_Cache, remove()","set end node to previous node.");
             }
         }
 
@@ -425,10 +428,7 @@ public class ByteMe {
             if(end ==null)
                 end = head;
 
-            if(developerMode)
-            {
-                Log.d(""+this.getClass().getName(),"MRU, setHead(), set node as head of list.");
-            }
+            printout.printMessage("ByteMe, MRU_Cache, setHead()","set node as head of list.");
         }
 
         /**
@@ -458,13 +458,11 @@ public class ByteMe {
                 remove(old);
                 setHead(old);
 
-                if(developerMode)
-                {
-                    Log.d(""+this.getClass().getName(),"MRU, add(), found node with the same key, replaced the value. Made it the head of the list");
-                }
+                printout.printMessage("ByteMe, MRU_Cache, add()", "found node with the same key, replaced the value. Made it the head of the list.");
             }
             // create a new one if it doesn't exist
-            else{
+            else
+            {
                 Node created = new Node(key, value);
 
                 int cacheOfObject = getTotalBitOfSingleObject(value);
@@ -610,13 +608,9 @@ public class ByteMe {
                         } catch (IllegalAccessException e) {
                             e.printStackTrace();
                         } catch (NullPointerException e) {
-                            if(developerMode) {
-                                String error_message = "";
-                                error_message += "Error: NullPointer Exception raised. ";
-                                error_message += "On Method " + method.getName() + " which appears to contain a null value.";
-                                Log.e("ByteMe", error_message);
-                                //e.printStackTrace();
-                            }
+                            printout.printError("ByteMe, getTotalBitOfSingleObject()",
+                                            "Error: NullPointer Exception raised. On method " + method.getName() +
+                                            " which appears to contain a null value. Stacktrace: ");
                         }
 
                         break;
@@ -631,13 +625,9 @@ public class ByteMe {
                         } catch (IllegalAccessException e) {
                             e.printStackTrace();
                         } catch (NullPointerException e) {
-                            if(developerMode) {
-                                String error_message = "";
-                                error_message += "Error: NullPointer Exception raised. ";
-                                error_message += "On Method " + method.getName() + " which appears to contain a null value.";
-                                Log.e("ByteMe", error_message);
-                                //e.printStackTrace();
-                            }
+                            printout.printError("ByteMe, getTotalBitOfSingleObject()",
+                                            "Error: NullPointer Exception raised. On method " + method.getName() +
+                                            " which appears to contain a null value. Stacktrace: ");
                         }
 
                         break;
@@ -652,13 +642,9 @@ public class ByteMe {
                         } catch (IllegalAccessException e) {
                             e.printStackTrace();
                         } catch (NullPointerException e) {
-                            if(developerMode) {
-                                String error_message = "";
-                                error_message += "Error: NullPointer Exception raised. ";
-                                error_message += "On Method " + method.getName() + " which appears to contain a null value.";
-                                Log.e("ByteMe", error_message);
-                                //e.printStackTrace();
-                            }
+                            printout.printError("ByteMe, getTotalBitOfSingleObject()",
+                                            "Error: NullPointer Exception raised. On method " + method.getName() +
+                                            " which appears to contain a null value. Stacktrace: ");
                         }
 
                         break;
@@ -673,13 +659,9 @@ public class ByteMe {
                         } catch (IllegalAccessException e) {
                             e.printStackTrace();
                         } catch (NullPointerException e) {
-                            if(developerMode) {
-                                String error_message = "";
-                                error_message += "Error: NullPointer Exception raised. ";
-                                error_message += "On Method " + method.getName() + " which appears to contain a null value.";
-                                Log.e("ByteMe", error_message);
-                                //e.printStackTrace();
-                            }
+                            printout.printError("ByteMe, getTotalBitOfSingleObject()",
+                                    "Error: NullPointer Exception raised. On method " + method.getName() +
+                                            " which appears to contain a null value. Stacktrace: ");
                         }
 
                         break;
@@ -694,13 +676,9 @@ public class ByteMe {
                         } catch (IllegalAccessException e) {
                             e.printStackTrace();
                         } catch (NullPointerException e) {
-                            if(developerMode) {
-                                String error_message = "";
-                                error_message += "Error: NullPointer Exception raised. ";
-                                error_message += "On Method " + method.getName() + " which appears to contain a null value.";
-                                Log.e("ByteMe", error_message);
-                                //e.printStackTrace();
-                            }
+                            printout.printError("ByteMe, getTotalBitOfSingleObject()",
+                                    "Error: NullPointer Exception raised. On method " + method.getName() +
+                                            " which appears to contain a null value. Stacktrace: ");
                         }
 
                         break;
@@ -715,13 +693,9 @@ public class ByteMe {
                         } catch (IllegalAccessException e) {
                             e.printStackTrace();
                         } catch (NullPointerException e) {
-                            if(developerMode) {
-                                String error_message = "";
-                                error_message += "Error: NullPointer Exception raised. ";
-                                error_message += "On Method " + method.getName() + " which appears to contain a null value.";
-                                Log.e("ByteMe", error_message);
-                                //e.printStackTrace();
-                            }
+                            printout.printError("ByteMe, getTotalBitOfSingleObject()",
+                                    "Error: NullPointer Exception raised. On method " + method.getName() +
+                                            " which appears to contain a null value. Stacktrace: ");
                         }
 
                         break;
@@ -736,13 +710,9 @@ public class ByteMe {
                         } catch (IllegalAccessException e) {
                             e.printStackTrace();
                         } catch (NullPointerException e) {
-                            if(developerMode) {
-                                String error_message = "";
-                                error_message += "Error: NullPointer Exception raised. ";
-                                error_message += "On Method " + method.getName() + " which appears to contain a null value.";
-                                Log.e("ByteMe", error_message);
-                                //e.printStackTrace();
-                            }
+                            printout.printError("ByteMe, getTotalBitOfSingleObject()",
+                                    "Error: NullPointer Exception raised. On method " + method.getName() +
+                                            " which appears to contain a null value. Stacktrace: ");
                         }
 
                         break;
@@ -757,13 +727,9 @@ public class ByteMe {
                         } catch (IllegalAccessException e) {
                             e.printStackTrace();
                         } catch (NullPointerException e) {
-                            if(developerMode) {
-                                String error_message = "";
-                                error_message += "Error: NullPointer Exception raised. ";
-                                error_message += "On Method " + method.getName() + " which appears to contain a null value.";
-                                Log.e("ByteMe", error_message);
-                                //e.printStackTrace();
-                            }
+                            printout.printError("ByteMe, getTotalBitOfSingleObject()",
+                                    "Error: NullPointer Exception raised. On method " + method.getName() +
+                                            " which appears to contain a null value. Stacktrace: ");
                         }
 
                         break;
@@ -778,13 +744,9 @@ public class ByteMe {
                         } catch (IllegalAccessException e) {
                             e.printStackTrace();
                         } catch (NullPointerException e) {
-                            if(developerMode) {
-                                String error_message = "";
-                                error_message += "Error: NullPointer Exception raised. ";
-                                error_message += "On Method " + method.getName() + " which appears to contain a null value.";
-                                Log.e("ByteMe", error_message);
-                                //e.printStackTrace();
-                            }
+                            printout.printError("ByteMe, getTotalBitOfSingleObject()",
+                                    "Error: NullPointer Exception raised. On method " + method.getName() +
+                                            " which appears to contain a null value. Stacktrace: ");
                         }
 
                         break;
@@ -799,13 +761,9 @@ public class ByteMe {
                         } catch (IllegalAccessException e) {
                             e.printStackTrace();
                         } catch (NullPointerException e) {
-                            if(developerMode) {
-                                String error_message = "";
-                                error_message += "Error: NullPointer Exception raised. ";
-                                error_message += "On Method " + method.getName() + " which appears to contain a null value.";
-                                Log.e("ByteMe", error_message);
-                                //e.printStackTrace();
-                            }
+                            printout.printError("ByteMe, getTotalBitOfSingleObject()",
+                                    "Error: NullPointer Exception raised. On method " + method.getName() +
+                                            " which appears to contain a null value. Stacktrace: ");
                         }
 
                         break;
@@ -896,37 +854,28 @@ public class ByteMe {
      * clearCache sets the cache being used to null, then sets the current allocation
      * amount to zero, and finally remakes an instance of the same cache.
      */
-    public void clearCache() {
-
+    public void clearCache()
+    {
         if (getAlgorithm() == ALGORITHM_LRU)
         {
             lru_cache = null;
             setAllocation_current(0);
             lru_cache = new LRU_Cache();
-            if(developerMode)
-            {
-                Log.d(""+this.getClass().getName(),"ByteMe, clearCache(), LRU cache cleared, allocation_current set to 0, and an instance of LRU made again.");
-            }
+            printout.printMessage("ByteMe, clearCache()", "LRU cache cleared, allocation_current set to 0, and an instance of LRU made again.");
         }
         else if(getAlgorithm() == ALGORITHM_FIFO)
         {
             fifo_cache = null;
             setAllocation_current(0);
             fifo_cache = new FIFO_Cache();
-            if(developerMode)
-            {
-                Log.d(""+this.getClass().getName(),"ByteMe, clearCache(), FIFO cache cleared, allocation_current set to 0, and an instance of FIFO made again.");
-            }
+            printout.printMessage("ByteMe, clearCache()", "FIFO cache cleared, allocation_current set to 0, and an instance of LRU made again.");
         }
         else if(getAlgorithm() == ALGORITHM_MRU)
         {
             mru_cache = null;
             setAllocation_current(0);
             mru_cache = new MRU_Cache();
-            if(developerMode)
-            {
-                Log.d(""+this.getClass().getName(),"ByteMe, clearCache(), MRU cache cleared, allocation_current set to 0, and an instance of MRU made again.");
-            }
+            printout.printMessage("ByteMe, clearCache()", "MRU cache cleared, allocation_current set to 0, and an instance of LRU made again.");
         }
     }
 
@@ -993,8 +942,7 @@ public class ByteMe {
     private int run(int[] int_data) {
         if(int_data == null)
         {
-            if(developerMode)
-                Log.e("ByteMe","Error: int array was null");
+            printout.printError("ByteMe, run()", "int array was null");
             return -2;
         }
         else {
@@ -1022,8 +970,7 @@ public class ByteMe {
 
         if(string_data == null)
         {
-            if(developerMode)
-                Log.e("ByteMe","Error: run(String[]): string array was null");
+            printout.printError("ByteMe, run()", "string array was null");
             return -2;
         }
         else {
@@ -1055,8 +1002,7 @@ public class ByteMe {
     private int run(short[] short_data) {
         if(short_data == null)
         {
-            if(developerMode)
-                Log.e("ByteMe","Error: run(short[]): short array was null");
+            printout.printError("ByteMe, run()", "short array was null");
             return -2;
         }
         else {
@@ -1079,8 +1025,7 @@ public class ByteMe {
     private int run(long[] long_data) {
         if(long_data == null)
         {
-            if(developerMode)
-                Log.e("ByteMe","Error: run(long[]): long array was null");
+            printout.printError("ByteMe, run()", "long array was null");
             return -2;
         }
         else {
@@ -1103,8 +1048,7 @@ public class ByteMe {
     private int run(byte[] byte_data) {
         if(byte_data == null)
         {
-            if(developerMode)
-                Log.e("ByteMe","Error: run(byte[]): byte array was null");
+            printout.printError("ByteMe, run()", "byte array was null");
             return -2;
         }
         else {
@@ -1127,8 +1071,7 @@ public class ByteMe {
     private int run(float[] float_data) {
         if(float_data == null)
         {
-            if(developerMode)
-                Log.e("ByteMe","Error: run(float[]): float array was null");
+            printout.printError("ByteMe, run()", "float array was null");
             return -2;
         }
         else {
@@ -1151,8 +1094,7 @@ public class ByteMe {
     private int run(double[] double_data) {
         if(double_data == null)
         {
-            if(developerMode)
-                Log.e("ByteMe","Error: run(double[]): double array was null");
+            printout.printError("ByteMe, run()", "double array was null");
             return -2;
         }
         else {
@@ -1176,8 +1118,7 @@ public class ByteMe {
     private int run(char[] char_data) {
         if(char_data == null)
         {
-            if(developerMode)
-                Log.e("ByteMe","Error: run(char[]): char array was null");
+            printout.printError("ByteMe, run()", "char array was null");
             return -2;
         }
         else {
@@ -1201,8 +1142,7 @@ public class ByteMe {
     private int run(boolean[] boolean_data) {
         if(boolean_data == null)
         {
-            if(developerMode)
-                Log.e("ByteMe","Error: run(boolean[]): boolean array was null");
+            printout.printError("ByteMe, run()", "boolean array was null");
             return -2;
         }
         else {
@@ -1226,9 +1166,7 @@ public class ByteMe {
     private int run(Bitmap[] bitmap_data) {
         if(bitmap_data == null)
         {
-            if(developerMode) {
-                Log.e("ByteMe", "Error: run(Bitmap[]): bitmap array was null");
-            }
+            printout.printError("ByteMe, run()", "Bitmap array was null");
             return -2;
         }
         else {
@@ -1273,19 +1211,13 @@ public class ByteMe {
     public void setAllocationMax(int allocation_max_m) {
         int tempMaxMemory = (int) getTotal_ram();
         this.allocation_max = tempMaxMemory / allocation_max_m;
-        if(developerMode)
-        {
-            Log.d(""+this.getClass().getName(),"ByteMe, setAllocationMax(), Allocation Max: " + this.allocation_max);
-            Log.d(""+this.getClass().getName(),"ByteMe, setAllocationMax(), Ram Max memory: " + tempMaxMemory);
-        }
+        printout.printMessage("ByteMe, setAllocationMax()", "Allocation Max: " + this.allocation_max);
+        printout.printMessage("ByteMe, setAllocationMax()", "Ram Max memory: " + tempMaxMemory);
     }
 
     public void setAllocationMaxManually(int allocation_max_m) {
         this.allocation_max = allocation_max_m;
-        if(developerMode)
-        {
-            Log.d(""+this.getClass().getName(),"ByteMe, setAllocationMaxManually(), Allocation Max: " + this.allocation_max);
-        }
+        printout.printMessage("ByteMe, setAllocationMax()","Allocation Max: " + this.allocation_max);
     }
 
     public int getAllocationMax()
@@ -1299,10 +1231,7 @@ public class ByteMe {
 
     private void setAllocation_current(int allocation_current) {
         this.allocation_current = allocation_current;
-        if(developerMode)
-        {
-            Log.d(""+this.getClass().getName(),"ByteMe, setAllocation_current(), Allocation Current: " + this.allocation_current);
-        }
+        printout.printMessage("ByteMe, setAllocationMax()","Allocation Current: " + this.allocation_current);
     }
 
     public long getTotal_ram() {
@@ -1312,18 +1241,12 @@ public class ByteMe {
         // if API 15 or lower
         if (currentapiVersion <= Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1){
             android_total_ram = getTotalMemoryOld();
-            if(developerMode)
-            {
-                Log.d(""+this.getClass().getName(),"ByteMe, getTotal_ram(), SDK level 15 or lower.");
-            }
+            printout.printMessage("ByteMe, getTotal_ram()","SDK level 15 or lower.");
         }
         // API is 16 or higher
         else{
             android_total_ram = getTotalMemoryNew();
-            if(developerMode)
-            {
-                Log.d(""+this.getClass().getName(),"ByteMe, getTotal_ram(), SDK level 16 or higher.");
-            }
+            printout.printMessage("ByteMe, getTotal_ram()","SDK level 16 or higher.");
         }
         return android_total_ram;
     }
@@ -1373,8 +1296,8 @@ public class ByteMe {
      * @return Byte value of total ram.
      */
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
-    public static long getTotalMemoryNew() {
-
+    public static long getTotalMemoryNew()
+    {
         ActivityManager actManager = (ActivityManager) mContext.getSystemService(mContext.ACTIVITY_SERVICE);
         ActivityManager.MemoryInfo memInfo = new ActivityManager.MemoryInfo();
         actManager.getMemoryInfo(memInfo);
@@ -1389,31 +1312,24 @@ public class ByteMe {
         ByteMe.mContext = mContext;
     }
 
-    public void setAlgorithm(int algorithm){
+    public void setAlgorithm(int algorithm)
+    {
         if(algorithm == ALGORITHM_LRU)
         {
             lru_cache = new LRU_Cache();
-            if(developerMode)
-            {
-                Log.d(""+this.getClass().getName(),"ByteMe, setAlgorithm(), LRU cache chosen. Instance of cache created.");
-            }
+            printout.printMessage("ByteMe, setAlgorithm()", "LRU cache chosen. Instance of cache created.");
         }
         else if(algorithm == ALGORITHM_FIFO)
         {
             fifo_cache = new FIFO_Cache();
-            if(developerMode)
-            {
-                Log.d(""+this.getClass().getName(),"ByteMe, setAlgorithm(), FIFO cache chosen. Instance of cache created.");
-            }
+            printout.printMessage("ByteMe, setAlgorithm()", "FIFO cache chosen. Instance of cache created.");
         }
         else if(algorithm == ALGORITHM_MRU)
         {
             mru_cache = new MRU_Cache();
-            if(developerMode)
-            {
-                Log.d(""+this.getClass().getName(),"ByteMe, setAlgorithm(), MRU cache chosen. Instance of cache created.");
-            }
+            printout.printMessage("ByteMe, setAlgorithm()", "MRU cache chosen. Instance of cache created.");
         }
+
         this.CHOSEN_ALGORITHM = algorithm;
     }
 
@@ -1438,31 +1354,20 @@ public class ByteMe {
         if(getAlgorithm() == ALGORITHM_LRU)
         {
             lru_cache.add(obj.hashCode(), obj);
-            if(developerMode)
-            {
-                Log.d(""+this.getClass().getName(),"ByteMe, addObjectToCache(), Object added to LRU cache.");
-            }
+            printout.printMessage("ByteMe, addObjectToCache()", "Object added to LRU cache.");
         }
         else if(getAlgorithm() == ALGORITHM_FIFO)
         {
             fifo_cache.add(obj);
-            if(developerMode)
-            {
-                Log.d(""+this.getClass().getName(),"ByteMe, addObjectToCache(), Object added to FIFO cache.");
-            }
+            printout.printMessage("ByteMe, addObjectToCache()", "Object added to FIFO cache.");
         }
         else if(getAlgorithm() == ALGORITHM_MRU) {
             mru_cache.add(obj.hashCode(), obj);
-            if(developerMode)
-            {
-                Log.d(""+this.getClass().getName(),"ByteMe, addObjectToCache(), Object added to MRU cache.");
-            }
+            printout.printMessage("ByteMe, addObjectToCache()", "Object added to MRU cache.");
         }
         else
-        {
-            //ERROR
-            Log.d(""+this.getClass().getName(),"ERROR: addObjectToCache(), no algorithm selected. Object not saved in cache.");
-        }
+            printout.printError("ByteMe, addObjectToCache()", "no algorithm selected. Object not saved in cache.");
+
     }
 
     /**
@@ -1492,7 +1397,7 @@ public class ByteMe {
         }
 
         if(obj.equals(-1)) {
-            Log.e("ByteMe","Error: getObjectFromCache(): could not get object from cache");
+            printout.printError("ByteMe, getObjectFromCache()","could not get object from cache");
             return null;
         }
         else
@@ -1507,8 +1412,8 @@ public class ByteMe {
      *
      * @return All objects found in chosen cache. Null if no cache is found or cache is empty.
      */
-    public Object[] getAllObjectsFromCache() {
-
+    public Object[] getAllObjectsFromCache()
+    {
         if(getAlgorithm() == ALGORITHM_LRU)
         {
             return lru_cache.getAllObjects();
@@ -1523,7 +1428,7 @@ public class ByteMe {
         }
         else
         {
-            Log.e("ByteMe","Error: getAllObjectsFromCache(): could not get all objects from cache. Algorithm couldn't be determined.");
+            printout.printError("ByteMe, getAllObjectsFromCache()", "could not get all objects from cache. Algorithm couldn't be determined.");
             return null;
         }
     }
